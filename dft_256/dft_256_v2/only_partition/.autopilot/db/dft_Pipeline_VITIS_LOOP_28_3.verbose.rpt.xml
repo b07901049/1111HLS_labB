@@ -1,0 +1,412 @@
+<profile>
+
+<section name = "Vitis HLS Report for 'dft_Pipeline_VITIS_LOOP_28_3'" level="0">
+<item name = "Date">Fri Oct 21 17:39:02 2022
+</item>
+<item name = "Version">2022.1 (Build 3526262 on Mon Apr 18 15:48:16 MDT 2022)</item>
+<item name = "Project">dft_256_v2</item>
+<item name = "Solution">only_partition (Vivado IP Flow Target)</item>
+<item name = "Product family">zynq</item>
+<item name = "Target device">xc7z020-clg484-1</item>
+</section>
+
+<section name = "Performance Estimates" level="0">
+<item name = "Timing">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="4">Clock, Target, Estimated, Uncertainty</keys>
+<column name="ap_clk">10.00 ns, 7.256 ns, 2.70 ns</column>
+</table>
+</item>
+</section>
+</item>
+<item name = "Latency">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="8">, min, max, min, max, min, max, Type</keys>
+<column name="">1289, 1289, 12.890 us, 12.890 us, 1289, 1289, no</column>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="0">
+<keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
+</table>
+</item>
+<item name = "Loop"><table name="" hasTotal="0">
+<keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
+<column name="- VITIS_LOOP_28_3">1287, 1287, 13, 5, 1, 256, yes</column>
+</table>
+</item>
+</section>
+</item>
+</section>
+</item>
+</section>
+
+<section name = "Utilization Estimates" level="0">
+<item name = "Summary"><table name="" hasTotal="1">
+<keys size="6">Name, BRAM_18K, DSP, FF, LUT, URAM</keys>
+<column name="DSP">-, -, -, -, -</column>
+<column name="Expression">-, -, 0, 42, -</column>
+<column name="FIFO">-, -, -, -, -</column>
+<column name="Instance">-, 5, 348, 2073, -</column>
+<column name="Memory">2, -, 0, 0, -</column>
+<column name="Multiplexer">-, -, -, 190, -</column>
+<column name="Register">-, -, 285, -, -</column>
+<specialColumn name="Available">280, 220, 106400, 53200, 0</specialColumn>
+<specialColumn name="Utilization (%)">~0, 2, ~0, 4, 0</specialColumn>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="1">
+<keys size="7">Instance, Module, BRAM_18K, DSP, FF, LUT, URAM</keys>
+<column name="fadd_32ns_32ns_32_5_full_dsp_1_U515">fadd_32ns_32ns_32_5_full_dsp_1, 0, 2, 205, 390, 0</column>
+<column name="fmul_32ns_32ns_32_4_max_dsp_1_U516">fmul_32ns_32ns_32_4_max_dsp_1, 0, 3, 143, 321, 0</column>
+<column name="mux_2569_32_1_1_U517">mux_2569_32_1_1, 0, 0, 0, 1362, 0</column>
+</table>
+</item>
+<item name = "DSP"><table name="" hasTotal="0">
+<keys size="3">Instance, Module, Expression</keys>
+</table>
+</item>
+<item name = "Memory"><table name="" hasTotal="1">
+<keys size="10">Memory, Module, BRAM_18K, FF, LUT, URAM, Words, Bits, Banks, W*Bits*Banks</keys>
+<column name="cos_coefficients_table_U">dft_Pipeline_VITIS_LOOP_28_3_cos_coefficients_table_ROM_AUTO_1R, 1, 0, 0, 0, 256, 32, 1, 8192</column>
+<column name="sin_coefficients_table_U">dft_Pipeline_VITIS_LOOP_28_3_sin_coefficients_table_ROM_AUTO_1R, 1, 0, 0, 0, 256, 32, 1, 8192</column>
+</table>
+</item>
+<item name = "FIFO"><table name="" hasTotal="1">
+<keys size="8">Name, BRAM_18K, FF, LUT, URAM, Depth, Bits, Size:D*B</keys>
+</table>
+</item>
+<item name = "Expression"><table name="" hasTotal="1">
+<keys size="7">Variable Name, Operation, DSP, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
+<column name="add_ln28_fu_2199_p2">+, 0, 0, 14, 9, 1</column>
+<column name="add_ln31_fu_2208_p2">+, 0, 0, 15, 8, 8</column>
+<column name="icmp_ln28_fu_2193_p2">icmp, 0, 0, 11, 9, 10</column>
+<column name="ap_enable_pp0">xor, 0, 0, 2, 1, 2</column>
+</table>
+</item>
+<item name = "Multiplexer"><table name="" hasTotal="1">
+<keys size="5">Name, LUT, Input Size, Bits, Total Bits</keys>
+<column name="ap_NS_fsm">31, 6, 1, 6</column>
+<column name="ap_done_int">9, 2, 1, 2</column>
+<column name="ap_enable_reg_pp0_iter0">9, 2, 1, 2</column>
+<column name="ap_enable_reg_pp0_iter1">9, 2, 1, 2</column>
+<column name="ap_enable_reg_pp0_iter2">9, 2, 1, 2</column>
+<column name="ap_loop_exit_ready_pp0_iter1_reg">9, 2, 1, 2</column>
+<column name="ap_sig_allocacmp_index_load">9, 2, 8, 16</column>
+<column name="ap_sig_allocacmp_n_1">9, 2, 9, 18</column>
+<column name="ap_sig_allocacmp_sum_i_load">9, 2, 32, 64</column>
+<column name="ap_sig_allocacmp_sum_r_load">9, 2, 32, 64</column>
+<column name="grp_fu_2158_p0">14, 3, 32, 96</column>
+<column name="grp_fu_2158_p1">14, 3, 32, 96</column>
+<column name="grp_fu_2162_p1">14, 3, 32, 96</column>
+<column name="index_fu_560">9, 2, 8, 16</column>
+<column name="n_fu_572">9, 2, 9, 18</column>
+<column name="sum_i_fu_568">9, 2, 32, 64</column>
+<column name="sum_r_fu_564">9, 2, 32, 64</column>
+</table>
+</item>
+<item name = "Register"><table name="" hasTotal="1">
+<keys size="5">Name, FF, LUT, Bits, Const Bits</keys>
+<column name="ap_CS_fsm">5, 0, 5, 0</column>
+<column name="ap_done_reg">1, 0, 1, 0</column>
+<column name="ap_enable_reg_pp0_iter0_reg">1, 0, 1, 0</column>
+<column name="ap_enable_reg_pp0_iter1">1, 0, 1, 0</column>
+<column name="ap_enable_reg_pp0_iter2">1, 0, 1, 0</column>
+<column name="ap_loop_exit_ready_pp0_iter1_reg">1, 0, 1, 0</column>
+<column name="cos_coefficients_table_load_reg_2823">32, 0, 32, 0</column>
+<column name="icmp_ln28_reg_2804">1, 0, 1, 0</column>
+<column name="icmp_ln28_reg_2804_pp0_iter1_reg">1, 0, 1, 0</column>
+<column name="index_fu_560">8, 0, 8, 0</column>
+<column name="mul1_reg_2843">32, 0, 32, 0</column>
+<column name="mul_reg_2833">32, 0, 32, 0</column>
+<column name="n_fu_572">9, 0, 9, 0</column>
+<column name="reg_2166">32, 0, 32, 0</column>
+<column name="sin_coefficients_table_load_reg_2828">32, 0, 32, 0</column>
+<column name="sum_i_fu_568">32, 0, 32, 0</column>
+<column name="sum_r_fu_564">32, 0, 32, 0</column>
+<column name="tmp_reg_2808">32, 0, 32, 0</column>
+</table>
+</item>
+</section>
+</item>
+</section>
+
+<section name = "Interface" level="0">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="6">RTL Ports, Dir, Bits, Protocol, Source Object, C Type</keys>
+<column name="ap_clk">in, 1, ap_ctrl_hs, dft_Pipeline_VITIS_LOOP_28_3, return value</column>
+<column name="ap_rst">in, 1, ap_ctrl_hs, dft_Pipeline_VITIS_LOOP_28_3, return value</column>
+<column name="ap_start">in, 1, ap_ctrl_hs, dft_Pipeline_VITIS_LOOP_28_3, return value</column>
+<column name="ap_done">out, 1, ap_ctrl_hs, dft_Pipeline_VITIS_LOOP_28_3, return value</column>
+<column name="ap_idle">out, 1, ap_ctrl_hs, dft_Pipeline_VITIS_LOOP_28_3, return value</column>
+<column name="ap_ready">out, 1, ap_ctrl_hs, dft_Pipeline_VITIS_LOOP_28_3, return value</column>
+<column name="trunc_ln1">in, 8, ap_none, trunc_ln1, scalar</column>
+<column name="temp_reload">in, 32, ap_none, temp_reload, scalar</column>
+<column name="temp_1_reload">in, 32, ap_none, temp_1_reload, scalar</column>
+<column name="temp_2_reload">in, 32, ap_none, temp_2_reload, scalar</column>
+<column name="temp_3_reload">in, 32, ap_none, temp_3_reload, scalar</column>
+<column name="temp_4_reload">in, 32, ap_none, temp_4_reload, scalar</column>
+<column name="temp_5_reload">in, 32, ap_none, temp_5_reload, scalar</column>
+<column name="temp_6_reload">in, 32, ap_none, temp_6_reload, scalar</column>
+<column name="temp_7_reload">in, 32, ap_none, temp_7_reload, scalar</column>
+<column name="temp_8_reload">in, 32, ap_none, temp_8_reload, scalar</column>
+<column name="temp_9_reload">in, 32, ap_none, temp_9_reload, scalar</column>
+<column name="temp_10_reload">in, 32, ap_none, temp_10_reload, scalar</column>
+<column name="temp_11_reload">in, 32, ap_none, temp_11_reload, scalar</column>
+<column name="temp_12_reload">in, 32, ap_none, temp_12_reload, scalar</column>
+<column name="temp_13_reload">in, 32, ap_none, temp_13_reload, scalar</column>
+<column name="temp_14_reload">in, 32, ap_none, temp_14_reload, scalar</column>
+<column name="temp_15_reload">in, 32, ap_none, temp_15_reload, scalar</column>
+<column name="temp_16_reload">in, 32, ap_none, temp_16_reload, scalar</column>
+<column name="temp_17_reload">in, 32, ap_none, temp_17_reload, scalar</column>
+<column name="temp_18_reload">in, 32, ap_none, temp_18_reload, scalar</column>
+<column name="temp_19_reload">in, 32, ap_none, temp_19_reload, scalar</column>
+<column name="temp_20_reload">in, 32, ap_none, temp_20_reload, scalar</column>
+<column name="temp_21_reload">in, 32, ap_none, temp_21_reload, scalar</column>
+<column name="temp_22_reload">in, 32, ap_none, temp_22_reload, scalar</column>
+<column name="temp_23_reload">in, 32, ap_none, temp_23_reload, scalar</column>
+<column name="temp_24_reload">in, 32, ap_none, temp_24_reload, scalar</column>
+<column name="temp_25_reload">in, 32, ap_none, temp_25_reload, scalar</column>
+<column name="temp_26_reload">in, 32, ap_none, temp_26_reload, scalar</column>
+<column name="temp_27_reload">in, 32, ap_none, temp_27_reload, scalar</column>
+<column name="temp_28_reload">in, 32, ap_none, temp_28_reload, scalar</column>
+<column name="temp_29_reload">in, 32, ap_none, temp_29_reload, scalar</column>
+<column name="temp_30_reload">in, 32, ap_none, temp_30_reload, scalar</column>
+<column name="temp_31_reload">in, 32, ap_none, temp_31_reload, scalar</column>
+<column name="temp_32_reload">in, 32, ap_none, temp_32_reload, scalar</column>
+<column name="temp_33_reload">in, 32, ap_none, temp_33_reload, scalar</column>
+<column name="temp_34_reload">in, 32, ap_none, temp_34_reload, scalar</column>
+<column name="temp_35_reload">in, 32, ap_none, temp_35_reload, scalar</column>
+<column name="temp_36_reload">in, 32, ap_none, temp_36_reload, scalar</column>
+<column name="temp_37_reload">in, 32, ap_none, temp_37_reload, scalar</column>
+<column name="temp_38_reload">in, 32, ap_none, temp_38_reload, scalar</column>
+<column name="temp_39_reload">in, 32, ap_none, temp_39_reload, scalar</column>
+<column name="temp_40_reload">in, 32, ap_none, temp_40_reload, scalar</column>
+<column name="temp_41_reload">in, 32, ap_none, temp_41_reload, scalar</column>
+<column name="temp_42_reload">in, 32, ap_none, temp_42_reload, scalar</column>
+<column name="temp_43_reload">in, 32, ap_none, temp_43_reload, scalar</column>
+<column name="temp_44_reload">in, 32, ap_none, temp_44_reload, scalar</column>
+<column name="temp_45_reload">in, 32, ap_none, temp_45_reload, scalar</column>
+<column name="temp_46_reload">in, 32, ap_none, temp_46_reload, scalar</column>
+<column name="temp_47_reload">in, 32, ap_none, temp_47_reload, scalar</column>
+<column name="temp_48_reload">in, 32, ap_none, temp_48_reload, scalar</column>
+<column name="temp_49_reload">in, 32, ap_none, temp_49_reload, scalar</column>
+<column name="temp_50_reload">in, 32, ap_none, temp_50_reload, scalar</column>
+<column name="temp_51_reload">in, 32, ap_none, temp_51_reload, scalar</column>
+<column name="temp_52_reload">in, 32, ap_none, temp_52_reload, scalar</column>
+<column name="temp_53_reload">in, 32, ap_none, temp_53_reload, scalar</column>
+<column name="temp_54_reload">in, 32, ap_none, temp_54_reload, scalar</column>
+<column name="temp_55_reload">in, 32, ap_none, temp_55_reload, scalar</column>
+<column name="temp_56_reload">in, 32, ap_none, temp_56_reload, scalar</column>
+<column name="temp_57_reload">in, 32, ap_none, temp_57_reload, scalar</column>
+<column name="temp_58_reload">in, 32, ap_none, temp_58_reload, scalar</column>
+<column name="temp_59_reload">in, 32, ap_none, temp_59_reload, scalar</column>
+<column name="temp_60_reload">in, 32, ap_none, temp_60_reload, scalar</column>
+<column name="temp_61_reload">in, 32, ap_none, temp_61_reload, scalar</column>
+<column name="temp_62_reload">in, 32, ap_none, temp_62_reload, scalar</column>
+<column name="temp_63_reload">in, 32, ap_none, temp_63_reload, scalar</column>
+<column name="temp_64_reload">in, 32, ap_none, temp_64_reload, scalar</column>
+<column name="temp_65_reload">in, 32, ap_none, temp_65_reload, scalar</column>
+<column name="temp_66_reload">in, 32, ap_none, temp_66_reload, scalar</column>
+<column name="temp_67_reload">in, 32, ap_none, temp_67_reload, scalar</column>
+<column name="temp_68_reload">in, 32, ap_none, temp_68_reload, scalar</column>
+<column name="temp_69_reload">in, 32, ap_none, temp_69_reload, scalar</column>
+<column name="temp_70_reload">in, 32, ap_none, temp_70_reload, scalar</column>
+<column name="temp_71_reload">in, 32, ap_none, temp_71_reload, scalar</column>
+<column name="temp_72_reload">in, 32, ap_none, temp_72_reload, scalar</column>
+<column name="temp_73_reload">in, 32, ap_none, temp_73_reload, scalar</column>
+<column name="temp_74_reload">in, 32, ap_none, temp_74_reload, scalar</column>
+<column name="temp_75_reload">in, 32, ap_none, temp_75_reload, scalar</column>
+<column name="temp_76_reload">in, 32, ap_none, temp_76_reload, scalar</column>
+<column name="temp_77_reload">in, 32, ap_none, temp_77_reload, scalar</column>
+<column name="temp_78_reload">in, 32, ap_none, temp_78_reload, scalar</column>
+<column name="temp_79_reload">in, 32, ap_none, temp_79_reload, scalar</column>
+<column name="temp_80_reload">in, 32, ap_none, temp_80_reload, scalar</column>
+<column name="temp_81_reload">in, 32, ap_none, temp_81_reload, scalar</column>
+<column name="temp_82_reload">in, 32, ap_none, temp_82_reload, scalar</column>
+<column name="temp_83_reload">in, 32, ap_none, temp_83_reload, scalar</column>
+<column name="temp_84_reload">in, 32, ap_none, temp_84_reload, scalar</column>
+<column name="temp_85_reload">in, 32, ap_none, temp_85_reload, scalar</column>
+<column name="temp_86_reload">in, 32, ap_none, temp_86_reload, scalar</column>
+<column name="temp_87_reload">in, 32, ap_none, temp_87_reload, scalar</column>
+<column name="temp_88_reload">in, 32, ap_none, temp_88_reload, scalar</column>
+<column name="temp_89_reload">in, 32, ap_none, temp_89_reload, scalar</column>
+<column name="temp_90_reload">in, 32, ap_none, temp_90_reload, scalar</column>
+<column name="temp_91_reload">in, 32, ap_none, temp_91_reload, scalar</column>
+<column name="temp_92_reload">in, 32, ap_none, temp_92_reload, scalar</column>
+<column name="temp_93_reload">in, 32, ap_none, temp_93_reload, scalar</column>
+<column name="temp_94_reload">in, 32, ap_none, temp_94_reload, scalar</column>
+<column name="temp_95_reload">in, 32, ap_none, temp_95_reload, scalar</column>
+<column name="temp_96_reload">in, 32, ap_none, temp_96_reload, scalar</column>
+<column name="temp_97_reload">in, 32, ap_none, temp_97_reload, scalar</column>
+<column name="temp_98_reload">in, 32, ap_none, temp_98_reload, scalar</column>
+<column name="temp_99_reload">in, 32, ap_none, temp_99_reload, scalar</column>
+<column name="temp_100_reload">in, 32, ap_none, temp_100_reload, scalar</column>
+<column name="temp_101_reload">in, 32, ap_none, temp_101_reload, scalar</column>
+<column name="temp_102_reload">in, 32, ap_none, temp_102_reload, scalar</column>
+<column name="temp_103_reload">in, 32, ap_none, temp_103_reload, scalar</column>
+<column name="temp_104_reload">in, 32, ap_none, temp_104_reload, scalar</column>
+<column name="temp_105_reload">in, 32, ap_none, temp_105_reload, scalar</column>
+<column name="temp_106_reload">in, 32, ap_none, temp_106_reload, scalar</column>
+<column name="temp_107_reload">in, 32, ap_none, temp_107_reload, scalar</column>
+<column name="temp_108_reload">in, 32, ap_none, temp_108_reload, scalar</column>
+<column name="temp_109_reload">in, 32, ap_none, temp_109_reload, scalar</column>
+<column name="temp_110_reload">in, 32, ap_none, temp_110_reload, scalar</column>
+<column name="temp_111_reload">in, 32, ap_none, temp_111_reload, scalar</column>
+<column name="temp_112_reload">in, 32, ap_none, temp_112_reload, scalar</column>
+<column name="temp_113_reload">in, 32, ap_none, temp_113_reload, scalar</column>
+<column name="temp_114_reload">in, 32, ap_none, temp_114_reload, scalar</column>
+<column name="temp_115_reload">in, 32, ap_none, temp_115_reload, scalar</column>
+<column name="temp_116_reload">in, 32, ap_none, temp_116_reload, scalar</column>
+<column name="temp_117_reload">in, 32, ap_none, temp_117_reload, scalar</column>
+<column name="temp_118_reload">in, 32, ap_none, temp_118_reload, scalar</column>
+<column name="temp_119_reload">in, 32, ap_none, temp_119_reload, scalar</column>
+<column name="temp_120_reload">in, 32, ap_none, temp_120_reload, scalar</column>
+<column name="temp_121_reload">in, 32, ap_none, temp_121_reload, scalar</column>
+<column name="temp_122_reload">in, 32, ap_none, temp_122_reload, scalar</column>
+<column name="temp_123_reload">in, 32, ap_none, temp_123_reload, scalar</column>
+<column name="temp_124_reload">in, 32, ap_none, temp_124_reload, scalar</column>
+<column name="temp_125_reload">in, 32, ap_none, temp_125_reload, scalar</column>
+<column name="temp_126_reload">in, 32, ap_none, temp_126_reload, scalar</column>
+<column name="temp_127_reload">in, 32, ap_none, temp_127_reload, scalar</column>
+<column name="temp_128_reload">in, 32, ap_none, temp_128_reload, scalar</column>
+<column name="temp_129_reload">in, 32, ap_none, temp_129_reload, scalar</column>
+<column name="temp_130_reload">in, 32, ap_none, temp_130_reload, scalar</column>
+<column name="temp_131_reload">in, 32, ap_none, temp_131_reload, scalar</column>
+<column name="temp_132_reload">in, 32, ap_none, temp_132_reload, scalar</column>
+<column name="temp_133_reload">in, 32, ap_none, temp_133_reload, scalar</column>
+<column name="temp_134_reload">in, 32, ap_none, temp_134_reload, scalar</column>
+<column name="temp_135_reload">in, 32, ap_none, temp_135_reload, scalar</column>
+<column name="temp_136_reload">in, 32, ap_none, temp_136_reload, scalar</column>
+<column name="temp_137_reload">in, 32, ap_none, temp_137_reload, scalar</column>
+<column name="temp_138_reload">in, 32, ap_none, temp_138_reload, scalar</column>
+<column name="temp_139_reload">in, 32, ap_none, temp_139_reload, scalar</column>
+<column name="temp_140_reload">in, 32, ap_none, temp_140_reload, scalar</column>
+<column name="temp_141_reload">in, 32, ap_none, temp_141_reload, scalar</column>
+<column name="temp_142_reload">in, 32, ap_none, temp_142_reload, scalar</column>
+<column name="temp_143_reload">in, 32, ap_none, temp_143_reload, scalar</column>
+<column name="temp_144_reload">in, 32, ap_none, temp_144_reload, scalar</column>
+<column name="temp_145_reload">in, 32, ap_none, temp_145_reload, scalar</column>
+<column name="temp_146_reload">in, 32, ap_none, temp_146_reload, scalar</column>
+<column name="temp_147_reload">in, 32, ap_none, temp_147_reload, scalar</column>
+<column name="temp_148_reload">in, 32, ap_none, temp_148_reload, scalar</column>
+<column name="temp_149_reload">in, 32, ap_none, temp_149_reload, scalar</column>
+<column name="temp_150_reload">in, 32, ap_none, temp_150_reload, scalar</column>
+<column name="temp_151_reload">in, 32, ap_none, temp_151_reload, scalar</column>
+<column name="temp_152_reload">in, 32, ap_none, temp_152_reload, scalar</column>
+<column name="temp_153_reload">in, 32, ap_none, temp_153_reload, scalar</column>
+<column name="temp_154_reload">in, 32, ap_none, temp_154_reload, scalar</column>
+<column name="temp_155_reload">in, 32, ap_none, temp_155_reload, scalar</column>
+<column name="temp_156_reload">in, 32, ap_none, temp_156_reload, scalar</column>
+<column name="temp_157_reload">in, 32, ap_none, temp_157_reload, scalar</column>
+<column name="temp_158_reload">in, 32, ap_none, temp_158_reload, scalar</column>
+<column name="temp_159_reload">in, 32, ap_none, temp_159_reload, scalar</column>
+<column name="temp_160_reload">in, 32, ap_none, temp_160_reload, scalar</column>
+<column name="temp_161_reload">in, 32, ap_none, temp_161_reload, scalar</column>
+<column name="temp_162_reload">in, 32, ap_none, temp_162_reload, scalar</column>
+<column name="temp_163_reload">in, 32, ap_none, temp_163_reload, scalar</column>
+<column name="temp_164_reload">in, 32, ap_none, temp_164_reload, scalar</column>
+<column name="temp_165_reload">in, 32, ap_none, temp_165_reload, scalar</column>
+<column name="temp_166_reload">in, 32, ap_none, temp_166_reload, scalar</column>
+<column name="temp_167_reload">in, 32, ap_none, temp_167_reload, scalar</column>
+<column name="temp_168_reload">in, 32, ap_none, temp_168_reload, scalar</column>
+<column name="temp_169_reload">in, 32, ap_none, temp_169_reload, scalar</column>
+<column name="temp_170_reload">in, 32, ap_none, temp_170_reload, scalar</column>
+<column name="temp_171_reload">in, 32, ap_none, temp_171_reload, scalar</column>
+<column name="temp_172_reload">in, 32, ap_none, temp_172_reload, scalar</column>
+<column name="temp_173_reload">in, 32, ap_none, temp_173_reload, scalar</column>
+<column name="temp_174_reload">in, 32, ap_none, temp_174_reload, scalar</column>
+<column name="temp_175_reload">in, 32, ap_none, temp_175_reload, scalar</column>
+<column name="temp_176_reload">in, 32, ap_none, temp_176_reload, scalar</column>
+<column name="temp_177_reload">in, 32, ap_none, temp_177_reload, scalar</column>
+<column name="temp_178_reload">in, 32, ap_none, temp_178_reload, scalar</column>
+<column name="temp_179_reload">in, 32, ap_none, temp_179_reload, scalar</column>
+<column name="temp_180_reload">in, 32, ap_none, temp_180_reload, scalar</column>
+<column name="temp_181_reload">in, 32, ap_none, temp_181_reload, scalar</column>
+<column name="temp_182_reload">in, 32, ap_none, temp_182_reload, scalar</column>
+<column name="temp_183_reload">in, 32, ap_none, temp_183_reload, scalar</column>
+<column name="temp_184_reload">in, 32, ap_none, temp_184_reload, scalar</column>
+<column name="temp_185_reload">in, 32, ap_none, temp_185_reload, scalar</column>
+<column name="temp_186_reload">in, 32, ap_none, temp_186_reload, scalar</column>
+<column name="temp_187_reload">in, 32, ap_none, temp_187_reload, scalar</column>
+<column name="temp_188_reload">in, 32, ap_none, temp_188_reload, scalar</column>
+<column name="temp_189_reload">in, 32, ap_none, temp_189_reload, scalar</column>
+<column name="temp_190_reload">in, 32, ap_none, temp_190_reload, scalar</column>
+<column name="temp_191_reload">in, 32, ap_none, temp_191_reload, scalar</column>
+<column name="temp_192_reload">in, 32, ap_none, temp_192_reload, scalar</column>
+<column name="temp_193_reload">in, 32, ap_none, temp_193_reload, scalar</column>
+<column name="temp_194_reload">in, 32, ap_none, temp_194_reload, scalar</column>
+<column name="temp_195_reload">in, 32, ap_none, temp_195_reload, scalar</column>
+<column name="temp_196_reload">in, 32, ap_none, temp_196_reload, scalar</column>
+<column name="temp_197_reload">in, 32, ap_none, temp_197_reload, scalar</column>
+<column name="temp_198_reload">in, 32, ap_none, temp_198_reload, scalar</column>
+<column name="temp_199_reload">in, 32, ap_none, temp_199_reload, scalar</column>
+<column name="temp_200_reload">in, 32, ap_none, temp_200_reload, scalar</column>
+<column name="temp_201_reload">in, 32, ap_none, temp_201_reload, scalar</column>
+<column name="temp_202_reload">in, 32, ap_none, temp_202_reload, scalar</column>
+<column name="temp_203_reload">in, 32, ap_none, temp_203_reload, scalar</column>
+<column name="temp_204_reload">in, 32, ap_none, temp_204_reload, scalar</column>
+<column name="temp_205_reload">in, 32, ap_none, temp_205_reload, scalar</column>
+<column name="temp_206_reload">in, 32, ap_none, temp_206_reload, scalar</column>
+<column name="temp_207_reload">in, 32, ap_none, temp_207_reload, scalar</column>
+<column name="temp_208_reload">in, 32, ap_none, temp_208_reload, scalar</column>
+<column name="temp_209_reload">in, 32, ap_none, temp_209_reload, scalar</column>
+<column name="temp_210_reload">in, 32, ap_none, temp_210_reload, scalar</column>
+<column name="temp_211_reload">in, 32, ap_none, temp_211_reload, scalar</column>
+<column name="temp_212_reload">in, 32, ap_none, temp_212_reload, scalar</column>
+<column name="temp_213_reload">in, 32, ap_none, temp_213_reload, scalar</column>
+<column name="temp_214_reload">in, 32, ap_none, temp_214_reload, scalar</column>
+<column name="temp_215_reload">in, 32, ap_none, temp_215_reload, scalar</column>
+<column name="temp_216_reload">in, 32, ap_none, temp_216_reload, scalar</column>
+<column name="temp_217_reload">in, 32, ap_none, temp_217_reload, scalar</column>
+<column name="temp_218_reload">in, 32, ap_none, temp_218_reload, scalar</column>
+<column name="temp_219_reload">in, 32, ap_none, temp_219_reload, scalar</column>
+<column name="temp_220_reload">in, 32, ap_none, temp_220_reload, scalar</column>
+<column name="temp_221_reload">in, 32, ap_none, temp_221_reload, scalar</column>
+<column name="temp_222_reload">in, 32, ap_none, temp_222_reload, scalar</column>
+<column name="temp_223_reload">in, 32, ap_none, temp_223_reload, scalar</column>
+<column name="temp_224_reload">in, 32, ap_none, temp_224_reload, scalar</column>
+<column name="temp_225_reload">in, 32, ap_none, temp_225_reload, scalar</column>
+<column name="temp_226_reload">in, 32, ap_none, temp_226_reload, scalar</column>
+<column name="temp_227_reload">in, 32, ap_none, temp_227_reload, scalar</column>
+<column name="temp_228_reload">in, 32, ap_none, temp_228_reload, scalar</column>
+<column name="temp_229_reload">in, 32, ap_none, temp_229_reload, scalar</column>
+<column name="temp_230_reload">in, 32, ap_none, temp_230_reload, scalar</column>
+<column name="temp_231_reload">in, 32, ap_none, temp_231_reload, scalar</column>
+<column name="temp_232_reload">in, 32, ap_none, temp_232_reload, scalar</column>
+<column name="temp_233_reload">in, 32, ap_none, temp_233_reload, scalar</column>
+<column name="temp_234_reload">in, 32, ap_none, temp_234_reload, scalar</column>
+<column name="temp_235_reload">in, 32, ap_none, temp_235_reload, scalar</column>
+<column name="temp_236_reload">in, 32, ap_none, temp_236_reload, scalar</column>
+<column name="temp_237_reload">in, 32, ap_none, temp_237_reload, scalar</column>
+<column name="temp_238_reload">in, 32, ap_none, temp_238_reload, scalar</column>
+<column name="temp_239_reload">in, 32, ap_none, temp_239_reload, scalar</column>
+<column name="temp_240_reload">in, 32, ap_none, temp_240_reload, scalar</column>
+<column name="temp_241_reload">in, 32, ap_none, temp_241_reload, scalar</column>
+<column name="temp_242_reload">in, 32, ap_none, temp_242_reload, scalar</column>
+<column name="temp_243_reload">in, 32, ap_none, temp_243_reload, scalar</column>
+<column name="temp_244_reload">in, 32, ap_none, temp_244_reload, scalar</column>
+<column name="temp_245_reload">in, 32, ap_none, temp_245_reload, scalar</column>
+<column name="temp_246_reload">in, 32, ap_none, temp_246_reload, scalar</column>
+<column name="temp_247_reload">in, 32, ap_none, temp_247_reload, scalar</column>
+<column name="temp_248_reload">in, 32, ap_none, temp_248_reload, scalar</column>
+<column name="temp_249_reload">in, 32, ap_none, temp_249_reload, scalar</column>
+<column name="temp_250_reload">in, 32, ap_none, temp_250_reload, scalar</column>
+<column name="temp_251_reload">in, 32, ap_none, temp_251_reload, scalar</column>
+<column name="temp_252_reload">in, 32, ap_none, temp_252_reload, scalar</column>
+<column name="temp_253_reload">in, 32, ap_none, temp_253_reload, scalar</column>
+<column name="temp_254_reload">in, 32, ap_none, temp_254_reload, scalar</column>
+<column name="temp_255_reload">in, 32, ap_none, temp_255_reload, scalar</column>
+<column name="sum_i_out">out, 32, ap_vld, sum_i_out, pointer</column>
+<column name="sum_i_out_ap_vld">out, 1, ap_vld, sum_i_out, pointer</column>
+<column name="sum_r_out">out, 32, ap_vld, sum_r_out, pointer</column>
+<column name="sum_r_out_ap_vld">out, 1, ap_vld, sum_r_out, pointer</column>
+</table>
+</item>
+</section>
+</profile>

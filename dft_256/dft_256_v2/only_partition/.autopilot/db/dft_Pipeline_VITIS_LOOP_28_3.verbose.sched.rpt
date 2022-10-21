@@ -1,0 +1,525 @@
+
+
+================================================================
+== Vitis HLS Report for 'dft_Pipeline_VITIS_LOOP_28_3'
+================================================================
+* Date:           Fri Oct 21 17:38:58 2022
+
+* Version:        2022.1 (Build 3526262 on Mon Apr 18 15:48:16 MDT 2022)
+* Project:        dft_256_v2
+* Solution:       only_partition (Vivado IP Flow Target)
+* Product family: zynq
+* Target device:  xc7z020-clg484-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  7.256 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+-----------+-----------+------+------+---------+
+    |  Latency (cycles) |   Latency (absolute)  |   Interval  | Pipeline|
+    |   min   |   max   |    min    |    max    |  min |  max |   Type  |
+    +---------+---------+-----------+-----------+------+------+---------+
+    |     1289|     1289|  12.890 us|  12.890 us|  1289|  1289|       no|
+    +---------+---------+-----------+-----------+------+------+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +-------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |                   |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
+        |     Loop Name     |   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +-------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |- VITIS_LOOP_28_3  |     1287|     1287|        13|          5|          1|   256|       yes|
+        +-------------------+---------+---------+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 2
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 5, depth = 13
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 13
+* Pipeline : 1
+  Pipeline-0 : II = 5, D = 13, States = { 1 2 3 4 5 6 7 8 9 10 11 12 13 }
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 
+3 --> 4 
+4 --> 5 
+5 --> 6 
+6 --> 7 
+7 --> 8 
+8 --> 9 
+9 --> 10 
+10 --> 11 
+11 --> 12 
+12 --> 13 
+13 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 4.77>
+ST_1 : Operation 16 [1/1] (0.00ns)   --->   "%index = alloca i32 1"   --->   Operation 16 'alloca' 'index' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 17 [1/1] (0.00ns)   --->   "%sum_r = alloca i32 1"   --->   Operation 17 'alloca' 'sum_r' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 18 [1/1] (0.00ns)   --->   "%sum_i = alloca i32 1"   --->   Operation 18 'alloca' 'sum_i' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 19 [1/1] (0.00ns)   --->   "%n = alloca i32 1"   --->   Operation 19 'alloca' 'n' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 20 [1/1] (0.00ns)   --->   "%temp_255_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_255_reload"   --->   Operation 20 'read' 'temp_255_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 21 [1/1] (0.00ns)   --->   "%temp_254_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_254_reload"   --->   Operation 21 'read' 'temp_254_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 22 [1/1] (0.00ns)   --->   "%temp_253_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_253_reload"   --->   Operation 22 'read' 'temp_253_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 23 [1/1] (0.00ns)   --->   "%temp_252_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_252_reload"   --->   Operation 23 'read' 'temp_252_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 24 [1/1] (0.00ns)   --->   "%temp_251_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_251_reload"   --->   Operation 24 'read' 'temp_251_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 25 [1/1] (0.00ns)   --->   "%temp_250_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_250_reload"   --->   Operation 25 'read' 'temp_250_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 26 [1/1] (0.00ns)   --->   "%temp_249_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_249_reload"   --->   Operation 26 'read' 'temp_249_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 27 [1/1] (0.00ns)   --->   "%temp_248_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_248_reload"   --->   Operation 27 'read' 'temp_248_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 28 [1/1] (0.00ns)   --->   "%temp_247_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_247_reload"   --->   Operation 28 'read' 'temp_247_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 29 [1/1] (0.00ns)   --->   "%temp_246_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_246_reload"   --->   Operation 29 'read' 'temp_246_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 30 [1/1] (0.00ns)   --->   "%temp_245_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_245_reload"   --->   Operation 30 'read' 'temp_245_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 31 [1/1] (0.00ns)   --->   "%temp_244_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_244_reload"   --->   Operation 31 'read' 'temp_244_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 32 [1/1] (0.00ns)   --->   "%temp_243_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_243_reload"   --->   Operation 32 'read' 'temp_243_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 33 [1/1] (0.00ns)   --->   "%temp_242_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_242_reload"   --->   Operation 33 'read' 'temp_242_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 34 [1/1] (0.00ns)   --->   "%temp_241_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_241_reload"   --->   Operation 34 'read' 'temp_241_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 35 [1/1] (0.00ns)   --->   "%temp_240_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_240_reload"   --->   Operation 35 'read' 'temp_240_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 36 [1/1] (0.00ns)   --->   "%temp_239_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_239_reload"   --->   Operation 36 'read' 'temp_239_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 37 [1/1] (0.00ns)   --->   "%temp_238_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_238_reload"   --->   Operation 37 'read' 'temp_238_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 38 [1/1] (0.00ns)   --->   "%temp_237_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_237_reload"   --->   Operation 38 'read' 'temp_237_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 39 [1/1] (0.00ns)   --->   "%temp_236_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_236_reload"   --->   Operation 39 'read' 'temp_236_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 40 [1/1] (0.00ns)   --->   "%temp_235_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_235_reload"   --->   Operation 40 'read' 'temp_235_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 41 [1/1] (0.00ns)   --->   "%temp_234_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_234_reload"   --->   Operation 41 'read' 'temp_234_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 42 [1/1] (0.00ns)   --->   "%temp_233_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_233_reload"   --->   Operation 42 'read' 'temp_233_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 43 [1/1] (0.00ns)   --->   "%temp_232_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_232_reload"   --->   Operation 43 'read' 'temp_232_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 44 [1/1] (0.00ns)   --->   "%temp_231_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_231_reload"   --->   Operation 44 'read' 'temp_231_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 45 [1/1] (0.00ns)   --->   "%temp_230_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_230_reload"   --->   Operation 45 'read' 'temp_230_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 46 [1/1] (0.00ns)   --->   "%temp_229_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_229_reload"   --->   Operation 46 'read' 'temp_229_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 47 [1/1] (0.00ns)   --->   "%temp_228_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_228_reload"   --->   Operation 47 'read' 'temp_228_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 48 [1/1] (0.00ns)   --->   "%temp_227_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_227_reload"   --->   Operation 48 'read' 'temp_227_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 49 [1/1] (0.00ns)   --->   "%temp_226_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_226_reload"   --->   Operation 49 'read' 'temp_226_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 50 [1/1] (0.00ns)   --->   "%temp_225_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_225_reload"   --->   Operation 50 'read' 'temp_225_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 51 [1/1] (0.00ns)   --->   "%temp_224_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_224_reload"   --->   Operation 51 'read' 'temp_224_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 52 [1/1] (0.00ns)   --->   "%temp_223_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_223_reload"   --->   Operation 52 'read' 'temp_223_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 53 [1/1] (0.00ns)   --->   "%temp_222_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_222_reload"   --->   Operation 53 'read' 'temp_222_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 54 [1/1] (0.00ns)   --->   "%temp_221_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_221_reload"   --->   Operation 54 'read' 'temp_221_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 55 [1/1] (0.00ns)   --->   "%temp_220_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_220_reload"   --->   Operation 55 'read' 'temp_220_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 56 [1/1] (0.00ns)   --->   "%temp_219_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_219_reload"   --->   Operation 56 'read' 'temp_219_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 57 [1/1] (0.00ns)   --->   "%temp_218_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_218_reload"   --->   Operation 57 'read' 'temp_218_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 58 [1/1] (0.00ns)   --->   "%temp_217_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_217_reload"   --->   Operation 58 'read' 'temp_217_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 59 [1/1] (0.00ns)   --->   "%temp_216_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_216_reload"   --->   Operation 59 'read' 'temp_216_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 60 [1/1] (0.00ns)   --->   "%temp_215_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_215_reload"   --->   Operation 60 'read' 'temp_215_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 61 [1/1] (0.00ns)   --->   "%temp_214_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_214_reload"   --->   Operation 61 'read' 'temp_214_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 62 [1/1] (0.00ns)   --->   "%temp_213_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_213_reload"   --->   Operation 62 'read' 'temp_213_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 63 [1/1] (0.00ns)   --->   "%temp_212_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_212_reload"   --->   Operation 63 'read' 'temp_212_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 64 [1/1] (0.00ns)   --->   "%temp_211_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_211_reload"   --->   Operation 64 'read' 'temp_211_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 65 [1/1] (0.00ns)   --->   "%temp_210_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_210_reload"   --->   Operation 65 'read' 'temp_210_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 66 [1/1] (0.00ns)   --->   "%temp_209_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_209_reload"   --->   Operation 66 'read' 'temp_209_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 67 [1/1] (0.00ns)   --->   "%temp_208_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_208_reload"   --->   Operation 67 'read' 'temp_208_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 68 [1/1] (0.00ns)   --->   "%temp_207_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_207_reload"   --->   Operation 68 'read' 'temp_207_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 69 [1/1] (0.00ns)   --->   "%temp_206_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_206_reload"   --->   Operation 69 'read' 'temp_206_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 70 [1/1] (0.00ns)   --->   "%temp_205_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_205_reload"   --->   Operation 70 'read' 'temp_205_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 71 [1/1] (0.00ns)   --->   "%temp_204_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_204_reload"   --->   Operation 71 'read' 'temp_204_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 72 [1/1] (0.00ns)   --->   "%temp_203_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_203_reload"   --->   Operation 72 'read' 'temp_203_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 73 [1/1] (0.00ns)   --->   "%temp_202_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_202_reload"   --->   Operation 73 'read' 'temp_202_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 74 [1/1] (0.00ns)   --->   "%temp_201_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_201_reload"   --->   Operation 74 'read' 'temp_201_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 75 [1/1] (0.00ns)   --->   "%temp_200_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_200_reload"   --->   Operation 75 'read' 'temp_200_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 76 [1/1] (0.00ns)   --->   "%temp_199_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_199_reload"   --->   Operation 76 'read' 'temp_199_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 77 [1/1] (0.00ns)   --->   "%temp_198_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_198_reload"   --->   Operation 77 'read' 'temp_198_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 78 [1/1] (0.00ns)   --->   "%temp_197_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_197_reload"   --->   Operation 78 'read' 'temp_197_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 79 [1/1] (0.00ns)   --->   "%temp_196_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_196_reload"   --->   Operation 79 'read' 'temp_196_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 80 [1/1] (0.00ns)   --->   "%temp_195_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_195_reload"   --->   Operation 80 'read' 'temp_195_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 81 [1/1] (0.00ns)   --->   "%temp_194_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_194_reload"   --->   Operation 81 'read' 'temp_194_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 82 [1/1] (0.00ns)   --->   "%temp_193_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_193_reload"   --->   Operation 82 'read' 'temp_193_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 83 [1/1] (0.00ns)   --->   "%temp_192_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_192_reload"   --->   Operation 83 'read' 'temp_192_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 84 [1/1] (0.00ns)   --->   "%temp_191_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_191_reload"   --->   Operation 84 'read' 'temp_191_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 85 [1/1] (0.00ns)   --->   "%temp_190_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_190_reload"   --->   Operation 85 'read' 'temp_190_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 86 [1/1] (0.00ns)   --->   "%temp_189_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_189_reload"   --->   Operation 86 'read' 'temp_189_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 87 [1/1] (0.00ns)   --->   "%temp_188_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_188_reload"   --->   Operation 87 'read' 'temp_188_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 88 [1/1] (0.00ns)   --->   "%temp_187_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_187_reload"   --->   Operation 88 'read' 'temp_187_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 89 [1/1] (0.00ns)   --->   "%temp_186_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_186_reload"   --->   Operation 89 'read' 'temp_186_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 90 [1/1] (0.00ns)   --->   "%temp_185_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_185_reload"   --->   Operation 90 'read' 'temp_185_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 91 [1/1] (0.00ns)   --->   "%temp_184_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_184_reload"   --->   Operation 91 'read' 'temp_184_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 92 [1/1] (0.00ns)   --->   "%temp_183_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_183_reload"   --->   Operation 92 'read' 'temp_183_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 93 [1/1] (0.00ns)   --->   "%temp_182_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_182_reload"   --->   Operation 93 'read' 'temp_182_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 94 [1/1] (0.00ns)   --->   "%temp_181_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_181_reload"   --->   Operation 94 'read' 'temp_181_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 95 [1/1] (0.00ns)   --->   "%temp_180_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_180_reload"   --->   Operation 95 'read' 'temp_180_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 96 [1/1] (0.00ns)   --->   "%temp_179_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_179_reload"   --->   Operation 96 'read' 'temp_179_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 97 [1/1] (0.00ns)   --->   "%temp_178_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_178_reload"   --->   Operation 97 'read' 'temp_178_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 98 [1/1] (0.00ns)   --->   "%temp_177_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_177_reload"   --->   Operation 98 'read' 'temp_177_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 99 [1/1] (0.00ns)   --->   "%temp_176_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_176_reload"   --->   Operation 99 'read' 'temp_176_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 100 [1/1] (0.00ns)   --->   "%temp_175_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_175_reload"   --->   Operation 100 'read' 'temp_175_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 101 [1/1] (0.00ns)   --->   "%temp_174_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_174_reload"   --->   Operation 101 'read' 'temp_174_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 102 [1/1] (0.00ns)   --->   "%temp_173_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_173_reload"   --->   Operation 102 'read' 'temp_173_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 103 [1/1] (0.00ns)   --->   "%temp_172_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_172_reload"   --->   Operation 103 'read' 'temp_172_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 104 [1/1] (0.00ns)   --->   "%temp_171_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_171_reload"   --->   Operation 104 'read' 'temp_171_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 105 [1/1] (0.00ns)   --->   "%temp_170_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_170_reload"   --->   Operation 105 'read' 'temp_170_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 106 [1/1] (0.00ns)   --->   "%temp_169_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_169_reload"   --->   Operation 106 'read' 'temp_169_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 107 [1/1] (0.00ns)   --->   "%temp_168_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_168_reload"   --->   Operation 107 'read' 'temp_168_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 108 [1/1] (0.00ns)   --->   "%temp_167_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_167_reload"   --->   Operation 108 'read' 'temp_167_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 109 [1/1] (0.00ns)   --->   "%temp_166_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_166_reload"   --->   Operation 109 'read' 'temp_166_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 110 [1/1] (0.00ns)   --->   "%temp_165_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_165_reload"   --->   Operation 110 'read' 'temp_165_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 111 [1/1] (0.00ns)   --->   "%temp_164_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_164_reload"   --->   Operation 111 'read' 'temp_164_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 112 [1/1] (0.00ns)   --->   "%temp_163_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_163_reload"   --->   Operation 112 'read' 'temp_163_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 113 [1/1] (0.00ns)   --->   "%temp_162_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_162_reload"   --->   Operation 113 'read' 'temp_162_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 114 [1/1] (0.00ns)   --->   "%temp_161_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_161_reload"   --->   Operation 114 'read' 'temp_161_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 115 [1/1] (0.00ns)   --->   "%temp_160_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_160_reload"   --->   Operation 115 'read' 'temp_160_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 116 [1/1] (0.00ns)   --->   "%temp_159_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_159_reload"   --->   Operation 116 'read' 'temp_159_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 117 [1/1] (0.00ns)   --->   "%temp_158_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_158_reload"   --->   Operation 117 'read' 'temp_158_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 118 [1/1] (0.00ns)   --->   "%temp_157_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_157_reload"   --->   Operation 118 'read' 'temp_157_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 119 [1/1] (0.00ns)   --->   "%temp_156_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_156_reload"   --->   Operation 119 'read' 'temp_156_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 120 [1/1] (0.00ns)   --->   "%temp_155_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_155_reload"   --->   Operation 120 'read' 'temp_155_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 121 [1/1] (0.00ns)   --->   "%temp_154_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_154_reload"   --->   Operation 121 'read' 'temp_154_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 122 [1/1] (0.00ns)   --->   "%temp_153_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_153_reload"   --->   Operation 122 'read' 'temp_153_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 123 [1/1] (0.00ns)   --->   "%temp_152_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_152_reload"   --->   Operation 123 'read' 'temp_152_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 124 [1/1] (0.00ns)   --->   "%temp_151_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_151_reload"   --->   Operation 124 'read' 'temp_151_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 125 [1/1] (0.00ns)   --->   "%temp_150_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_150_reload"   --->   Operation 125 'read' 'temp_150_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 126 [1/1] (0.00ns)   --->   "%temp_149_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_149_reload"   --->   Operation 126 'read' 'temp_149_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 127 [1/1] (0.00ns)   --->   "%temp_148_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_148_reload"   --->   Operation 127 'read' 'temp_148_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 128 [1/1] (0.00ns)   --->   "%temp_147_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_147_reload"   --->   Operation 128 'read' 'temp_147_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 129 [1/1] (0.00ns)   --->   "%temp_146_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_146_reload"   --->   Operation 129 'read' 'temp_146_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 130 [1/1] (0.00ns)   --->   "%temp_145_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_145_reload"   --->   Operation 130 'read' 'temp_145_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 131 [1/1] (0.00ns)   --->   "%temp_144_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_144_reload"   --->   Operation 131 'read' 'temp_144_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 132 [1/1] (0.00ns)   --->   "%temp_143_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_143_reload"   --->   Operation 132 'read' 'temp_143_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 133 [1/1] (0.00ns)   --->   "%temp_142_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_142_reload"   --->   Operation 133 'read' 'temp_142_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 134 [1/1] (0.00ns)   --->   "%temp_141_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_141_reload"   --->   Operation 134 'read' 'temp_141_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 135 [1/1] (0.00ns)   --->   "%temp_140_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_140_reload"   --->   Operation 135 'read' 'temp_140_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 136 [1/1] (0.00ns)   --->   "%temp_139_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_139_reload"   --->   Operation 136 'read' 'temp_139_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 137 [1/1] (0.00ns)   --->   "%temp_138_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_138_reload"   --->   Operation 137 'read' 'temp_138_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 138 [1/1] (0.00ns)   --->   "%temp_137_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_137_reload"   --->   Operation 138 'read' 'temp_137_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 139 [1/1] (0.00ns)   --->   "%temp_136_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_136_reload"   --->   Operation 139 'read' 'temp_136_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 140 [1/1] (0.00ns)   --->   "%temp_135_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_135_reload"   --->   Operation 140 'read' 'temp_135_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 141 [1/1] (0.00ns)   --->   "%temp_134_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_134_reload"   --->   Operation 141 'read' 'temp_134_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 142 [1/1] (0.00ns)   --->   "%temp_133_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_133_reload"   --->   Operation 142 'read' 'temp_133_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 143 [1/1] (0.00ns)   --->   "%temp_132_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_132_reload"   --->   Operation 143 'read' 'temp_132_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 144 [1/1] (0.00ns)   --->   "%temp_131_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_131_reload"   --->   Operation 144 'read' 'temp_131_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 145 [1/1] (0.00ns)   --->   "%temp_130_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_130_reload"   --->   Operation 145 'read' 'temp_130_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 146 [1/1] (0.00ns)   --->   "%temp_129_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_129_reload"   --->   Operation 146 'read' 'temp_129_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 147 [1/1] (0.00ns)   --->   "%temp_128_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_128_reload"   --->   Operation 147 'read' 'temp_128_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 148 [1/1] (0.00ns)   --->   "%temp_127_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_127_reload"   --->   Operation 148 'read' 'temp_127_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 149 [1/1] (0.00ns)   --->   "%temp_126_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_126_reload"   --->   Operation 149 'read' 'temp_126_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 150 [1/1] (0.00ns)   --->   "%temp_125_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_125_reload"   --->   Operation 150 'read' 'temp_125_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 151 [1/1] (0.00ns)   --->   "%temp_124_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_124_reload"   --->   Operation 151 'read' 'temp_124_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 152 [1/1] (0.00ns)   --->   "%temp_123_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_123_reload"   --->   Operation 152 'read' 'temp_123_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 153 [1/1] (0.00ns)   --->   "%temp_122_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_122_reload"   --->   Operation 153 'read' 'temp_122_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 154 [1/1] (0.00ns)   --->   "%temp_121_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_121_reload"   --->   Operation 154 'read' 'temp_121_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 155 [1/1] (0.00ns)   --->   "%temp_120_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_120_reload"   --->   Operation 155 'read' 'temp_120_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 156 [1/1] (0.00ns)   --->   "%temp_119_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_119_reload"   --->   Operation 156 'read' 'temp_119_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 157 [1/1] (0.00ns)   --->   "%temp_118_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_118_reload"   --->   Operation 157 'read' 'temp_118_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 158 [1/1] (0.00ns)   --->   "%temp_117_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_117_reload"   --->   Operation 158 'read' 'temp_117_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 159 [1/1] (0.00ns)   --->   "%temp_116_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_116_reload"   --->   Operation 159 'read' 'temp_116_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 160 [1/1] (0.00ns)   --->   "%temp_115_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_115_reload"   --->   Operation 160 'read' 'temp_115_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 161 [1/1] (0.00ns)   --->   "%temp_114_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_114_reload"   --->   Operation 161 'read' 'temp_114_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 162 [1/1] (0.00ns)   --->   "%temp_113_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_113_reload"   --->   Operation 162 'read' 'temp_113_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 163 [1/1] (0.00ns)   --->   "%temp_112_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_112_reload"   --->   Operation 163 'read' 'temp_112_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 164 [1/1] (0.00ns)   --->   "%temp_111_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_111_reload"   --->   Operation 164 'read' 'temp_111_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 165 [1/1] (0.00ns)   --->   "%temp_110_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_110_reload"   --->   Operation 165 'read' 'temp_110_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 166 [1/1] (0.00ns)   --->   "%temp_109_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_109_reload"   --->   Operation 166 'read' 'temp_109_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 167 [1/1] (0.00ns)   --->   "%temp_108_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_108_reload"   --->   Operation 167 'read' 'temp_108_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 168 [1/1] (0.00ns)   --->   "%temp_107_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_107_reload"   --->   Operation 168 'read' 'temp_107_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 169 [1/1] (0.00ns)   --->   "%temp_106_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_106_reload"   --->   Operation 169 'read' 'temp_106_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 170 [1/1] (0.00ns)   --->   "%temp_105_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_105_reload"   --->   Operation 170 'read' 'temp_105_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 171 [1/1] (0.00ns)   --->   "%temp_104_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_104_reload"   --->   Operation 171 'read' 'temp_104_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 172 [1/1] (0.00ns)   --->   "%temp_103_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_103_reload"   --->   Operation 172 'read' 'temp_103_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 173 [1/1] (0.00ns)   --->   "%temp_102_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_102_reload"   --->   Operation 173 'read' 'temp_102_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 174 [1/1] (0.00ns)   --->   "%temp_101_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_101_reload"   --->   Operation 174 'read' 'temp_101_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 175 [1/1] (0.00ns)   --->   "%temp_100_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_100_reload"   --->   Operation 175 'read' 'temp_100_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 176 [1/1] (0.00ns)   --->   "%temp_99_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_99_reload"   --->   Operation 176 'read' 'temp_99_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 177 [1/1] (0.00ns)   --->   "%temp_98_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_98_reload"   --->   Operation 177 'read' 'temp_98_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 178 [1/1] (0.00ns)   --->   "%temp_97_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_97_reload"   --->   Operation 178 'read' 'temp_97_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 179 [1/1] (0.00ns)   --->   "%temp_96_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_96_reload"   --->   Operation 179 'read' 'temp_96_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 180 [1/1] (0.00ns)   --->   "%temp_95_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_95_reload"   --->   Operation 180 'read' 'temp_95_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 181 [1/1] (0.00ns)   --->   "%temp_94_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_94_reload"   --->   Operation 181 'read' 'temp_94_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 182 [1/1] (0.00ns)   --->   "%temp_93_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_93_reload"   --->   Operation 182 'read' 'temp_93_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 183 [1/1] (0.00ns)   --->   "%temp_92_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_92_reload"   --->   Operation 183 'read' 'temp_92_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 184 [1/1] (0.00ns)   --->   "%temp_91_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_91_reload"   --->   Operation 184 'read' 'temp_91_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 185 [1/1] (0.00ns)   --->   "%temp_90_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_90_reload"   --->   Operation 185 'read' 'temp_90_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 186 [1/1] (0.00ns)   --->   "%temp_89_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_89_reload"   --->   Operation 186 'read' 'temp_89_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 187 [1/1] (0.00ns)   --->   "%temp_88_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_88_reload"   --->   Operation 187 'read' 'temp_88_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 188 [1/1] (0.00ns)   --->   "%temp_87_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_87_reload"   --->   Operation 188 'read' 'temp_87_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 189 [1/1] (0.00ns)   --->   "%temp_86_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_86_reload"   --->   Operation 189 'read' 'temp_86_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 190 [1/1] (0.00ns)   --->   "%temp_85_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_85_reload"   --->   Operation 190 'read' 'temp_85_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 191 [1/1] (0.00ns)   --->   "%temp_84_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_84_reload"   --->   Operation 191 'read' 'temp_84_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 192 [1/1] (0.00ns)   --->   "%temp_83_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_83_reload"   --->   Operation 192 'read' 'temp_83_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 193 [1/1] (0.00ns)   --->   "%temp_82_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_82_reload"   --->   Operation 193 'read' 'temp_82_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 194 [1/1] (0.00ns)   --->   "%temp_81_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_81_reload"   --->   Operation 194 'read' 'temp_81_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 195 [1/1] (0.00ns)   --->   "%temp_80_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_80_reload"   --->   Operation 195 'read' 'temp_80_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 196 [1/1] (0.00ns)   --->   "%temp_79_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_79_reload"   --->   Operation 196 'read' 'temp_79_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 197 [1/1] (0.00ns)   --->   "%temp_78_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_78_reload"   --->   Operation 197 'read' 'temp_78_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 198 [1/1] (0.00ns)   --->   "%temp_77_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_77_reload"   --->   Operation 198 'read' 'temp_77_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 199 [1/1] (0.00ns)   --->   "%temp_76_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_76_reload"   --->   Operation 199 'read' 'temp_76_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 200 [1/1] (0.00ns)   --->   "%temp_75_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_75_reload"   --->   Operation 200 'read' 'temp_75_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 201 [1/1] (0.00ns)   --->   "%temp_74_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_74_reload"   --->   Operation 201 'read' 'temp_74_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 202 [1/1] (0.00ns)   --->   "%temp_73_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_73_reload"   --->   Operation 202 'read' 'temp_73_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 203 [1/1] (0.00ns)   --->   "%temp_72_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_72_reload"   --->   Operation 203 'read' 'temp_72_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 204 [1/1] (0.00ns)   --->   "%temp_71_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_71_reload"   --->   Operation 204 'read' 'temp_71_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 205 [1/1] (0.00ns)   --->   "%temp_70_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_70_reload"   --->   Operation 205 'read' 'temp_70_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 206 [1/1] (0.00ns)   --->   "%temp_69_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_69_reload"   --->   Operation 206 'read' 'temp_69_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 207 [1/1] (0.00ns)   --->   "%temp_68_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_68_reload"   --->   Operation 207 'read' 'temp_68_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 208 [1/1] (0.00ns)   --->   "%temp_67_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_67_reload"   --->   Operation 208 'read' 'temp_67_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 209 [1/1] (0.00ns)   --->   "%temp_66_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_66_reload"   --->   Operation 209 'read' 'temp_66_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 210 [1/1] (0.00ns)   --->   "%temp_65_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_65_reload"   --->   Operation 210 'read' 'temp_65_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 211 [1/1] (0.00ns)   --->   "%temp_64_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_64_reload"   --->   Operation 211 'read' 'temp_64_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 212 [1/1] (0.00ns)   --->   "%temp_63_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_63_reload"   --->   Operation 212 'read' 'temp_63_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 213 [1/1] (0.00ns)   --->   "%temp_62_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_62_reload"   --->   Operation 213 'read' 'temp_62_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 214 [1/1] (0.00ns)   --->   "%temp_61_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_61_reload"   --->   Operation 214 'read' 'temp_61_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 215 [1/1] (0.00ns)   --->   "%temp_60_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_60_reload"   --->   Operation 215 'read' 'temp_60_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 216 [1/1] (0.00ns)   --->   "%temp_59_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_59_reload"   --->   Operation 216 'read' 'temp_59_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 217 [1/1] (0.00ns)   --->   "%temp_58_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_58_reload"   --->   Operation 217 'read' 'temp_58_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 218 [1/1] (0.00ns)   --->   "%temp_57_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_57_reload"   --->   Operation 218 'read' 'temp_57_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 219 [1/1] (0.00ns)   --->   "%temp_56_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_56_reload"   --->   Operation 219 'read' 'temp_56_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 220 [1/1] (0.00ns)   --->   "%temp_55_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_55_reload"   --->   Operation 220 'read' 'temp_55_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 221 [1/1] (0.00ns)   --->   "%temp_54_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_54_reload"   --->   Operation 221 'read' 'temp_54_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 222 [1/1] (0.00ns)   --->   "%temp_53_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_53_reload"   --->   Operation 222 'read' 'temp_53_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 223 [1/1] (0.00ns)   --->   "%temp_52_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_52_reload"   --->   Operation 223 'read' 'temp_52_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 224 [1/1] (0.00ns)   --->   "%temp_51_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_51_reload"   --->   Operation 224 'read' 'temp_51_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 225 [1/1] (0.00ns)   --->   "%temp_50_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_50_reload"   --->   Operation 225 'read' 'temp_50_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 226 [1/1] (0.00ns)   --->   "%temp_49_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_49_reload"   --->   Operation 226 'read' 'temp_49_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 227 [1/1] (0.00ns)   --->   "%temp_48_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_48_reload"   --->   Operation 227 'read' 'temp_48_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 228 [1/1] (0.00ns)   --->   "%temp_47_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_47_reload"   --->   Operation 228 'read' 'temp_47_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 229 [1/1] (0.00ns)   --->   "%temp_46_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_46_reload"   --->   Operation 229 'read' 'temp_46_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 230 [1/1] (0.00ns)   --->   "%temp_45_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_45_reload"   --->   Operation 230 'read' 'temp_45_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 231 [1/1] (0.00ns)   --->   "%temp_44_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_44_reload"   --->   Operation 231 'read' 'temp_44_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 232 [1/1] (0.00ns)   --->   "%temp_43_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_43_reload"   --->   Operation 232 'read' 'temp_43_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 233 [1/1] (0.00ns)   --->   "%temp_42_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_42_reload"   --->   Operation 233 'read' 'temp_42_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 234 [1/1] (0.00ns)   --->   "%temp_41_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_41_reload"   --->   Operation 234 'read' 'temp_41_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 235 [1/1] (0.00ns)   --->   "%temp_40_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_40_reload"   --->   Operation 235 'read' 'temp_40_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 236 [1/1] (0.00ns)   --->   "%temp_39_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_39_reload"   --->   Operation 236 'read' 'temp_39_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 237 [1/1] (0.00ns)   --->   "%temp_38_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_38_reload"   --->   Operation 237 'read' 'temp_38_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 238 [1/1] (0.00ns)   --->   "%temp_37_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_37_reload"   --->   Operation 238 'read' 'temp_37_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 239 [1/1] (0.00ns)   --->   "%temp_36_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_36_reload"   --->   Operation 239 'read' 'temp_36_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 240 [1/1] (0.00ns)   --->   "%temp_35_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_35_reload"   --->   Operation 240 'read' 'temp_35_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 241 [1/1] (0.00ns)   --->   "%temp_34_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_34_reload"   --->   Operation 241 'read' 'temp_34_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 242 [1/1] (0.00ns)   --->   "%temp_33_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_33_reload"   --->   Operation 242 'read' 'temp_33_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 243 [1/1] (0.00ns)   --->   "%temp_32_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_32_reload"   --->   Operation 243 'read' 'temp_32_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 244 [1/1] (0.00ns)   --->   "%temp_31_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_31_reload"   --->   Operation 244 'read' 'temp_31_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 245 [1/1] (0.00ns)   --->   "%temp_30_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_30_reload"   --->   Operation 245 'read' 'temp_30_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 246 [1/1] (0.00ns)   --->   "%temp_29_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_29_reload"   --->   Operation 246 'read' 'temp_29_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 247 [1/1] (0.00ns)   --->   "%temp_28_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_28_reload"   --->   Operation 247 'read' 'temp_28_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 248 [1/1] (0.00ns)   --->   "%temp_27_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_27_reload"   --->   Operation 248 'read' 'temp_27_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 249 [1/1] (0.00ns)   --->   "%temp_26_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_26_reload"   --->   Operation 249 'read' 'temp_26_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 250 [1/1] (0.00ns)   --->   "%temp_25_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_25_reload"   --->   Operation 250 'read' 'temp_25_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 251 [1/1] (0.00ns)   --->   "%temp_24_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_24_reload"   --->   Operation 251 'read' 'temp_24_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 252 [1/1] (0.00ns)   --->   "%temp_23_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_23_reload"   --->   Operation 252 'read' 'temp_23_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 253 [1/1] (0.00ns)   --->   "%temp_22_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_22_reload"   --->   Operation 253 'read' 'temp_22_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 254 [1/1] (0.00ns)   --->   "%temp_21_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_21_reload"   --->   Operation 254 'read' 'temp_21_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 255 [1/1] (0.00ns)   --->   "%temp_20_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_20_reload"   --->   Operation 255 'read' 'temp_20_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 256 [1/1] (0.00ns)   --->   "%temp_19_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_19_reload"   --->   Operation 256 'read' 'temp_19_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 257 [1/1] (0.00ns)   --->   "%temp_18_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_18_reload"   --->   Operation 257 'read' 'temp_18_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 258 [1/1] (0.00ns)   --->   "%temp_17_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_17_reload"   --->   Operation 258 'read' 'temp_17_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 259 [1/1] (0.00ns)   --->   "%temp_16_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_16_reload"   --->   Operation 259 'read' 'temp_16_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 260 [1/1] (0.00ns)   --->   "%temp_15_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_15_reload"   --->   Operation 260 'read' 'temp_15_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 261 [1/1] (0.00ns)   --->   "%temp_14_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_14_reload"   --->   Operation 261 'read' 'temp_14_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 262 [1/1] (0.00ns)   --->   "%temp_13_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_13_reload"   --->   Operation 262 'read' 'temp_13_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 263 [1/1] (0.00ns)   --->   "%temp_12_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_12_reload"   --->   Operation 263 'read' 'temp_12_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 264 [1/1] (0.00ns)   --->   "%temp_11_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_11_reload"   --->   Operation 264 'read' 'temp_11_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 265 [1/1] (0.00ns)   --->   "%temp_10_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_10_reload"   --->   Operation 265 'read' 'temp_10_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 266 [1/1] (0.00ns)   --->   "%temp_9_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_9_reload"   --->   Operation 266 'read' 'temp_9_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 267 [1/1] (0.00ns)   --->   "%temp_8_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_8_reload"   --->   Operation 267 'read' 'temp_8_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 268 [1/1] (0.00ns)   --->   "%temp_7_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_7_reload"   --->   Operation 268 'read' 'temp_7_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 269 [1/1] (0.00ns)   --->   "%temp_6_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_6_reload"   --->   Operation 269 'read' 'temp_6_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 270 [1/1] (0.00ns)   --->   "%temp_5_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_5_reload"   --->   Operation 270 'read' 'temp_5_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 271 [1/1] (0.00ns)   --->   "%temp_4_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_4_reload"   --->   Operation 271 'read' 'temp_4_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 272 [1/1] (0.00ns)   --->   "%temp_3_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_3_reload"   --->   Operation 272 'read' 'temp_3_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 273 [1/1] (0.00ns)   --->   "%temp_2_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_2_reload"   --->   Operation 273 'read' 'temp_2_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 274 [1/1] (0.00ns)   --->   "%temp_1_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_1_reload"   --->   Operation 274 'read' 'temp_1_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 275 [1/1] (0.00ns)   --->   "%temp_reload_read = read i32 @_ssdm_op_Read.ap_auto.float, i32 %temp_reload"   --->   Operation 275 'read' 'temp_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 276 [1/1] (0.00ns)   --->   "%trunc_ln1_read = read i8 @_ssdm_op_Read.ap_auto.i8, i8 %trunc_ln1"   --->   Operation 276 'read' 'trunc_ln1_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 277 [1/1] (1.58ns)   --->   "%store_ln0 = store i9 0, i9 %n"   --->   Operation 277 'store' 'store_ln0' <Predicate = true> <Delay = 1.58>
+ST_1 : Operation 278 [1/1] (1.58ns)   --->   "%store_ln0 = store i32 0, i32 %sum_i"   --->   Operation 278 'store' 'store_ln0' <Predicate = true> <Delay = 1.58>
+ST_1 : Operation 279 [1/1] (1.58ns)   --->   "%store_ln0 = store i32 0, i32 %sum_r"   --->   Operation 279 'store' 'store_ln0' <Predicate = true> <Delay = 1.58>
+ST_1 : Operation 280 [1/1] (1.58ns)   --->   "%store_ln0 = store i8 0, i8 %index"   --->   Operation 280 'store' 'store_ln0' <Predicate = true> <Delay = 1.58>
+ST_1 : Operation 281 [1/1] (0.00ns)   --->   "%br_ln0 = br void %for.inc20"   --->   Operation 281 'br' 'br_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 282 [1/1] (0.00ns)   --->   "%n_1 = load i9 %n" [dft_256_v2/dft.cpp:28]   --->   Operation 282 'load' 'n_1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 283 [1/1] (0.00ns)   --->   "%specpipeline_ln0 = specpipeline void @_ssdm_op_SpecPipeline, i32 4294967295, i32 0, i32 1, i32 0, void @p_str"   --->   Operation 283 'specpipeline' 'specpipeline_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 284 [1/1] (1.66ns)   --->   "%icmp_ln28 = icmp_eq  i9 %n_1, i9 256" [dft_256_v2/dft.cpp:28]   --->   Operation 284 'icmp' 'icmp_ln28' <Predicate = true> <Delay = 1.66> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 1.66> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 285 [1/1] (0.00ns)   --->   "%empty = speclooptripcount i32 @_ssdm_op_SpecLoopTripCount, i64 256, i64 256, i64 256"   --->   Operation 285 'speclooptripcount' 'empty' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 286 [1/1] (1.82ns)   --->   "%add_ln28 = add i9 %n_1, i9 1" [dft_256_v2/dft.cpp:28]   --->   Operation 286 'add' 'add_ln28' <Predicate = true> <Delay = 1.82> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.82> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 287 [1/1] (0.00ns)   --->   "%br_ln28 = br i1 %icmp_ln28, void %for.inc20.split, void %for.inc27.exitStub" [dft_256_v2/dft.cpp:28]   --->   Operation 287 'br' 'br_ln28' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 288 [1/1] (0.00ns)   --->   "%index_load = load i8 %index" [dft_256_v2/dft.cpp:31]   --->   Operation 288 'load' 'index_load' <Predicate = (!icmp_ln28)> <Delay = 0.00>
+ST_1 : Operation 289 [1/1] (1.91ns)   --->   "%add_ln31 = add i8 %index_load, i8 %trunc_ln1_read" [dft_256_v2/dft.cpp:31]   --->   Operation 289 'add' 'add_ln31' <Predicate = (!icmp_ln28)> <Delay = 1.91> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.91> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 290 [1/1] (4.77ns)   --->   "%tmp = mux i32 @_ssdm_op_Mux.ap_auto.256float.i9, i32 %temp_reload_read, i32 %temp_1_reload_read, i32 %temp_2_reload_read, i32 %temp_3_reload_read, i32 %temp_4_reload_read, i32 %temp_5_reload_read, i32 %temp_6_reload_read, i32 %temp_7_reload_read, i32 %temp_8_reload_read, i32 %temp_9_reload_read, i32 %temp_10_reload_read, i32 %temp_11_reload_read, i32 %temp_12_reload_read, i32 %temp_13_reload_read, i32 %temp_14_reload_read, i32 %temp_15_reload_read, i32 %temp_16_reload_read, i32 %temp_17_reload_read, i32 %temp_18_reload_read, i32 %temp_19_reload_read, i32 %temp_20_reload_read, i32 %temp_21_reload_read, i32 %temp_22_reload_read, i32 %temp_23_reload_read, i32 %temp_24_reload_read, i32 %temp_25_reload_read, i32 %temp_26_reload_read, i32 %temp_27_reload_read, i32 %temp_28_reload_read, i32 %temp_29_reload_read, i32 %temp_30_reload_read, i32 %temp_31_reload_read, i32 %temp_32_reload_read, i32 %temp_33_reload_read, i32 %temp_34_reload_read, i32 %temp_35_reload_read, i32 %temp_36_reload_read, i32 %temp_37_reload_read, i32 %temp_38_reload_read, i32 %temp_39_reload_read, i32 %temp_40_reload_read, i32 %temp_41_reload_read, i32 %temp_42_reload_read, i32 %temp_43_reload_read, i32 %temp_44_reload_read, i32 %temp_45_reload_read, i32 %temp_46_reload_read, i32 %temp_47_reload_read, i32 %temp_48_reload_read, i32 %temp_49_reload_read, i32 %temp_50_reload_read, i32 %temp_51_reload_read, i32 %temp_52_reload_read, i32 %temp_53_reload_read, i32 %temp_54_reload_read, i32 %temp_55_reload_read, i32 %temp_56_reload_read, i32 %temp_57_reload_read, i32 %temp_58_reload_read, i32 %temp_59_reload_read, i32 %temp_60_reload_read, i32 %temp_61_reload_read, i32 %temp_62_reload_read, i32 %temp_63_reload_read, i32 %temp_64_reload_read, i32 %temp_65_reload_read, i32 %temp_66_reload_read, i32 %temp_67_reload_read, i32 %temp_68_reload_read, i32 %temp_69_reload_read, i32 %temp_70_reload_read, i32 %temp_71_reload_read, i32 %temp_72_reload_read, i32 %temp_73_reload_read, i32 %temp_74_reload_read, i32 %temp_75_reload_read, i32 %temp_76_reload_read, i32 %temp_77_reload_read, i32 %temp_78_reload_read, i32 %temp_79_reload_read, i32 %temp_80_reload_read, i32 %temp_81_reload_read, i32 %temp_82_reload_read, i32 %temp_83_reload_read, i32 %temp_84_reload_read, i32 %temp_85_reload_read, i32 %temp_86_reload_read, i32 %temp_87_reload_read, i32 %temp_88_reload_read, i32 %temp_89_reload_read, i32 %temp_90_reload_read, i32 %temp_91_reload_read, i32 %temp_92_reload_read, i32 %temp_93_reload_read, i32 %temp_94_reload_read, i32 %temp_95_reload_read, i32 %temp_96_reload_read, i32 %temp_97_reload_read, i32 %temp_98_reload_read, i32 %temp_99_reload_read, i32 %temp_100_reload_read, i32 %temp_101_reload_read, i32 %temp_102_reload_read, i32 %temp_103_reload_read, i32 %temp_104_reload_read, i32 %temp_105_reload_read, i32 %temp_106_reload_read, i32 %temp_107_reload_read, i32 %temp_108_reload_read, i32 %temp_109_reload_read, i32 %temp_110_reload_read, i32 %temp_111_reload_read, i32 %temp_112_reload_read, i32 %temp_113_reload_read, i32 %temp_114_reload_read, i32 %temp_115_reload_read, i32 %temp_116_reload_read, i32 %temp_117_reload_read, i32 %temp_118_reload_read, i32 %temp_119_reload_read, i32 %temp_120_reload_read, i32 %temp_121_reload_read, i32 %temp_122_reload_read, i32 %temp_123_reload_read, i32 %temp_124_reload_read, i32 %temp_125_reload_read, i32 %temp_126_reload_read, i32 %temp_127_reload_read, i32 %temp_128_reload_read, i32 %temp_129_reload_read, i32 %temp_130_reload_read, i32 %temp_131_reload_read, i32 %temp_132_reload_read, i32 %temp_133_reload_read, i32 %temp_134_reload_read, i32 %temp_135_reload_read, i32 %temp_136_reload_read, i32 %temp_137_reload_read, i32 %temp_138_reload_read, i32 %temp_139_reload_read, i32 %temp_140_reload_read, i32 %temp_141_reload_read, i32 %temp_142_reload_read, i32 %temp_143_reload_read, i32 %temp_144_reload_read, i32 %temp_145_reload_read, i32 %temp_146_reload_read, i32 %temp_147_reload_read, i32 %temp_148_reload_read, i32 %temp_149_reload_read, i32 %temp_150_reload_read, i32 %temp_151_reload_read, i32 %temp_152_reload_read, i32 %temp_153_reload_read, i32 %temp_154_reload_read, i32 %temp_155_reload_read, i32 %temp_156_reload_read, i32 %temp_157_reload_read, i32 %temp_158_reload_read, i32 %temp_159_reload_read, i32 %temp_160_reload_read, i32 %temp_161_reload_read, i32 %temp_162_reload_read, i32 %temp_163_reload_read, i32 %temp_164_reload_read, i32 %temp_165_reload_read, i32 %temp_166_reload_read, i32 %temp_167_reload_read, i32 %temp_168_reload_read, i32 %temp_169_reload_read, i32 %temp_170_reload_read, i32 %temp_171_reload_read, i32 %temp_172_reload_read, i32 %temp_173_reload_read, i32 %temp_174_reload_read, i32 %temp_175_reload_read, i32 %temp_176_reload_read, i32 %temp_177_reload_read, i32 %temp_178_reload_read, i32 %temp_179_reload_read, i32 %temp_180_reload_read, i32 %temp_181_reload_read, i32 %temp_182_reload_read, i32 %temp_183_reload_read, i32 %temp_184_reload_read, i32 %temp_185_reload_read, i32 %temp_186_reload_read, i32 %temp_187_reload_read, i32 %temp_188_reload_read, i32 %temp_189_reload_read, i32 %temp_190_reload_read, i32 %temp_191_reload_read, i32 %temp_192_reload_read, i32 %temp_193_reload_read, i32 %temp_194_reload_read, i32 %temp_195_reload_read, i32 %temp_196_reload_read, i32 %temp_197_reload_read, i32 %temp_198_reload_read, i32 %temp_199_reload_read, i32 %temp_200_reload_read, i32 %temp_201_reload_read, i32 %temp_202_reload_read, i32 %temp_203_reload_read, i32 %temp_204_reload_read, i32 %temp_205_reload_read, i32 %temp_206_reload_read, i32 %temp_207_reload_read, i32 %temp_208_reload_read, i32 %temp_209_reload_read, i32 %temp_210_reload_read, i32 %temp_211_reload_read, i32 %temp_212_reload_read, i32 %temp_213_reload_read, i32 %temp_214_reload_read, i32 %temp_215_reload_read, i32 %temp_216_reload_read, i32 %temp_217_reload_read, i32 %temp_218_reload_read, i32 %temp_219_reload_read, i32 %temp_220_reload_read, i32 %temp_221_reload_read, i32 %temp_222_reload_read, i32 %temp_223_reload_read, i32 %temp_224_reload_read, i32 %temp_225_reload_read, i32 %temp_226_reload_read, i32 %temp_227_reload_read, i32 %temp_228_reload_read, i32 %temp_229_reload_read, i32 %temp_230_reload_read, i32 %temp_231_reload_read, i32 %temp_232_reload_read, i32 %temp_233_reload_read, i32 %temp_234_reload_read, i32 %temp_235_reload_read, i32 %temp_236_reload_read, i32 %temp_237_reload_read, i32 %temp_238_reload_read, i32 %temp_239_reload_read, i32 %temp_240_reload_read, i32 %temp_241_reload_read, i32 %temp_242_reload_read, i32 %temp_243_reload_read, i32 %temp_244_reload_read, i32 %temp_245_reload_read, i32 %temp_246_reload_read, i32 %temp_247_reload_read, i32 %temp_248_reload_read, i32 %temp_249_reload_read, i32 %temp_250_reload_read, i32 %temp_251_reload_read, i32 %temp_252_reload_read, i32 %temp_253_reload_read, i32 %temp_254_reload_read, i32 %temp_255_reload_read, i9 %n_1" [dft_256_v2/dft.cpp:32]   --->   Operation 290 'mux' 'tmp' <Predicate = (!icmp_ln28)> <Delay = 4.77> <CoreInst = "Multiplexer">   --->   Core 76 'Multiplexer' <Latency = 0> <II = 1> <Delay = 4.77> <FuncUnit> <Opcode : 'mux'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 291 [1/1] (0.00ns)   --->   "%zext_ln32 = zext i8 %index_load" [dft_256_v2/dft.cpp:32]   --->   Operation 291 'zext' 'zext_ln32' <Predicate = (!icmp_ln28)> <Delay = 0.00>
+ST_1 : Operation 292 [1/1] (0.00ns)   --->   "%cos_coefficients_table_addr = getelementptr i32 %cos_coefficients_table, i64 0, i64 %zext_ln32" [dft_256_v2/dft.cpp:32]   --->   Operation 292 'getelementptr' 'cos_coefficients_table_addr' <Predicate = (!icmp_ln28)> <Delay = 0.00>
+ST_1 : Operation 293 [2/2] (3.25ns)   --->   "%cos_coefficients_table_load = load i8 %cos_coefficients_table_addr" [dft_256_v2/dft.cpp:32]   --->   Operation 293 'load' 'cos_coefficients_table_load' <Predicate = (!icmp_ln28)> <Delay = 3.25> <CoreInst = "ROM">   --->   Core 95 'ROM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 256> <ROM>
+ST_1 : Operation 294 [1/1] (0.00ns)   --->   "%sin_coefficients_table_addr = getelementptr i32 %sin_coefficients_table, i64 0, i64 %zext_ln32" [dft_256_v2/dft.cpp:33]   --->   Operation 294 'getelementptr' 'sin_coefficients_table_addr' <Predicate = (!icmp_ln28)> <Delay = 0.00>
+ST_1 : Operation 295 [2/2] (3.25ns)   --->   "%sin_coefficients_table_load = load i8 %sin_coefficients_table_addr" [dft_256_v2/dft.cpp:33]   --->   Operation 295 'load' 'sin_coefficients_table_load' <Predicate = (!icmp_ln28)> <Delay = 3.25> <CoreInst = "ROM">   --->   Core 95 'ROM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 256> <ROM>
+ST_1 : Operation 296 [1/1] (1.58ns)   --->   "%store_ln28 = store i9 %add_ln28, i9 %n" [dft_256_v2/dft.cpp:28]   --->   Operation 296 'store' 'store_ln28' <Predicate = (!icmp_ln28)> <Delay = 1.58>
+ST_1 : Operation 297 [1/1] (1.58ns)   --->   "%store_ln28 = store i8 %add_ln31, i8 %index" [dft_256_v2/dft.cpp:28]   --->   Operation 297 'store' 'store_ln28' <Predicate = (!icmp_ln28)> <Delay = 1.58>
+
+State 2 <SV = 1> <Delay = 3.25>
+ST_2 : Operation 298 [1/2] (3.25ns)   --->   "%cos_coefficients_table_load = load i8 %cos_coefficients_table_addr" [dft_256_v2/dft.cpp:32]   --->   Operation 298 'load' 'cos_coefficients_table_load' <Predicate = (!icmp_ln28)> <Delay = 3.25> <CoreInst = "ROM">   --->   Core 95 'ROM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 256> <ROM>
+ST_2 : Operation 299 [1/2] (3.25ns)   --->   "%sin_coefficients_table_load = load i8 %sin_coefficients_table_addr" [dft_256_v2/dft.cpp:33]   --->   Operation 299 'load' 'sin_coefficients_table_load' <Predicate = (!icmp_ln28)> <Delay = 3.25> <CoreInst = "ROM">   --->   Core 95 'ROM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 256> <ROM>
+
+State 3 <SV = 2> <Delay = 5.70>
+ST_3 : Operation 300 [4/4] (5.70ns)   --->   "%mul = fmul i32 %tmp, i32 %cos_coefficients_table_load" [dft_256_v2/dft.cpp:32]   --->   Operation 300 'fmul' 'mul' <Predicate = (!icmp_ln28)> <Delay = 5.70> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 3> <II = 1> <Delay = 5.70> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 4 <SV = 3> <Delay = 5.70>
+ST_4 : Operation 301 [3/4] (5.70ns)   --->   "%mul = fmul i32 %tmp, i32 %cos_coefficients_table_load" [dft_256_v2/dft.cpp:32]   --->   Operation 301 'fmul' 'mul' <Predicate = (!icmp_ln28)> <Delay = 5.70> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 3> <II = 1> <Delay = 5.70> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 302 [4/4] (5.70ns)   --->   "%mul1 = fmul i32 %tmp, i32 %sin_coefficients_table_load" [dft_256_v2/dft.cpp:33]   --->   Operation 302 'fmul' 'mul1' <Predicate = (!icmp_ln28)> <Delay = 5.70> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 3> <II = 1> <Delay = 5.70> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 5 <SV = 4> <Delay = 5.70>
+ST_5 : Operation 303 [2/4] (5.70ns)   --->   "%mul = fmul i32 %tmp, i32 %cos_coefficients_table_load" [dft_256_v2/dft.cpp:32]   --->   Operation 303 'fmul' 'mul' <Predicate = (!icmp_ln28)> <Delay = 5.70> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 3> <II = 1> <Delay = 5.70> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 304 [3/4] (5.70ns)   --->   "%mul1 = fmul i32 %tmp, i32 %sin_coefficients_table_load" [dft_256_v2/dft.cpp:33]   --->   Operation 304 'fmul' 'mul1' <Predicate = (!icmp_ln28)> <Delay = 5.70> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 3> <II = 1> <Delay = 5.70> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 6 <SV = 5> <Delay = 5.70>
+ST_6 : Operation 305 [1/4] (5.70ns)   --->   "%mul = fmul i32 %tmp, i32 %cos_coefficients_table_load" [dft_256_v2/dft.cpp:32]   --->   Operation 305 'fmul' 'mul' <Predicate = true> <Delay = 5.70> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 3> <II = 1> <Delay = 5.70> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 306 [2/4] (5.70ns)   --->   "%mul1 = fmul i32 %tmp, i32 %sin_coefficients_table_load" [dft_256_v2/dft.cpp:33]   --->   Operation 306 'fmul' 'mul1' <Predicate = true> <Delay = 5.70> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 3> <II = 1> <Delay = 5.70> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 7 <SV = 6> <Delay = 7.25>
+ST_7 : Operation 307 [1/1] (0.00ns)   --->   "%sum_r_load = load i32 %sum_r" [dft_256_v2/dft.cpp:32]   --->   Operation 307 'load' 'sum_r_load' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 308 [5/5] (7.25ns)   --->   "%sum_r_1 = fadd i32 %sum_r_load, i32 %mul" [dft_256_v2/dft.cpp:32]   --->   Operation 308 'fadd' 'sum_r_1' <Predicate = true> <Delay = 7.25> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 309 [1/4] (5.70ns)   --->   "%mul1 = fmul i32 %tmp, i32 %sin_coefficients_table_load" [dft_256_v2/dft.cpp:33]   --->   Operation 309 'fmul' 'mul1' <Predicate = true> <Delay = 5.70> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 3> <II = 1> <Delay = 5.70> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 8 <SV = 7> <Delay = 7.25>
+ST_8 : Operation 310 [1/1] (0.00ns)   --->   "%sum_i_load = load i32 %sum_i" [dft_256_v2/dft.cpp:33]   --->   Operation 310 'load' 'sum_i_load' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 311 [4/5] (7.25ns)   --->   "%sum_r_1 = fadd i32 %sum_r_load, i32 %mul" [dft_256_v2/dft.cpp:32]   --->   Operation 311 'fadd' 'sum_r_1' <Predicate = true> <Delay = 7.25> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 312 [5/5] (7.25ns)   --->   "%sum_i_1 = fadd i32 %sum_i_load, i32 %mul1" [dft_256_v2/dft.cpp:33]   --->   Operation 312 'fadd' 'sum_i_1' <Predicate = true> <Delay = 7.25> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 324 [1/1] (0.00ns)   --->   "%sum_r_load_1 = load i32 %sum_r"   --->   Operation 324 'load' 'sum_r_load_1' <Predicate = (icmp_ln28)> <Delay = 0.00>
+ST_8 : Operation 325 [1/1] (0.00ns)   --->   "%sum_i_load_1 = load i32 %sum_i"   --->   Operation 325 'load' 'sum_i_load_1' <Predicate = (icmp_ln28)> <Delay = 0.00>
+ST_8 : Operation 326 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.floatP0A, i32 %sum_i_out, i32 %sum_i_load_1"   --->   Operation 326 'write' 'write_ln0' <Predicate = (icmp_ln28)> <Delay = 0.00>
+ST_8 : Operation 327 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.floatP0A, i32 %sum_r_out, i32 %sum_r_load_1"   --->   Operation 327 'write' 'write_ln0' <Predicate = (icmp_ln28)> <Delay = 0.00>
+ST_8 : Operation 328 [1/1] (0.00ns)   --->   "%ret_ln0 = ret"   --->   Operation 328 'ret' 'ret_ln0' <Predicate = (icmp_ln28)> <Delay = 0.00>
+
+State 9 <SV = 8> <Delay = 7.25>
+ST_9 : Operation 313 [3/5] (7.25ns)   --->   "%sum_r_1 = fadd i32 %sum_r_load, i32 %mul" [dft_256_v2/dft.cpp:32]   --->   Operation 313 'fadd' 'sum_r_1' <Predicate = true> <Delay = 7.25> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_9 : Operation 314 [4/5] (7.25ns)   --->   "%sum_i_1 = fadd i32 %sum_i_load, i32 %mul1" [dft_256_v2/dft.cpp:33]   --->   Operation 314 'fadd' 'sum_i_1' <Predicate = true> <Delay = 7.25> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 10 <SV = 9> <Delay = 7.25>
+ST_10 : Operation 315 [2/5] (7.25ns)   --->   "%sum_r_1 = fadd i32 %sum_r_load, i32 %mul" [dft_256_v2/dft.cpp:32]   --->   Operation 315 'fadd' 'sum_r_1' <Predicate = true> <Delay = 7.25> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 316 [3/5] (7.25ns)   --->   "%sum_i_1 = fadd i32 %sum_i_load, i32 %mul1" [dft_256_v2/dft.cpp:33]   --->   Operation 316 'fadd' 'sum_i_1' <Predicate = true> <Delay = 7.25> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 11 <SV = 10> <Delay = 7.25>
+ST_11 : Operation 317 [1/5] (7.25ns)   --->   "%sum_r_1 = fadd i32 %sum_r_load, i32 %mul" [dft_256_v2/dft.cpp:32]   --->   Operation 317 'fadd' 'sum_r_1' <Predicate = true> <Delay = 7.25> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_11 : Operation 318 [2/5] (7.25ns)   --->   "%sum_i_1 = fadd i32 %sum_i_load, i32 %mul1" [dft_256_v2/dft.cpp:33]   --->   Operation 318 'fadd' 'sum_i_1' <Predicate = true> <Delay = 7.25> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 12 <SV = 11> <Delay = 7.25>
+ST_12 : Operation 319 [1/5] (7.25ns)   --->   "%sum_i_1 = fadd i32 %sum_i_load, i32 %mul1" [dft_256_v2/dft.cpp:33]   --->   Operation 319 'fadd' 'sum_i_1' <Predicate = true> <Delay = 7.25> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_12 : Operation 320 [1/1] (1.58ns)   --->   "%store_ln28 = store i32 %sum_r_1, i32 %sum_r" [dft_256_v2/dft.cpp:28]   --->   Operation 320 'store' 'store_ln28' <Predicate = true> <Delay = 1.58>
+
+State 13 <SV = 12> <Delay = 1.58>
+ST_13 : Operation 321 [1/1] (0.00ns)   --->   "%specloopname_ln12 = specloopname void @_ssdm_op_SpecLoopName, void @empty_2" [dft_256_v2/dft.cpp:12]   --->   Operation 321 'specloopname' 'specloopname_ln12' <Predicate = true> <Delay = 0.00>
+ST_13 : Operation 322 [1/1] (1.58ns)   --->   "%store_ln28 = store i32 %sum_i_1, i32 %sum_i" [dft_256_v2/dft.cpp:28]   --->   Operation 322 'store' 'store_ln28' <Predicate = true> <Delay = 1.58>
+ST_13 : Operation 323 [1/1] (0.00ns)   --->   "%br_ln28 = br void %for.inc20" [dft_256_v2/dft.cpp:28]   --->   Operation 323 'br' 'br_ln28' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 2.7ns.
+
+ <State 1>: 4.77ns
+The critical path consists of the following:
+	'alloca' operation ('n') [265]  (0 ns)
+	'load' operation ('n', dft_256_v2/dft.cpp:28) on local variable 'n' [529]  (0 ns)
+	'mux' operation ('tmp', dft_256_v2/dft.cpp:32) [541]  (4.77 ns)
+
+ <State 2>: 3.25ns
+The critical path consists of the following:
+	'load' operation ('cos_coefficients_table_load', dft_256_v2/dft.cpp:32) on array 'cos_coefficients_table' [544]  (3.25 ns)
+
+ <State 3>: 5.7ns
+The critical path consists of the following:
+	'fmul' operation ('mul', dft_256_v2/dft.cpp:32) [545]  (5.7 ns)
+
+ <State 4>: 5.7ns
+The critical path consists of the following:
+	'fmul' operation ('mul', dft_256_v2/dft.cpp:32) [545]  (5.7 ns)
+
+ <State 5>: 5.7ns
+The critical path consists of the following:
+	'fmul' operation ('mul', dft_256_v2/dft.cpp:32) [545]  (5.7 ns)
+
+ <State 6>: 5.7ns
+The critical path consists of the following:
+	'fmul' operation ('mul', dft_256_v2/dft.cpp:32) [545]  (5.7 ns)
+
+ <State 7>: 7.26ns
+The critical path consists of the following:
+	'load' operation ('sum_r_load', dft_256_v2/dft.cpp:32) on local variable 'sum_r' [537]  (0 ns)
+	'fadd' operation ('sum_r', dft_256_v2/dft.cpp:32) [546]  (7.26 ns)
+
+ <State 8>: 7.26ns
+The critical path consists of the following:
+	'fadd' operation ('sum_r', dft_256_v2/dft.cpp:32) [546]  (7.26 ns)
+
+ <State 9>: 7.26ns
+The critical path consists of the following:
+	'fadd' operation ('sum_r', dft_256_v2/dft.cpp:32) [546]  (7.26 ns)
+
+ <State 10>: 7.26ns
+The critical path consists of the following:
+	'fadd' operation ('sum_r', dft_256_v2/dft.cpp:32) [546]  (7.26 ns)
+
+ <State 11>: 7.26ns
+The critical path consists of the following:
+	'fadd' operation ('sum_r', dft_256_v2/dft.cpp:32) [546]  (7.26 ns)
+
+ <State 12>: 7.26ns
+The critical path consists of the following:
+	'fadd' operation ('sum_i', dft_256_v2/dft.cpp:33) [550]  (7.26 ns)
+
+ <State 13>: 1.59ns
+The critical path consists of the following:
+	'store' operation ('store_ln28', dft_256_v2/dft.cpp:28) of variable 'sum_i', dft_256_v2/dft.cpp:33 on local variable 'sum_i' [552]  (1.59 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+	State 12
+	State 13
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

@@ -1,0 +1,31 @@
+<xilinx:hls_fe_msgs>
+    <msg msg_groups="PRAGMA_DATAFLOW" msg_id="214-114" msg_severity="WARNING" msg_loc="dft_256_v2/dft.cpp:22:9" msg_body="Since the only kind of statements allowed in a canonical dataflow region are variable declarations and function calls, the compiler may not be able to correctly handle the region"/>
+    <msg msg_groups="" msg_id="207-5292" msg_severity="WARNING" msg_loc="dft_256_v2/dft.cpp:5:78" msg_body="unused parameter 'imag_sample'">
+        <args ClangWarningOption="unused-parameter"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="D:/1111HLS/LabB/dft_256/dft_256_v2/dataflow_1/csynth.tcl:17:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="dft" ARG_PragmaIsValid="1" ARG_PragmaOptions="name=dft" ARG_PragmaType="top" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="dft_256_v2/dft.cpp:22:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="dft" ARG_PragmaIsValid="1" ARG_PragmaType="dataflow" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="dft_256_v2/dft.cpp:27:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="dft" ARG_PragmaIsValid="1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="dft_256_v2/dft.cpp:28:19" msg_body="Loop 'VITIS_LOOP_28_3' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="VITIS_LOOP_28_3"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="dft_256_v2/dft.cpp:6:0" msg_body="Unrolling loop 'VITIS_LOOP_28_3' (dft_256_v2/dft.cpp:28:19) in function 'dft' completely with a factor of 256">
+        <args Factor="256" LoopLoc="dft_256_v2/dft.cpp:28:19" LoopName="VITIS_LOOP_28_3"/>
+    </msg>
+    <msg msg_groups="AUTOMATION_VERBOSE_PASSED" msg_id="214-335" msg_severity="INFO" msg_loc="dft_256_v2/dft.cpp:0:1" msg_body="array_partition dim=1 type=complete  variable=temp 1 dft dft_256_v2/dft.cpp:14:8 dft_256_v2/dft.cpp:27:9temp">
+        <args PragmaFunction="dft" PragmaIsAuto="1" PragmaOptions="dim=1 type=complete  variable=temp" PragmaSrcLoc="dft_256_v2/dft.cpp:27:9" PragmaType="array_partition" VarName="temp" varLoc="dft_256_v2/dft.cpp:14:8"/>
+    </msg>
+    <msg msg_groups="AUTOMATION PRAGMA_MISC" msg_id="214-270" msg_severity="INFO" msg_loc="dft_256_v2/dft.cpp:27:9" msg_body="Inferring pragma 'array_partition type=complete dim=1' for array 'temp' due to pipeline pragma">
+        <args Dim="1" Mode="complete" Name="temp" PragmaType="array_partition"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="dft_256_v2/dft.cpp:14:8" msg_body="Applying array_partition to 'temp': Complete partitioning on dimension 1.">
+        <args Dim="1" Mode="Complete" UOName="temp"/>
+    </msg>
+</xilinx:hls_fe_msgs>
+

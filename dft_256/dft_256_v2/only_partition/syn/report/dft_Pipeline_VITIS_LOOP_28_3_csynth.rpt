@@ -1,0 +1,439 @@
+
+
+================================================================
+== Vitis HLS Report for 'dft_Pipeline_VITIS_LOOP_28_3'
+================================================================
+* Date:           Fri Oct 21 17:39:02 2022
+
+* Version:        2022.1 (Build 3526262 on Mon Apr 18 15:48:16 MDT 2022)
+* Project:        dft_256_v2
+* Solution:       only_partition (Vivado IP Flow Target)
+* Product family: zynq
+* Target device:  xc7z020-clg484-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  7.256 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+-----------+-----------+------+------+---------+
+    |  Latency (cycles) |   Latency (absolute)  |   Interval  | Pipeline|
+    |   min   |   max   |    min    |    max    |  min |  max |   Type  |
+    +---------+---------+-----------+-----------+------+------+---------+
+    |     1289|     1289|  12.890 us|  12.890 us|  1289|  1289|       no|
+    +---------+---------+-----------+-----------+------+------+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +-------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |                   |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
+        |     Loop Name     |   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +-------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |- VITIS_LOOP_28_3  |     1287|     1287|        13|          5|          1|   256|       yes|
+        +-------------------+---------+---------+----------+-----------+-----------+------+----------+
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-----+--------+-------+-----+
+|       Name      | BRAM_18K| DSP |   FF   |  LUT  | URAM|
++-----------------+---------+-----+--------+-------+-----+
+|DSP              |        -|    -|       -|      -|    -|
+|Expression       |        -|    -|       0|     42|    -|
+|FIFO             |        -|    -|       -|      -|    -|
+|Instance         |        -|    5|     348|   2073|    -|
+|Memory           |        2|    -|       0|      0|    -|
+|Multiplexer      |        -|    -|       -|    190|    -|
+|Register         |        -|    -|     285|      -|    -|
++-----------------+---------+-----+--------+-------+-----+
+|Total            |        2|    5|     633|   2305|    0|
++-----------------+---------+-----+--------+-------+-----+
+|Available        |      280|  220|  106400|  53200|    0|
++-----------------+---------+-----+--------+-------+-----+
+|Utilization (%)  |       ~0|    2|      ~0|      4|    0|
++-----------------+---------+-----+--------+-------+-----+
+
++ Detail: 
+    * Instance: 
+    +-------------------------------------+--------------------------------+---------+----+-----+------+-----+
+    |               Instance              |             Module             | BRAM_18K| DSP|  FF |  LUT | URAM|
+    +-------------------------------------+--------------------------------+---------+----+-----+------+-----+
+    |fadd_32ns_32ns_32_5_full_dsp_1_U515  |fadd_32ns_32ns_32_5_full_dsp_1  |        0|   2|  205|   390|    0|
+    |fmul_32ns_32ns_32_4_max_dsp_1_U516   |fmul_32ns_32ns_32_4_max_dsp_1   |        0|   3|  143|   321|    0|
+    |mux_2569_32_1_1_U517                 |mux_2569_32_1_1                 |        0|   0|    0|  1362|    0|
+    +-------------------------------------+--------------------------------+---------+----+-----+------+-----+
+    |Total                                |                                |        0|   5|  348|  2073|    0|
+    +-------------------------------------+--------------------------------+---------+----+-----+------+-----+
+
+    * DSP: 
+    N/A
+
+    * Memory: 
+    +--------------------------+-----------------------------------------------------------------+---------+---+----+-----+------+-----+------+-------------+
+    |          Memory          |                              Module                             | BRAM_18K| FF| LUT| URAM| Words| Bits| Banks| W*Bits*Banks|
+    +--------------------------+-----------------------------------------------------------------+---------+---+----+-----+------+-----+------+-------------+
+    |cos_coefficients_table_U  |dft_Pipeline_VITIS_LOOP_28_3_cos_coefficients_table_ROM_AUTO_1R  |        1|  0|   0|    0|   256|   32|     1|         8192|
+    |sin_coefficients_table_U  |dft_Pipeline_VITIS_LOOP_28_3_sin_coefficients_table_ROM_AUTO_1R  |        1|  0|   0|    0|   256|   32|     1|         8192|
+    +--------------------------+-----------------------------------------------------------------+---------+---+----+-----+------+-----+------+-------------+
+    |Total                     |                                                                 |        2|  0|   0|    0|   512|   64|     2|        16384|
+    +--------------------------+-----------------------------------------------------------------+---------+---+----+-----+------+-----+------+-------------+
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +----------------------+----------+----+---+----+------------+------------+
+    |     Variable Name    | Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +----------------------+----------+----+---+----+------------+------------+
+    |add_ln28_fu_2199_p2   |         +|   0|  0|  14|           9|           1|
+    |add_ln31_fu_2208_p2   |         +|   0|  0|  15|           8|           8|
+    |icmp_ln28_fu_2193_p2  |      icmp|   0|  0|  11|           9|          10|
+    |ap_enable_pp0         |       xor|   0|  0|   2|           1|           2|
+    +----------------------+----------+----+---+----+------------+------------+
+    |Total                 |          |   0|  0|  42|          27|          21|
+    +----------------------+----------+----+---+----+------------+------------+
+
+    * Multiplexer: 
+    +----------------------------------+----+-----------+-----+-----------+
+    |               Name               | LUT| Input Size| Bits| Total Bits|
+    +----------------------------------+----+-----------+-----+-----------+
+    |ap_NS_fsm                         |  31|          6|    1|          6|
+    |ap_done_int                       |   9|          2|    1|          2|
+    |ap_enable_reg_pp0_iter0           |   9|          2|    1|          2|
+    |ap_enable_reg_pp0_iter1           |   9|          2|    1|          2|
+    |ap_enable_reg_pp0_iter2           |   9|          2|    1|          2|
+    |ap_loop_exit_ready_pp0_iter1_reg  |   9|          2|    1|          2|
+    |ap_sig_allocacmp_index_load       |   9|          2|    8|         16|
+    |ap_sig_allocacmp_n_1              |   9|          2|    9|         18|
+    |ap_sig_allocacmp_sum_i_load       |   9|          2|   32|         64|
+    |ap_sig_allocacmp_sum_r_load       |   9|          2|   32|         64|
+    |grp_fu_2158_p0                    |  14|          3|   32|         96|
+    |grp_fu_2158_p1                    |  14|          3|   32|         96|
+    |grp_fu_2162_p1                    |  14|          3|   32|         96|
+    |index_fu_560                      |   9|          2|    8|         16|
+    |n_fu_572                          |   9|          2|    9|         18|
+    |sum_i_fu_568                      |   9|          2|   32|         64|
+    |sum_r_fu_564                      |   9|          2|   32|         64|
+    +----------------------------------+----+-----------+-----+-----------+
+    |Total                             | 190|         41|  264|        628|
+    +----------------------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +--------------------------------------+----+----+-----+-----------+
+    |                 Name                 | FF | LUT| Bits| Const Bits|
+    +--------------------------------------+----+----+-----+-----------+
+    |ap_CS_fsm                             |   5|   0|    5|          0|
+    |ap_done_reg                           |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter0_reg           |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter1               |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter2               |   1|   0|    1|          0|
+    |ap_loop_exit_ready_pp0_iter1_reg      |   1|   0|    1|          0|
+    |cos_coefficients_table_load_reg_2823  |  32|   0|   32|          0|
+    |icmp_ln28_reg_2804                    |   1|   0|    1|          0|
+    |icmp_ln28_reg_2804_pp0_iter1_reg      |   1|   0|    1|          0|
+    |index_fu_560                          |   8|   0|    8|          0|
+    |mul1_reg_2843                         |  32|   0|   32|          0|
+    |mul_reg_2833                          |  32|   0|   32|          0|
+    |n_fu_572                              |   9|   0|    9|          0|
+    |reg_2166                              |  32|   0|   32|          0|
+    |sin_coefficients_table_load_reg_2828  |  32|   0|   32|          0|
+    |sum_i_fu_568                          |  32|   0|   32|          0|
+    |sum_r_fu_564                          |  32|   0|   32|          0|
+    |tmp_reg_2808                          |  32|   0|   32|          0|
+    +--------------------------------------+----+----+-----+-----------+
+    |Total                                 | 285|   0|  285|          0|
+    +--------------------------------------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++------------------+-----+-----+------------+------------------------------+--------------+
+|     RTL Ports    | Dir | Bits|  Protocol  |         Source Object        |    C Type    |
++------------------+-----+-----+------------+------------------------------+--------------+
+|ap_clk            |   in|    1|  ap_ctrl_hs|  dft_Pipeline_VITIS_LOOP_28_3|  return value|
+|ap_rst            |   in|    1|  ap_ctrl_hs|  dft_Pipeline_VITIS_LOOP_28_3|  return value|
+|ap_start          |   in|    1|  ap_ctrl_hs|  dft_Pipeline_VITIS_LOOP_28_3|  return value|
+|ap_done           |  out|    1|  ap_ctrl_hs|  dft_Pipeline_VITIS_LOOP_28_3|  return value|
+|ap_idle           |  out|    1|  ap_ctrl_hs|  dft_Pipeline_VITIS_LOOP_28_3|  return value|
+|ap_ready          |  out|    1|  ap_ctrl_hs|  dft_Pipeline_VITIS_LOOP_28_3|  return value|
+|trunc_ln1         |   in|    8|     ap_none|                     trunc_ln1|        scalar|
+|temp_reload       |   in|   32|     ap_none|                   temp_reload|        scalar|
+|temp_1_reload     |   in|   32|     ap_none|                 temp_1_reload|        scalar|
+|temp_2_reload     |   in|   32|     ap_none|                 temp_2_reload|        scalar|
+|temp_3_reload     |   in|   32|     ap_none|                 temp_3_reload|        scalar|
+|temp_4_reload     |   in|   32|     ap_none|                 temp_4_reload|        scalar|
+|temp_5_reload     |   in|   32|     ap_none|                 temp_5_reload|        scalar|
+|temp_6_reload     |   in|   32|     ap_none|                 temp_6_reload|        scalar|
+|temp_7_reload     |   in|   32|     ap_none|                 temp_7_reload|        scalar|
+|temp_8_reload     |   in|   32|     ap_none|                 temp_8_reload|        scalar|
+|temp_9_reload     |   in|   32|     ap_none|                 temp_9_reload|        scalar|
+|temp_10_reload    |   in|   32|     ap_none|                temp_10_reload|        scalar|
+|temp_11_reload    |   in|   32|     ap_none|                temp_11_reload|        scalar|
+|temp_12_reload    |   in|   32|     ap_none|                temp_12_reload|        scalar|
+|temp_13_reload    |   in|   32|     ap_none|                temp_13_reload|        scalar|
+|temp_14_reload    |   in|   32|     ap_none|                temp_14_reload|        scalar|
+|temp_15_reload    |   in|   32|     ap_none|                temp_15_reload|        scalar|
+|temp_16_reload    |   in|   32|     ap_none|                temp_16_reload|        scalar|
+|temp_17_reload    |   in|   32|     ap_none|                temp_17_reload|        scalar|
+|temp_18_reload    |   in|   32|     ap_none|                temp_18_reload|        scalar|
+|temp_19_reload    |   in|   32|     ap_none|                temp_19_reload|        scalar|
+|temp_20_reload    |   in|   32|     ap_none|                temp_20_reload|        scalar|
+|temp_21_reload    |   in|   32|     ap_none|                temp_21_reload|        scalar|
+|temp_22_reload    |   in|   32|     ap_none|                temp_22_reload|        scalar|
+|temp_23_reload    |   in|   32|     ap_none|                temp_23_reload|        scalar|
+|temp_24_reload    |   in|   32|     ap_none|                temp_24_reload|        scalar|
+|temp_25_reload    |   in|   32|     ap_none|                temp_25_reload|        scalar|
+|temp_26_reload    |   in|   32|     ap_none|                temp_26_reload|        scalar|
+|temp_27_reload    |   in|   32|     ap_none|                temp_27_reload|        scalar|
+|temp_28_reload    |   in|   32|     ap_none|                temp_28_reload|        scalar|
+|temp_29_reload    |   in|   32|     ap_none|                temp_29_reload|        scalar|
+|temp_30_reload    |   in|   32|     ap_none|                temp_30_reload|        scalar|
+|temp_31_reload    |   in|   32|     ap_none|                temp_31_reload|        scalar|
+|temp_32_reload    |   in|   32|     ap_none|                temp_32_reload|        scalar|
+|temp_33_reload    |   in|   32|     ap_none|                temp_33_reload|        scalar|
+|temp_34_reload    |   in|   32|     ap_none|                temp_34_reload|        scalar|
+|temp_35_reload    |   in|   32|     ap_none|                temp_35_reload|        scalar|
+|temp_36_reload    |   in|   32|     ap_none|                temp_36_reload|        scalar|
+|temp_37_reload    |   in|   32|     ap_none|                temp_37_reload|        scalar|
+|temp_38_reload    |   in|   32|     ap_none|                temp_38_reload|        scalar|
+|temp_39_reload    |   in|   32|     ap_none|                temp_39_reload|        scalar|
+|temp_40_reload    |   in|   32|     ap_none|                temp_40_reload|        scalar|
+|temp_41_reload    |   in|   32|     ap_none|                temp_41_reload|        scalar|
+|temp_42_reload    |   in|   32|     ap_none|                temp_42_reload|        scalar|
+|temp_43_reload    |   in|   32|     ap_none|                temp_43_reload|        scalar|
+|temp_44_reload    |   in|   32|     ap_none|                temp_44_reload|        scalar|
+|temp_45_reload    |   in|   32|     ap_none|                temp_45_reload|        scalar|
+|temp_46_reload    |   in|   32|     ap_none|                temp_46_reload|        scalar|
+|temp_47_reload    |   in|   32|     ap_none|                temp_47_reload|        scalar|
+|temp_48_reload    |   in|   32|     ap_none|                temp_48_reload|        scalar|
+|temp_49_reload    |   in|   32|     ap_none|                temp_49_reload|        scalar|
+|temp_50_reload    |   in|   32|     ap_none|                temp_50_reload|        scalar|
+|temp_51_reload    |   in|   32|     ap_none|                temp_51_reload|        scalar|
+|temp_52_reload    |   in|   32|     ap_none|                temp_52_reload|        scalar|
+|temp_53_reload    |   in|   32|     ap_none|                temp_53_reload|        scalar|
+|temp_54_reload    |   in|   32|     ap_none|                temp_54_reload|        scalar|
+|temp_55_reload    |   in|   32|     ap_none|                temp_55_reload|        scalar|
+|temp_56_reload    |   in|   32|     ap_none|                temp_56_reload|        scalar|
+|temp_57_reload    |   in|   32|     ap_none|                temp_57_reload|        scalar|
+|temp_58_reload    |   in|   32|     ap_none|                temp_58_reload|        scalar|
+|temp_59_reload    |   in|   32|     ap_none|                temp_59_reload|        scalar|
+|temp_60_reload    |   in|   32|     ap_none|                temp_60_reload|        scalar|
+|temp_61_reload    |   in|   32|     ap_none|                temp_61_reload|        scalar|
+|temp_62_reload    |   in|   32|     ap_none|                temp_62_reload|        scalar|
+|temp_63_reload    |   in|   32|     ap_none|                temp_63_reload|        scalar|
+|temp_64_reload    |   in|   32|     ap_none|                temp_64_reload|        scalar|
+|temp_65_reload    |   in|   32|     ap_none|                temp_65_reload|        scalar|
+|temp_66_reload    |   in|   32|     ap_none|                temp_66_reload|        scalar|
+|temp_67_reload    |   in|   32|     ap_none|                temp_67_reload|        scalar|
+|temp_68_reload    |   in|   32|     ap_none|                temp_68_reload|        scalar|
+|temp_69_reload    |   in|   32|     ap_none|                temp_69_reload|        scalar|
+|temp_70_reload    |   in|   32|     ap_none|                temp_70_reload|        scalar|
+|temp_71_reload    |   in|   32|     ap_none|                temp_71_reload|        scalar|
+|temp_72_reload    |   in|   32|     ap_none|                temp_72_reload|        scalar|
+|temp_73_reload    |   in|   32|     ap_none|                temp_73_reload|        scalar|
+|temp_74_reload    |   in|   32|     ap_none|                temp_74_reload|        scalar|
+|temp_75_reload    |   in|   32|     ap_none|                temp_75_reload|        scalar|
+|temp_76_reload    |   in|   32|     ap_none|                temp_76_reload|        scalar|
+|temp_77_reload    |   in|   32|     ap_none|                temp_77_reload|        scalar|
+|temp_78_reload    |   in|   32|     ap_none|                temp_78_reload|        scalar|
+|temp_79_reload    |   in|   32|     ap_none|                temp_79_reload|        scalar|
+|temp_80_reload    |   in|   32|     ap_none|                temp_80_reload|        scalar|
+|temp_81_reload    |   in|   32|     ap_none|                temp_81_reload|        scalar|
+|temp_82_reload    |   in|   32|     ap_none|                temp_82_reload|        scalar|
+|temp_83_reload    |   in|   32|     ap_none|                temp_83_reload|        scalar|
+|temp_84_reload    |   in|   32|     ap_none|                temp_84_reload|        scalar|
+|temp_85_reload    |   in|   32|     ap_none|                temp_85_reload|        scalar|
+|temp_86_reload    |   in|   32|     ap_none|                temp_86_reload|        scalar|
+|temp_87_reload    |   in|   32|     ap_none|                temp_87_reload|        scalar|
+|temp_88_reload    |   in|   32|     ap_none|                temp_88_reload|        scalar|
+|temp_89_reload    |   in|   32|     ap_none|                temp_89_reload|        scalar|
+|temp_90_reload    |   in|   32|     ap_none|                temp_90_reload|        scalar|
+|temp_91_reload    |   in|   32|     ap_none|                temp_91_reload|        scalar|
+|temp_92_reload    |   in|   32|     ap_none|                temp_92_reload|        scalar|
+|temp_93_reload    |   in|   32|     ap_none|                temp_93_reload|        scalar|
+|temp_94_reload    |   in|   32|     ap_none|                temp_94_reload|        scalar|
+|temp_95_reload    |   in|   32|     ap_none|                temp_95_reload|        scalar|
+|temp_96_reload    |   in|   32|     ap_none|                temp_96_reload|        scalar|
+|temp_97_reload    |   in|   32|     ap_none|                temp_97_reload|        scalar|
+|temp_98_reload    |   in|   32|     ap_none|                temp_98_reload|        scalar|
+|temp_99_reload    |   in|   32|     ap_none|                temp_99_reload|        scalar|
+|temp_100_reload   |   in|   32|     ap_none|               temp_100_reload|        scalar|
+|temp_101_reload   |   in|   32|     ap_none|               temp_101_reload|        scalar|
+|temp_102_reload   |   in|   32|     ap_none|               temp_102_reload|        scalar|
+|temp_103_reload   |   in|   32|     ap_none|               temp_103_reload|        scalar|
+|temp_104_reload   |   in|   32|     ap_none|               temp_104_reload|        scalar|
+|temp_105_reload   |   in|   32|     ap_none|               temp_105_reload|        scalar|
+|temp_106_reload   |   in|   32|     ap_none|               temp_106_reload|        scalar|
+|temp_107_reload   |   in|   32|     ap_none|               temp_107_reload|        scalar|
+|temp_108_reload   |   in|   32|     ap_none|               temp_108_reload|        scalar|
+|temp_109_reload   |   in|   32|     ap_none|               temp_109_reload|        scalar|
+|temp_110_reload   |   in|   32|     ap_none|               temp_110_reload|        scalar|
+|temp_111_reload   |   in|   32|     ap_none|               temp_111_reload|        scalar|
+|temp_112_reload   |   in|   32|     ap_none|               temp_112_reload|        scalar|
+|temp_113_reload   |   in|   32|     ap_none|               temp_113_reload|        scalar|
+|temp_114_reload   |   in|   32|     ap_none|               temp_114_reload|        scalar|
+|temp_115_reload   |   in|   32|     ap_none|               temp_115_reload|        scalar|
+|temp_116_reload   |   in|   32|     ap_none|               temp_116_reload|        scalar|
+|temp_117_reload   |   in|   32|     ap_none|               temp_117_reload|        scalar|
+|temp_118_reload   |   in|   32|     ap_none|               temp_118_reload|        scalar|
+|temp_119_reload   |   in|   32|     ap_none|               temp_119_reload|        scalar|
+|temp_120_reload   |   in|   32|     ap_none|               temp_120_reload|        scalar|
+|temp_121_reload   |   in|   32|     ap_none|               temp_121_reload|        scalar|
+|temp_122_reload   |   in|   32|     ap_none|               temp_122_reload|        scalar|
+|temp_123_reload   |   in|   32|     ap_none|               temp_123_reload|        scalar|
+|temp_124_reload   |   in|   32|     ap_none|               temp_124_reload|        scalar|
+|temp_125_reload   |   in|   32|     ap_none|               temp_125_reload|        scalar|
+|temp_126_reload   |   in|   32|     ap_none|               temp_126_reload|        scalar|
+|temp_127_reload   |   in|   32|     ap_none|               temp_127_reload|        scalar|
+|temp_128_reload   |   in|   32|     ap_none|               temp_128_reload|        scalar|
+|temp_129_reload   |   in|   32|     ap_none|               temp_129_reload|        scalar|
+|temp_130_reload   |   in|   32|     ap_none|               temp_130_reload|        scalar|
+|temp_131_reload   |   in|   32|     ap_none|               temp_131_reload|        scalar|
+|temp_132_reload   |   in|   32|     ap_none|               temp_132_reload|        scalar|
+|temp_133_reload   |   in|   32|     ap_none|               temp_133_reload|        scalar|
+|temp_134_reload   |   in|   32|     ap_none|               temp_134_reload|        scalar|
+|temp_135_reload   |   in|   32|     ap_none|               temp_135_reload|        scalar|
+|temp_136_reload   |   in|   32|     ap_none|               temp_136_reload|        scalar|
+|temp_137_reload   |   in|   32|     ap_none|               temp_137_reload|        scalar|
+|temp_138_reload   |   in|   32|     ap_none|               temp_138_reload|        scalar|
+|temp_139_reload   |   in|   32|     ap_none|               temp_139_reload|        scalar|
+|temp_140_reload   |   in|   32|     ap_none|               temp_140_reload|        scalar|
+|temp_141_reload   |   in|   32|     ap_none|               temp_141_reload|        scalar|
+|temp_142_reload   |   in|   32|     ap_none|               temp_142_reload|        scalar|
+|temp_143_reload   |   in|   32|     ap_none|               temp_143_reload|        scalar|
+|temp_144_reload   |   in|   32|     ap_none|               temp_144_reload|        scalar|
+|temp_145_reload   |   in|   32|     ap_none|               temp_145_reload|        scalar|
+|temp_146_reload   |   in|   32|     ap_none|               temp_146_reload|        scalar|
+|temp_147_reload   |   in|   32|     ap_none|               temp_147_reload|        scalar|
+|temp_148_reload   |   in|   32|     ap_none|               temp_148_reload|        scalar|
+|temp_149_reload   |   in|   32|     ap_none|               temp_149_reload|        scalar|
+|temp_150_reload   |   in|   32|     ap_none|               temp_150_reload|        scalar|
+|temp_151_reload   |   in|   32|     ap_none|               temp_151_reload|        scalar|
+|temp_152_reload   |   in|   32|     ap_none|               temp_152_reload|        scalar|
+|temp_153_reload   |   in|   32|     ap_none|               temp_153_reload|        scalar|
+|temp_154_reload   |   in|   32|     ap_none|               temp_154_reload|        scalar|
+|temp_155_reload   |   in|   32|     ap_none|               temp_155_reload|        scalar|
+|temp_156_reload   |   in|   32|     ap_none|               temp_156_reload|        scalar|
+|temp_157_reload   |   in|   32|     ap_none|               temp_157_reload|        scalar|
+|temp_158_reload   |   in|   32|     ap_none|               temp_158_reload|        scalar|
+|temp_159_reload   |   in|   32|     ap_none|               temp_159_reload|        scalar|
+|temp_160_reload   |   in|   32|     ap_none|               temp_160_reload|        scalar|
+|temp_161_reload   |   in|   32|     ap_none|               temp_161_reload|        scalar|
+|temp_162_reload   |   in|   32|     ap_none|               temp_162_reload|        scalar|
+|temp_163_reload   |   in|   32|     ap_none|               temp_163_reload|        scalar|
+|temp_164_reload   |   in|   32|     ap_none|               temp_164_reload|        scalar|
+|temp_165_reload   |   in|   32|     ap_none|               temp_165_reload|        scalar|
+|temp_166_reload   |   in|   32|     ap_none|               temp_166_reload|        scalar|
+|temp_167_reload   |   in|   32|     ap_none|               temp_167_reload|        scalar|
+|temp_168_reload   |   in|   32|     ap_none|               temp_168_reload|        scalar|
+|temp_169_reload   |   in|   32|     ap_none|               temp_169_reload|        scalar|
+|temp_170_reload   |   in|   32|     ap_none|               temp_170_reload|        scalar|
+|temp_171_reload   |   in|   32|     ap_none|               temp_171_reload|        scalar|
+|temp_172_reload   |   in|   32|     ap_none|               temp_172_reload|        scalar|
+|temp_173_reload   |   in|   32|     ap_none|               temp_173_reload|        scalar|
+|temp_174_reload   |   in|   32|     ap_none|               temp_174_reload|        scalar|
+|temp_175_reload   |   in|   32|     ap_none|               temp_175_reload|        scalar|
+|temp_176_reload   |   in|   32|     ap_none|               temp_176_reload|        scalar|
+|temp_177_reload   |   in|   32|     ap_none|               temp_177_reload|        scalar|
+|temp_178_reload   |   in|   32|     ap_none|               temp_178_reload|        scalar|
+|temp_179_reload   |   in|   32|     ap_none|               temp_179_reload|        scalar|
+|temp_180_reload   |   in|   32|     ap_none|               temp_180_reload|        scalar|
+|temp_181_reload   |   in|   32|     ap_none|               temp_181_reload|        scalar|
+|temp_182_reload   |   in|   32|     ap_none|               temp_182_reload|        scalar|
+|temp_183_reload   |   in|   32|     ap_none|               temp_183_reload|        scalar|
+|temp_184_reload   |   in|   32|     ap_none|               temp_184_reload|        scalar|
+|temp_185_reload   |   in|   32|     ap_none|               temp_185_reload|        scalar|
+|temp_186_reload   |   in|   32|     ap_none|               temp_186_reload|        scalar|
+|temp_187_reload   |   in|   32|     ap_none|               temp_187_reload|        scalar|
+|temp_188_reload   |   in|   32|     ap_none|               temp_188_reload|        scalar|
+|temp_189_reload   |   in|   32|     ap_none|               temp_189_reload|        scalar|
+|temp_190_reload   |   in|   32|     ap_none|               temp_190_reload|        scalar|
+|temp_191_reload   |   in|   32|     ap_none|               temp_191_reload|        scalar|
+|temp_192_reload   |   in|   32|     ap_none|               temp_192_reload|        scalar|
+|temp_193_reload   |   in|   32|     ap_none|               temp_193_reload|        scalar|
+|temp_194_reload   |   in|   32|     ap_none|               temp_194_reload|        scalar|
+|temp_195_reload   |   in|   32|     ap_none|               temp_195_reload|        scalar|
+|temp_196_reload   |   in|   32|     ap_none|               temp_196_reload|        scalar|
+|temp_197_reload   |   in|   32|     ap_none|               temp_197_reload|        scalar|
+|temp_198_reload   |   in|   32|     ap_none|               temp_198_reload|        scalar|
+|temp_199_reload   |   in|   32|     ap_none|               temp_199_reload|        scalar|
+|temp_200_reload   |   in|   32|     ap_none|               temp_200_reload|        scalar|
+|temp_201_reload   |   in|   32|     ap_none|               temp_201_reload|        scalar|
+|temp_202_reload   |   in|   32|     ap_none|               temp_202_reload|        scalar|
+|temp_203_reload   |   in|   32|     ap_none|               temp_203_reload|        scalar|
+|temp_204_reload   |   in|   32|     ap_none|               temp_204_reload|        scalar|
+|temp_205_reload   |   in|   32|     ap_none|               temp_205_reload|        scalar|
+|temp_206_reload   |   in|   32|     ap_none|               temp_206_reload|        scalar|
+|temp_207_reload   |   in|   32|     ap_none|               temp_207_reload|        scalar|
+|temp_208_reload   |   in|   32|     ap_none|               temp_208_reload|        scalar|
+|temp_209_reload   |   in|   32|     ap_none|               temp_209_reload|        scalar|
+|temp_210_reload   |   in|   32|     ap_none|               temp_210_reload|        scalar|
+|temp_211_reload   |   in|   32|     ap_none|               temp_211_reload|        scalar|
+|temp_212_reload   |   in|   32|     ap_none|               temp_212_reload|        scalar|
+|temp_213_reload   |   in|   32|     ap_none|               temp_213_reload|        scalar|
+|temp_214_reload   |   in|   32|     ap_none|               temp_214_reload|        scalar|
+|temp_215_reload   |   in|   32|     ap_none|               temp_215_reload|        scalar|
+|temp_216_reload   |   in|   32|     ap_none|               temp_216_reload|        scalar|
+|temp_217_reload   |   in|   32|     ap_none|               temp_217_reload|        scalar|
+|temp_218_reload   |   in|   32|     ap_none|               temp_218_reload|        scalar|
+|temp_219_reload   |   in|   32|     ap_none|               temp_219_reload|        scalar|
+|temp_220_reload   |   in|   32|     ap_none|               temp_220_reload|        scalar|
+|temp_221_reload   |   in|   32|     ap_none|               temp_221_reload|        scalar|
+|temp_222_reload   |   in|   32|     ap_none|               temp_222_reload|        scalar|
+|temp_223_reload   |   in|   32|     ap_none|               temp_223_reload|        scalar|
+|temp_224_reload   |   in|   32|     ap_none|               temp_224_reload|        scalar|
+|temp_225_reload   |   in|   32|     ap_none|               temp_225_reload|        scalar|
+|temp_226_reload   |   in|   32|     ap_none|               temp_226_reload|        scalar|
+|temp_227_reload   |   in|   32|     ap_none|               temp_227_reload|        scalar|
+|temp_228_reload   |   in|   32|     ap_none|               temp_228_reload|        scalar|
+|temp_229_reload   |   in|   32|     ap_none|               temp_229_reload|        scalar|
+|temp_230_reload   |   in|   32|     ap_none|               temp_230_reload|        scalar|
+|temp_231_reload   |   in|   32|     ap_none|               temp_231_reload|        scalar|
+|temp_232_reload   |   in|   32|     ap_none|               temp_232_reload|        scalar|
+|temp_233_reload   |   in|   32|     ap_none|               temp_233_reload|        scalar|
+|temp_234_reload   |   in|   32|     ap_none|               temp_234_reload|        scalar|
+|temp_235_reload   |   in|   32|     ap_none|               temp_235_reload|        scalar|
+|temp_236_reload   |   in|   32|     ap_none|               temp_236_reload|        scalar|
+|temp_237_reload   |   in|   32|     ap_none|               temp_237_reload|        scalar|
+|temp_238_reload   |   in|   32|     ap_none|               temp_238_reload|        scalar|
+|temp_239_reload   |   in|   32|     ap_none|               temp_239_reload|        scalar|
+|temp_240_reload   |   in|   32|     ap_none|               temp_240_reload|        scalar|
+|temp_241_reload   |   in|   32|     ap_none|               temp_241_reload|        scalar|
+|temp_242_reload   |   in|   32|     ap_none|               temp_242_reload|        scalar|
+|temp_243_reload   |   in|   32|     ap_none|               temp_243_reload|        scalar|
+|temp_244_reload   |   in|   32|     ap_none|               temp_244_reload|        scalar|
+|temp_245_reload   |   in|   32|     ap_none|               temp_245_reload|        scalar|
+|temp_246_reload   |   in|   32|     ap_none|               temp_246_reload|        scalar|
+|temp_247_reload   |   in|   32|     ap_none|               temp_247_reload|        scalar|
+|temp_248_reload   |   in|   32|     ap_none|               temp_248_reload|        scalar|
+|temp_249_reload   |   in|   32|     ap_none|               temp_249_reload|        scalar|
+|temp_250_reload   |   in|   32|     ap_none|               temp_250_reload|        scalar|
+|temp_251_reload   |   in|   32|     ap_none|               temp_251_reload|        scalar|
+|temp_252_reload   |   in|   32|     ap_none|               temp_252_reload|        scalar|
+|temp_253_reload   |   in|   32|     ap_none|               temp_253_reload|        scalar|
+|temp_254_reload   |   in|   32|     ap_none|               temp_254_reload|        scalar|
+|temp_255_reload   |   in|   32|     ap_none|               temp_255_reload|        scalar|
+|sum_i_out         |  out|   32|      ap_vld|                     sum_i_out|       pointer|
+|sum_i_out_ap_vld  |  out|    1|      ap_vld|                     sum_i_out|       pointer|
+|sum_r_out         |  out|   32|      ap_vld|                     sum_r_out|       pointer|
+|sum_r_out_ap_vld  |  out|    1|      ap_vld|                     sum_r_out|       pointer|
++------------------+-----+-----+------------+------------------------------+--------------+
+

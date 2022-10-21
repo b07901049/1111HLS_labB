@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vivadoHLSLog:LogRoot xmlns:vivadoHLSLog="www.xilinx.com/vivadoHLSLog">
+  <errorLogs>
+    <logs>
+      <synLog/>
+      <simLog>
+        <logs message="ERROR: [COSIM 212-4] *** C/RTL co-simulation finished: FAIL ***" projectName="dft_256_v2" solutionName="dataflow_1" date="2022-10-21T19:40:11.021+0800"/>
+        <logs message="ERROR: [COSIM 212-5] *** C/RTL co-simulation file generation failed. ***" projectName="dft_256_v2" solutionName="dataflow_1" date="2022-10-21T19:40:10.936+0800"/>
+        <logs message="ERROR: [COSIM 212-366] Cannot delete directory  'sim/verilog': it is being used by another program. Please close the program and try again.&#xD;&#xA;error deleting &quot;sim/verilog&quot;: permission denied" projectName="dft_256_v2" solutionName="dataflow_1" date="2022-10-21T19:40:10.934+0800"/>
+      </simLog>
+      <mgLog/>
+      <packageLog/>
+      <csimLog/>
+    </logs>
+  </errorLogs>
+  <warningLogs>
+    <logs>
+      <synLog>
+        <logs message="WARNING: [RTGEN 206-101] Port 'dft/imag_sample_we0' has no fanin or fanout and is left dangling.&#xD;&#xA;               Please use C simulation to confirm this function argument can be read from or written to." projectName="dft_256_v2" solutionName="dataflow_1" date="2022-10-21T19:36:53.603+0800" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Port 'dft/imag_sample_q0' has no fanin or fanout and is left dangling.&#xD;&#xA;               Please use C simulation to confirm this function argument can be read from or written to." projectName="dft_256_v2" solutionName="dataflow_1" date="2022-10-21T19:36:53.584+0800" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Port 'dft/imag_sample_d0' has no fanin or fanout and is left dangling.&#xD;&#xA;               Please use C simulation to confirm this function argument can be read from or written to." projectName="dft_256_v2" solutionName="dataflow_1" date="2022-10-21T19:36:53.582+0800" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Port 'dft/imag_sample_ce0' has no fanin or fanout and is left dangling.&#xD;&#xA;               Please use C simulation to confirm this function argument can be read from or written to." projectName="dft_256_v2" solutionName="dataflow_1" date="2022-10-21T19:36:53.580+0800" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Port 'dft/imag_sample_address0' has no fanin or fanout and is left dangling.&#xD;&#xA;               Please use C simulation to confirm this function argument can be read from or written to." projectName="dft_256_v2" solutionName="dataflow_1" date="2022-10-21T19:36:53.579+0800" type="Warning"/>
+        <logs message="WARNING: [HLS 200-786] Detected dataflow-on-top in function  'dft' (dft_256_v2/dft.cpp:5:1)  with default interface mode 'ap_ctrl_hs'. Overlapped execution of successive kernel calls will not happen unless interface mode 'ap_ctrl_chain' is used (or 'ap_ctrl_none' for a purely data-driven design).&#xD;&#xA;Resolution: For help on HLS 200-786 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.1;t=hls+guidance;d=200-786.html" projectName="dft_256_v2" solutionName="dataflow_1" date="2022-10-21T19:35:31.457+0800" type="Warning"/>
+        <logs message="WARNING: [HLS 207-5292] unused parameter 'imag_sample' (dft_256_v2/dft.cpp:5:78)" projectName="dft_256_v2" solutionName="dataflow_1" date="2022-10-21T19:35:25.489+0800" type="Warning"/>
+        <logs message="WARNING: [HLS 200-471] Dataflow form checks found 1 issue(s) in file dft_256_v2/dft.cpp&#xD;&#xA;Resolution: For help on HLS 200-471 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.1;t=hls+guidance;d=200-471.html" projectName="dft_256_v2" solutionName="dataflow_1" date="2022-10-21T19:35:25.485+0800" type="Warning"/>
+        <logs message="WARNING: [HLS 214-114] Since the only kind of statements allowed in a canonical dataflow region are variable declarations and function calls, the compiler may not be able to correctly handle the region (dft_256_v2/dft.cpp:22:9)&#xD;&#xA;Resolution: For help on HLS 214-114 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.1;t=hls+guidance;d=214-114.html" projectName="dft_256_v2" solutionName="dataflow_1" date="2022-10-21T19:35:25.360+0800" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Port 'dft/imag_sample_63_q1' has no fanin or fanout and is left dangling.&#xD;&#xA;               Please use C simulation to confirm this function argument can be read from or written to." projectName="dft_256_v2" solutionName="solution2" date="2022-10-21T18:32:13.799+0800" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'dft/imag_sample_63_d1' to 0." projectName="dft_256_v2" solutionName="solution2" date="2022-10-21T18:32:13.737+0800" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Port 'dft/imag_sample_63_d1' has no fanin or fanout and is left dangling.&#xD;&#xA;               Please use C simulation to confirm this function argument can be read from or written to." projectName="dft_256_v2" solutionName="solution2" date="2022-10-21T18:32:13.719+0800" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'dft/imag_sample_63_we1' to 0." projectName="dft_256_v2" solutionName="solution2" date="2022-10-21T18:32:13.704+0800" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Port 'dft/imag_sample_63_we1' has no fanin or fanout and is left dangling.&#xD;&#xA;               Please use C simulation to confirm this function argument can be read from or written to." projectName="dft_256_v2" solutionName="solution2" date="2022-10-21T18:32:13.683+0800" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'dft/imag_sample_63_ce1' to 0." projectName="dft_256_v2" solutionName="solution2" date="2022-10-21T18:32:13.666+0800" type="Warning"/>
+      </synLog>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog/>
+    </logs>
+  </warningLogs>
+</vivadoHLSLog:LogRoot>

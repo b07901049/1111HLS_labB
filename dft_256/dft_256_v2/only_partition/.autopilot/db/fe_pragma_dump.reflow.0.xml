@@ -1,0 +1,7 @@
+<pragmas>
+<pragma file="dft_256_v2/dft.cpp" line="7" pragmaType="array_partition" parentfunction="dft" dim="1" factor="0" mode="complete" dynamic="0" variable="real_sample"/>
+<pragma file="dft_256_v2/dft.cpp" line="8" pragmaType="array_partition" parentfunction="dft" dim="1" factor="0" mode="complete" dynamic="0" variable="imag_sample"/>
+<pragma file="dft_256_v2/dft.cpp" line="9" pragmaType="array_partition" parentfunction="dft" dim="1" factor="0" mode="complete" dynamic="0" variable="real_output"/>
+<pragma file="dft_256_v2/dft.cpp" line="10" pragmaType="array_partition" parentfunction="dft" dim="1" factor="0" mode="complete" dynamic="0" variable="imag_output"/>
+<pragma file="dft_256_v2/dft.cpp" line="16" pragmaType="array_partition" parentfunction="dft" dim="1" factor="0" mode="complete" dynamic="0" variable=""/>
+</pragmas>

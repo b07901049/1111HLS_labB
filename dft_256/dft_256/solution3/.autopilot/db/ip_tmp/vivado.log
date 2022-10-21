@@ -1,0 +1,23 @@
+#-----------------------------------------------------------
+# Vivado v2022.1 (64-bit)
+# SW Build 3526262 on Mon Apr 18 15:48:16 MDT 2022
+# IP Build 3524634 on Mon Apr 18 20:55:01 MDT 2022
+# Start of session at: Fri Oct 21 13:18:28 2022
+# Process ID: 19048
+# Current directory: D:/1111HLS/LabB/dft_256/dft_256/solution3/.autopilot/db/ip_tmp
+# Command line: vivado.exe -notrace -log vivado.log -mode batch -source run_vivado_gen_ip.tcl
+# Log file: D:/1111HLS/LabB/dft_256/dft_256/solution3/.autopilot/db/ip_tmp/vivado.log
+# Journal file: D:/1111HLS/LabB/dft_256/dft_256/solution3/.autopilot/db/ip_tmp\vivado.jou
+# Running On: DESKTOP-DR3I53C, OS: Windows, CPU Frequency: 2496 MHz, CPU Physical cores: 6, Host memory: 34137 MB
+#-----------------------------------------------------------
+source run_vivado_gen_ip.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Xilinx/Vivado/2022.1/data/ip'.
+WARNING: [IP_Flow 19-4832] The IP name 'dft_fadd_32ns_32ns_32_5_full_dsp_1_ip' you have specified is long. The Windows operating system has path length limitations. It is recommended you use shorter names to reduce the likelihood of issues.
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'dft_fadd_32ns_32ns_32_5_full_dsp_1_ip'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'dft_fadd_32ns_32ns_32_5_full_dsp_1_ip'...
+WARNING: [IP_Flow 19-4832] The IP name 'dft_fmul_32ns_32ns_32_4_max_dsp_1_ip' you have specified is long. The Windows operating system has path length limitations. It is recommended you use shorter names to reduce the likelihood of issues.
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'dft_fmul_32ns_32ns_32_4_max_dsp_1_ip'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'dft_fmul_32ns_32ns_32_4_max_dsp_1_ip'...
+INFO: [Common 17-206] Exiting Vivado at Fri Oct 21 13:18:39 2022...

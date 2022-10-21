@@ -1,0 +1,45 @@
+<xilinx:hls_fe_msgs>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="D:/1111HLS/LabB/dft_256/dft_256_v2/solution2/csynth.tcl:17:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="dft" ARG_PragmaIsValid="1" ARG_PragmaOptions="name=dft" ARG_PragmaType="top" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="D:/1111HLS/LabB/dft_256/dft_256_v2/solution2/directives.tcl:6:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="dft" ARG_PragmaIsValid="1" ARG_PragmaOptions="name=dft" ARG_PragmaType="top" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="dft_256_v2/dft.cpp:7:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="dft" ARG_PragmaIsValid="1" ARG_PragmaOptions="dim=1 factor=64 type=block variable=real_sample" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="dft_256_v2/dft.cpp:8:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="dft" ARG_PragmaIsValid="1" ARG_PragmaOptions="dim=1 factor=64 type=block variable=imag_sample" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="dft_256_v2/dft.cpp:9:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="dft" ARG_PragmaIsValid="1" ARG_PragmaOptions="dim=1 factor=64 type=block variable=real_output" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="dft_256_v2/dft.cpp:10:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="dft" ARG_PragmaIsValid="1" ARG_PragmaOptions="dim=1 factor=64 type=block variable=imag_output" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="dft_256_v2/dft.cpp:16:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="dft" ARG_PragmaIsValid="1" ARG_PragmaOptions="dim=1 factor=64 type=block variable=temp" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="dft_256_v2/dft.cpp:29:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="dft" ARG_PragmaIsValid="1" ARG_PragmaOptions="factor=32" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-188" msg_severity="INFO" msg_loc="dft_256_v2/dft.cpp:6:0" msg_body="Unrolling loop 'VITIS_LOOP_28_3' (dft_256_v2/dft.cpp:28:20) in function 'dft' partially with a factor of 32">
+        <args Factor="32" LoopLoc="dft_256_v2/dft.cpp:28:20" LoopName="VITIS_LOOP_28_3"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="dft_256_v2/dft.cpp:14:8" msg_body="Applying array_partition to 'temp': Block partitioning with factor 64 on dimension 1.">
+        <args Dim="1" Factor="64" Mode="Block" UOName="temp"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="dft_256_v2/dft.cpp:6:0" msg_body="Applying array_partition to 'real_sample': Block partitioning with factor 64 on dimension 1.">
+        <args Dim="1" Factor="64" Mode="Block" UOName="real_sample"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="dft_256_v2/dft.cpp:6:0" msg_body="Applying array_partition to 'imag_sample': Block partitioning with factor 64 on dimension 1.">
+        <args Dim="1" Factor="64" Mode="Block" UOName="imag_sample"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="dft_256_v2/dft.cpp:6:0" msg_body="Applying array_partition to 'real_output': Block partitioning with factor 64 on dimension 1.">
+        <args Dim="1" Factor="64" Mode="Block" UOName="real_output"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="dft_256_v2/dft.cpp:6:0" msg_body="Applying array_partition to 'imag_output': Block partitioning with factor 64 on dimension 1.">
+        <args Dim="1" Factor="64" Mode="Block" UOName="imag_output"/>
+    </msg>
+</xilinx:hls_fe_msgs>
+

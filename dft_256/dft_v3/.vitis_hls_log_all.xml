@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vivadoHLSLog:LogRoot xmlns:vivadoHLSLog="www.xilinx.com/vivadoHLSLog">
+  <errorLogs>
+    <logs>
+      <csimLog>
+        <logs message="ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s)." projectName="dft_v3" solutionName="solution1" date="2022-10-21T19:51:48.444+0800"/>
+      </csimLog>
+    </logs>
+  </errorLogs>
+  <warningLogs>
+    <logs>
+      <csimLog/>
+    </logs>
+  </warningLogs>
+</vivadoHLSLog:LogRoot>

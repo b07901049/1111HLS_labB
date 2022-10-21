@@ -1,0 +1,5 @@
+,AESL_inst_dft,,module_status1.csv
+,grp_dft_Pipeline_VITIS_LOOP_12_1_fu_94,,module_status2.csv
+,grp_dft_Pipeline_VITIS_LOOP_31_4_fu_106,,module_status3.csv
+,grp_dft_Pipeline_VITIS_LOOP_20_3_fu_116,,module_status4.csv
+grp_dft_Pipeline_VITIS_LOOP_20_3_fu_116,grp_sin_or_cos_float_s_fu_144,,module_status5.csv

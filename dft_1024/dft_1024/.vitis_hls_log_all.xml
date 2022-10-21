@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vivadoHLSLog:LogRoot xmlns:vivadoHLSLog="www.xilinx.com/vivadoHLSLog">
+  <errorLogs>
+    <logs>
+      <synLog/>
+    </logs>
+  </errorLogs>
+  <warningLogs>
+    <logs>
+      <synLog>
+        <logs message="WARNING: [RTGEN 206-101] Port 'dft/imag_sample_63_q1' has no fanin or fanout and is left dangling.&#xD;&#xA;               Please use C simulation to confirm this function argument can be read from or written to." projectName="dft_1024" solutionName="solution1" date="2022-10-21T19:07:55.575+0800" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'dft/imag_sample_63_d1' to 0." projectName="dft_1024" solutionName="solution1" date="2022-10-21T19:07:55.281+0800" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Port 'dft/imag_sample_63_d1' has no fanin or fanout and is left dangling.&#xD;&#xA;               Please use C simulation to confirm this function argument can be read from or written to." projectName="dft_1024" solutionName="solution1" date="2022-10-21T19:07:55.266+0800" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'dft/imag_sample_63_we1' to 0." projectName="dft_1024" solutionName="solution1" date="2022-10-21T19:07:55.250+0800" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Port 'dft/imag_sample_63_we1' has no fanin or fanout and is left dangling.&#xD;&#xA;               Please use C simulation to confirm this function argument can be read from or written to." projectName="dft_1024" solutionName="solution1" date="2022-10-21T19:07:55.234+0800" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'dft/imag_sample_63_ce1' to 0." projectName="dft_1024" solutionName="solution1" date="2022-10-21T19:07:55.218+0800" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Port 'dft/imag_sample_63_ce1' has no fanin or fanout and is left dangling.&#xD;&#xA;               Please use C simulation to confirm this function argument can be read from or written to." projectName="dft_1024" solutionName="solution1" date="2022-10-21T19:07:55.202+0800" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'dft/imag_sample_63_address1' to 0." projectName="dft_1024" solutionName="solution1" date="2022-10-21T19:07:55.186+0800" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Port 'dft/imag_sample_63_address1' has no fanin or fanout and is left dangling.&#xD;&#xA;               Please use C simulation to confirm this function argument can be read from or written to." projectName="dft_1024" solutionName="solution1" date="2022-10-21T19:07:55.169+0800" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Port 'dft/imag_sample_63_q0' has no fanin or fanout and is left dangling.&#xD;&#xA;               Please use C simulation to confirm this function argument can be read from or written to." projectName="dft_1024" solutionName="solution1" date="2022-10-21T19:07:55.153+0800" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'dft/imag_sample_63_d0' to 0." projectName="dft_1024" solutionName="solution1" date="2022-10-21T19:07:55.137+0800" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Port 'dft/imag_sample_63_d0' has no fanin or fanout and is left dangling.&#xD;&#xA;               Please use C simulation to confirm this function argument can be read from or written to." projectName="dft_1024" solutionName="solution1" date="2022-10-21T19:07:55.121+0800" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'dft/imag_sample_63_we0' to 0." projectName="dft_1024" solutionName="solution1" date="2022-10-21T19:07:55.105+0800" type="Warning"/>
+      </synLog>
+    </logs>
+  </warningLogs>
+</vivadoHLSLog:LogRoot>

@@ -1,0 +1,1564 @@
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2022.1 (64-bit)
+Tool Version Limit: 2022.04
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-1611] Setting target device to 'xc7z020-clg484-1'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_part xc7z020clg484-1 
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+INFO: [HLS 200-1510] Running: csim_design -quiet 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-111] Finished Command csim_design CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.899 seconds; current allocated memory: 0.000 MB.
+INFO: [HLS 200-112] Total CPU user time: 3 seconds. Total CPU system time: 1 seconds. Total elapsed time: 2.897 seconds; peak allocated memory: 1.465 GB.
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2022.1 (64-bit)
+Tool Version Limit: 2022.04
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-1611] Setting target device to 'xc7z020-clg484-1'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_part xc7z020clg484-1 
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0 seconds. CPU system time: 1 seconds. Elapsed time: 0.008 seconds; current allocated memory: 1.464 GB.
+INFO: [HLS 200-10] Analyzing design file 'dft_256_v2/dft.cpp' ... 
+WARNING: [HLS 214-114] Since the only kind of statements allowed in a canonical dataflow region are variable declarations and function calls, the compiler may not be able to correctly handle the region (dft_256_v2/dft.cpp:20:9)
+WARNING: [HLS 200-471] Dataflow form checks found 1 issue(s) in file dft_256_v2/dft.cpp
+WARNING: [HLS 207-5292] unused parameter 'imag_sample' (dft_256_v2/dft.cpp:5:78)
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.537 seconds; current allocated memory: 1.464 GB.
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 2.594 seconds; current allocated memory: 1.464 GB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.001 seconds; current allocated memory: 1.464 GB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.01 seconds; current allocated memory: 1.464 GB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.006 seconds; current allocated memory: 1.464 GB.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_16_1' (dft_256_v2/dft.cpp:17) in function 'dft' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_22_3' (dft_256_v2/dft.cpp:12) in function 'dft' automatically.
+INFO: [XFORM 203-721] Changing loop 'Loop_VITIS_LOOP_16_1_proc' (dft_256_v2/dft.cpp:17) to a process function for dataflow in function 'dft'.
+INFO: [XFORM 203-721] Changing loop 'Loop_VITIS_LOOP_21_2_proc' (dft_256_v2/dft.cpp:12) to a process function for dataflow in function 'dft'.
+WARNING: [HLS 200-786] Detected dataflow-on-top in function  'dft' (dft_256_v2/dft.cpp:5:1)  with default interface mode 'ap_ctrl_hs'. Overlapped execution of successive kernel calls will not happen unless interface mode 'ap_ctrl_chain' is used (or 'ap_ctrl_none' for a purely data-driven design).
+INFO: [XFORM 203-712] Applying dataflow to function 'dft' (dft_256_v2/dft.cpp:5:1), detected/extracted 2 process function(s): 
+	 'Loop_VITIS_LOOP_16_1_proc'
+	 'Loop_VITIS_LOOP_21_2_proc'.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.039 seconds; current allocated memory: 1.464 GB.
+WARNING: [HLS 200-960] Cannot flatten loop 'VITIS_LOOP_21_2' (dft_256_v2/dft.cpp:12:9) in function 'Loop_VITIS_LOOP_21_2_proc' the outer loop is not a perfect loop.
+INFO: [HLS 200-472] Inferring partial write operation for 'temp' (dft_256_v2/dft.cpp:17:11)
+WARNING: [HLS 200-1449] Process Loop_VITIS_LOOP_21_2_proc has both a predecessor and reads an input from its caller (see the GUI dataflow viewer). This may lead to lower throughput. Consider copying this input via a predecessor process.
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.033 seconds; current allocated memory: 1.464 GB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'dft' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'Loop_VITIS_LOOP_16_1_proc' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_16_1'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 2, loop 'VITIS_LOOP_16_1'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.065 seconds; current allocated memory: 1.464 GB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.016 seconds; current allocated memory: 1.464 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'Loop_VITIS_LOOP_21_2_proc_Pipeline_VITIS_LOOP_22_3' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_22_3'.
+WARNING: [HLS 200-880] The II Violation in module 'Loop_VITIS_LOOP_21_2_proc_Pipeline_VITIS_LOOP_22_3' (loop 'VITIS_LOOP_22_3'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 0) between 'store' operation ('add2_write_ln27', dft_256_v2/dft.cpp:27) of variable 'add', dft_256_v2/dft.cpp:27 on local variable 'add2' and 'load' operation ('add2_load', dft_256_v2/dft.cpp:27) on local variable 'add2'.
+WARNING: [HLS 200-880] The II Violation in module 'Loop_VITIS_LOOP_21_2_proc_Pipeline_VITIS_LOOP_22_3' (loop 'VITIS_LOOP_22_3'): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 0) between 'store' operation ('add2_write_ln27', dft_256_v2/dft.cpp:27) of variable 'add', dft_256_v2/dft.cpp:27 on local variable 'add2' and 'load' operation ('add2_load', dft_256_v2/dft.cpp:27) on local variable 'add2'.
+WARNING: [HLS 200-880] The II Violation in module 'Loop_VITIS_LOOP_21_2_proc_Pipeline_VITIS_LOOP_22_3' (loop 'VITIS_LOOP_22_3'): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 0) between 'store' operation ('add2_write_ln27', dft_256_v2/dft.cpp:27) of variable 'add', dft_256_v2/dft.cpp:27 on local variable 'add2' and 'load' operation ('add2_load', dft_256_v2/dft.cpp:27) on local variable 'add2'.
+WARNING: [HLS 200-880] The II Violation in module 'Loop_VITIS_LOOP_21_2_proc_Pipeline_VITIS_LOOP_22_3' (loop 'VITIS_LOOP_22_3'): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 0) between 'store' operation ('add2_write_ln27', dft_256_v2/dft.cpp:27) of variable 'add', dft_256_v2/dft.cpp:27 on local variable 'add2' and 'load' operation ('add2_load', dft_256_v2/dft.cpp:27) on local variable 'add2'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 5, Depth = 13, loop 'VITIS_LOOP_22_3'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.064 seconds; current allocated memory: 1.464 GB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.057 seconds; current allocated memory: 1.464 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'Loop_VITIS_LOOP_21_2_proc' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.053 seconds; current allocated memory: 1.464 GB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.029 seconds; current allocated memory: 1.464 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'dft' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.036 seconds; current allocated memory: 1.464 GB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.026 seconds; current allocated memory: 1.464 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'Loop_VITIS_LOOP_16_1_proc' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'Loop_VITIS_LOOP_16_1_proc' pipeline 'VITIS_LOOP_16_1' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Finished creating RTL model for 'Loop_VITIS_LOOP_16_1_proc'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.039 seconds; current allocated memory: 1.464 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'Loop_VITIS_LOOP_21_2_proc_Pipeline_VITIS_LOOP_22_3' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SYN 201-210] Renamed object name 'Loop_VITIS_LOOP_21_2_proc_Pipeline_VITIS_LOOP_22_3_cos_coefficients_table_ROM_AUTO_1R' to 'Loop_VITIS_LOOP_21_2_proc_Pipeline_VITIS_LOOP_22_3_cos_coefficients_table_ROMbkb' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'Loop_VITIS_LOOP_21_2_proc_Pipeline_VITIS_LOOP_22_3_sin_coefficients_table_ROM_AUTO_1R' to 'Loop_VITIS_LOOP_21_2_proc_Pipeline_VITIS_LOOP_22_3_sin_coefficients_table_ROMcud' due to the length limit 80
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'Loop_VITIS_LOOP_21_2_proc_Pipeline_VITIS_LOOP_22_3' pipeline 'VITIS_LOOP_22_3' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'fadd_32ns_32ns_32_5_full_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fmul_32ns_32ns_32_4_max_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'Loop_VITIS_LOOP_21_2_proc_Pipeline_VITIS_LOOP_22_3'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.32 seconds; current allocated memory: 1.464 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'Loop_VITIS_LOOP_21_2_proc' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'Loop_VITIS_LOOP_21_2_proc'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.109 seconds; current allocated memory: 1.464 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'dft' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'dft/real_sample' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'dft/imag_sample' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'dft/real_output' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'dft/imag_output' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'dft' to 'ap_ctrl_hs'.
+WARNING: [RTGEN 206-101] Port 'dft/imag_sample_address0' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'dft/imag_sample_ce0' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'dft/imag_sample_d0' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'dft/imag_sample_q0' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'dft/imag_sample_we0' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'dft'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.073 seconds; current allocated memory: 1.464 GB.
+INFO: [RTMG 210-279] Implementing memory 'dft_Loop_VITIS_LOOP_21_2_proc_Pipeline_VITIS_LOOP_22_3_cos_coefficients_table_ROMbkb' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'dft_Loop_VITIS_LOOP_21_2_proc_Pipeline_VITIS_LOOP_22_3_sin_coefficients_table_ROMcud' using auto ROMs.
+INFO: [HLS 200-741] Implementing PIPO dft_temp_RAM_AUTO_1R1W_memcore using a single memory for all blocks
+INFO: [RTMG 210-278] Implementing memory 'dft_temp_RAM_AUTO_1R1W_memcore_ram (RAM)' using auto RAMs.
+INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.438 seconds; current allocated memory: 1.464 GB.
+INFO: [HLS 200-111] Finished Updating report files: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.337 seconds; current allocated memory: 1.464 GB.
+INFO: [VHDL 208-304] Generating VHDL RTL for dft.
+INFO: [VLOG 209-307] Generating Verilog RTL for dft.
+INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were NOT satisfied.
+INFO: [HLS 200-789] **** Estimated Fmax: 137.82 MHz
+INFO: [HLS 200-111] Finished Command csynth_design CPU user time: 1 seconds. CPU system time: 1 seconds. Elapsed time: 4.918 seconds; current allocated memory: 0.000 MB.
+INFO: [HLS 200-112] Total CPU user time: 4 seconds. Total CPU system time: 1 seconds. Total elapsed time: 6.868 seconds; peak allocated memory: 1.464 GB.
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2022.1 (64-bit)
+Tool Version Limit: 2022.04
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-1611] Setting target device to 'xc7z020-clg484-1'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_part xc7z020clg484-1 
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.008 seconds; current allocated memory: 1.464 GB.
+INFO: [HLS 200-10] Analyzing design file 'dft_256_v2/dft.cpp' ... 
+WARNING: [HLS 214-114] Since the only kind of statements allowed in a canonical dataflow region are variable declarations and function calls, the compiler may not be able to correctly handle the region (dft_256_v2/dft.cpp:20:9)
+WARNING: [HLS 200-471] Dataflow form checks found 1 issue(s) in file dft_256_v2/dft.cpp
+WARNING: [HLS 207-5292] unused parameter 'imag_sample' (dft_256_v2/dft.cpp:5:78)
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.544 seconds; current allocated memory: 1.464 GB.
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 2.554 seconds; current allocated memory: 1.464 GB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.001 seconds; current allocated memory: 1.464 GB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.009 seconds; current allocated memory: 1.464 GB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.007 seconds; current allocated memory: 1.464 GB.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_16_1' (dft_256_v2/dft.cpp:17) in function 'dft' automatically.
+INFO: [XFORM 203-721] Changing loop 'Loop_VITIS_LOOP_16_1_proc' (dft_256_v2/dft.cpp:17) to a process function for dataflow in function 'dft'.
+INFO: [XFORM 203-721] Changing loop 'Loop_VITIS_LOOP_21_2_proc' (dft_256_v2/dft.cpp:12) to a process function for dataflow in function 'dft'.
+WARNING: [HLS 200-786] Detected dataflow-on-top in function  'dft' (dft_256_v2/dft.cpp:5:1)  with default interface mode 'ap_ctrl_hs'. Overlapped execution of successive kernel calls will not happen unless interface mode 'ap_ctrl_chain' is used (or 'ap_ctrl_none' for a purely data-driven design).
+INFO: [XFORM 203-712] Applying dataflow to function 'dft' (dft_256_v2/dft.cpp:5:1), detected/extracted 2 process function(s): 
+	 'Loop_VITIS_LOOP_16_1_proc'
+	 'Loop_VITIS_LOOP_21_2_proc'.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.039 seconds; current allocated memory: 1.464 GB.
+WARNING: [HLS 200-960] Cannot flatten loop 'VITIS_LOOP_21_2' (dft_256_v2/dft.cpp:12:9) in function 'Loop_VITIS_LOOP_21_2_proc' the outer loop is not a perfect loop.
+INFO: [HLS 200-472] Inferring partial write operation for 'temp' (dft_256_v2/dft.cpp:17:11)
+WARNING: [HLS 200-1449] Process Loop_VITIS_LOOP_21_2_proc has both a predecessor and reads an input from its caller (see the GUI dataflow viewer). This may lead to lower throughput. Consider copying this input via a predecessor process.
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.032 seconds; current allocated memory: 1.464 GB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'dft' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'Loop_VITIS_LOOP_16_1_proc' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_16_1'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 2, loop 'VITIS_LOOP_16_1'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.055 seconds; current allocated memory: 1.464 GB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.015 seconds; current allocated memory: 1.464 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'Loop_VITIS_LOOP_21_2_proc_Pipeline_VITIS_LOOP_22_3' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_22_3'.
+WARNING: [HLS 200-880] The II Violation in module 'Loop_VITIS_LOOP_21_2_proc_Pipeline_VITIS_LOOP_22_3' (loop 'VITIS_LOOP_22_3'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 0) between 'store' operation ('add2_write_ln27', dft_256_v2/dft.cpp:27) of variable 'add', dft_256_v2/dft.cpp:27 on local variable 'add2' and 'load' operation ('add2_load', dft_256_v2/dft.cpp:27) on local variable 'add2'.
+WARNING: [HLS 200-880] The II Violation in module 'Loop_VITIS_LOOP_21_2_proc_Pipeline_VITIS_LOOP_22_3' (loop 'VITIS_LOOP_22_3'): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 0) between 'store' operation ('add2_write_ln27', dft_256_v2/dft.cpp:27) of variable 'add', dft_256_v2/dft.cpp:27 on local variable 'add2' and 'load' operation ('add2_load', dft_256_v2/dft.cpp:27) on local variable 'add2'.
+WARNING: [HLS 200-880] The II Violation in module 'Loop_VITIS_LOOP_21_2_proc_Pipeline_VITIS_LOOP_22_3' (loop 'VITIS_LOOP_22_3'): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 0) between 'store' operation ('add2_write_ln27', dft_256_v2/dft.cpp:27) of variable 'add', dft_256_v2/dft.cpp:27 on local variable 'add2' and 'load' operation ('add2_load', dft_256_v2/dft.cpp:27) on local variable 'add2'.
+WARNING: [HLS 200-880] The II Violation in module 'Loop_VITIS_LOOP_21_2_proc_Pipeline_VITIS_LOOP_22_3' (loop 'VITIS_LOOP_22_3'): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 0) between 'store' operation ('add2_write_ln27', dft_256_v2/dft.cpp:27) of variable 'add', dft_256_v2/dft.cpp:27 on local variable 'add2' and 'load' operation ('add2_load', dft_256_v2/dft.cpp:27) on local variable 'add2'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 5, Depth = 13, loop 'VITIS_LOOP_22_3'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.065 seconds; current allocated memory: 1.464 GB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.059 seconds; current allocated memory: 1.464 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'Loop_VITIS_LOOP_21_2_proc' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.051 seconds; current allocated memory: 1.464 GB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.029 seconds; current allocated memory: 1.464 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'dft' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.036 seconds; current allocated memory: 1.464 GB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.026 seconds; current allocated memory: 1.464 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'Loop_VITIS_LOOP_16_1_proc' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'Loop_VITIS_LOOP_16_1_proc' pipeline 'VITIS_LOOP_16_1' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Finished creating RTL model for 'Loop_VITIS_LOOP_16_1_proc'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.039 seconds; current allocated memory: 1.464 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'Loop_VITIS_LOOP_21_2_proc_Pipeline_VITIS_LOOP_22_3' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SYN 201-210] Renamed object name 'Loop_VITIS_LOOP_21_2_proc_Pipeline_VITIS_LOOP_22_3_cos_coefficients_table_ROM_AUTO_1R' to 'Loop_VITIS_LOOP_21_2_proc_Pipeline_VITIS_LOOP_22_3_cos_coefficients_table_ROMbkb' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'Loop_VITIS_LOOP_21_2_proc_Pipeline_VITIS_LOOP_22_3_sin_coefficients_table_ROM_AUTO_1R' to 'Loop_VITIS_LOOP_21_2_proc_Pipeline_VITIS_LOOP_22_3_sin_coefficients_table_ROMcud' due to the length limit 80
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'Loop_VITIS_LOOP_21_2_proc_Pipeline_VITIS_LOOP_22_3' pipeline 'VITIS_LOOP_22_3' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'fadd_32ns_32ns_32_5_full_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fmul_32ns_32ns_32_4_max_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'Loop_VITIS_LOOP_21_2_proc_Pipeline_VITIS_LOOP_22_3'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.172 seconds; current allocated memory: 1.464 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'Loop_VITIS_LOOP_21_2_proc' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'Loop_VITIS_LOOP_21_2_proc'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.111 seconds; current allocated memory: 1.464 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'dft' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'dft/real_sample' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'dft/imag_sample' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'dft/real_output' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'dft/imag_output' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'dft' to 'ap_ctrl_hs'.
+WARNING: [RTGEN 206-101] Port 'dft/imag_sample_address0' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'dft/imag_sample_ce0' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'dft/imag_sample_d0' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'dft/imag_sample_q0' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'dft/imag_sample_we0' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'dft'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.071 seconds; current allocated memory: 1.464 GB.
+INFO: [RTMG 210-279] Implementing memory 'dft_Loop_VITIS_LOOP_21_2_proc_Pipeline_VITIS_LOOP_22_3_cos_coefficients_table_ROMbkb' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'dft_Loop_VITIS_LOOP_21_2_proc_Pipeline_VITIS_LOOP_22_3_sin_coefficients_table_ROMcud' using auto ROMs.
+INFO: [HLS 200-741] Implementing PIPO dft_temp_RAM_AUTO_1R1W_memcore using a single memory for all blocks
+INFO: [RTMG 210-278] Implementing memory 'dft_temp_RAM_AUTO_1R1W_memcore_ram (RAM)' using auto RAMs.
+INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.433 seconds; current allocated memory: 1.464 GB.
+INFO: [HLS 200-111] Finished Updating report files: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.336 seconds; current allocated memory: 1.464 GB.
+INFO: [VHDL 208-304] Generating VHDL RTL for dft.
+INFO: [VLOG 209-307] Generating Verilog RTL for dft.
+INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were NOT satisfied.
+INFO: [HLS 200-789] **** Estimated Fmax: 137.82 MHz
+INFO: [HLS 200-111] Finished Command csynth_design CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 4.721 seconds; current allocated memory: 0.000 MB.
+INFO: [HLS 200-112] Total CPU user time: 4 seconds. Total CPU system time: 1 seconds. Total elapsed time: 6.701 seconds; peak allocated memory: 1.464 GB.
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2022.1 (64-bit)
+Tool Version Limit: 2022.04
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-1611] Setting target device to 'xc7z020-clg484-1'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_part xc7z020clg484-1 
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.009 seconds; current allocated memory: 1.464 GB.
+INFO: [HLS 200-10] Analyzing design file 'dft_256_v2/dft.cpp' ... 
+WARNING: [HLS 214-114] Since the only kind of statements allowed in a canonical dataflow region are variable declarations and function calls, the compiler may not be able to correctly handle the region (dft_256_v2/dft.cpp:20:9)
+WARNING: [HLS 200-471] Dataflow form checks found 1 issue(s) in file dft_256_v2/dft.cpp
+WARNING: [HLS 207-5292] unused parameter 'imag_sample' (dft_256_v2/dft.cpp:5:78)
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.541 seconds; current allocated memory: 1.464 GB.
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_23_3' is marked as complete unroll implied by the pipeline pragma (dft_256_v2/dft.cpp:23:19)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_23_3' (dft_256_v2/dft.cpp:23:19) in function 'dft' completely with a factor of 256 (dft_256_v2/dft.cpp:6:0)
+INFO: [HLS 214-270] Inferring pragma 'array_partition type=complete dim=1' for array 'temp' due to pipeline pragma (dft_256_v2/dft.cpp:22:9)
+INFO: [HLS 214-248] Applying array_partition to 'temp': Complete partitioning on dimension 1. (dft_256_v2/dft.cpp:14:8)
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 3.388 seconds; current allocated memory: 1.464 GB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.001 seconds; current allocated memory: 1.464 GB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.463 seconds; current allocated memory: 1.464 GB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.21 seconds; current allocated memory: 1.464 GB.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_16_1' (dft_256_v2/dft.cpp:17) in function 'dft' automatically.
+INFO: [XFORM 203-721] Changing loop 'Loop_VITIS_LOOP_16_1_proc' (dft_256_v2/dft.cpp:17) to a process function for dataflow in function 'dft'.
+INFO: [XFORM 203-721] Changing loop 'Loop_VITIS_LOOP_21_2_proc' (dft_256_v2/dft.cpp:12) to a process function for dataflow in function 'dft'.
+WARNING: [HLS 200-786] Detected dataflow-on-top in function  'dft' (dft_256_v2/dft.cpp:5:1)  with default interface mode 'ap_ctrl_hs'. Overlapped execution of successive kernel calls will not happen unless interface mode 'ap_ctrl_chain' is used (or 'ap_ctrl_none' for a purely data-driven design).
+INFO: [XFORM 203-712] Applying dataflow to function 'dft' (dft_256_v2/dft.cpp:5:1), detected/extracted 2 process function(s): 
+	 'Loop_VITIS_LOOP_16_1_proc'
+	 'Loop_VITIS_LOOP_21_2_proc'.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 2 seconds. CPU system time: 0 seconds. Elapsed time: 2.113 seconds; current allocated memory: 1.464 GB.
+WARNING: [HLS 200-1449] Process Loop_VITIS_LOOP_21_2_proc has both a predecessor and reads an input from its caller (see the GUI dataflow viewer). This may lead to lower throughput. Consider copying this input via a predecessor process.
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 1.325 seconds; current allocated memory: 1.464 GB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'dft' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'Loop_VITIS_LOOP_16_1_proc' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_16_1'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 2, loop 'VITIS_LOOP_16_1'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.724 seconds; current allocated memory: 1.464 GB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.31 seconds; current allocated memory: 1.464 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'Loop_VITIS_LOOP_21_2_proc_Pipeline_VITIS_LOOP_21_2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_21_2'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 1283, loop 'VITIS_LOOP_21_2'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 7 seconds. CPU system time: 0 seconds. Elapsed time: 6.674 seconds; current allocated memory: 1.464 GB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 8 seconds. CPU system time: 0 seconds. Elapsed time: 8.421 seconds; current allocated memory: 1.464 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'Loop_VITIS_LOOP_21_2_proc' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 6 seconds. CPU system time: 0 seconds. Elapsed time: 6.319 seconds; current allocated memory: 1.464 GB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 2 seconds. CPU system time: 0 seconds. Elapsed time: 1.383 seconds; current allocated memory: 1.464 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'dft' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 3 seconds. CPU system time: 0 seconds. Elapsed time: 3.078 seconds; current allocated memory: 1.464 GB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 1.34 seconds; current allocated memory: 1.464 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'Loop_VITIS_LOOP_16_1_proc' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'Loop_VITIS_LOOP_16_1_proc' pipeline 'VITIS_LOOP_16_1' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-104] Estimated max fanout for 'Loop_VITIS_LOOP_16_1_proc' is 16384 from HDL expression: ((icmp_ln16_fu_1595_p2 == 1'd1) & (1'b0 == ap_block_pp0_stage0_11001) & (1'b1 == ap_CS_fsm_pp0_stage0))
+INFO: [RTGEN 206-100] Finished creating RTL model for 'Loop_VITIS_LOOP_16_1_proc'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 8 seconds. CPU system time: 0 seconds. Elapsed time: 7.693 seconds; current allocated memory: 1.464 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'Loop_VITIS_LOOP_21_2_proc_Pipeline_VITIS_LOOP_21_2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SYN 201-210] Renamed object name 'Loop_VITIS_LOOP_21_2_proc_Pipeline_VITIS_LOOP_21_2_cos_coefficients_table_ROM_AUTO_1R' to 'Loop_VITIS_LOOP_21_2_proc_Pipeline_VITIS_LOOP_21_2_cos_coefficients_table_ROMbkb' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'Loop_VITIS_LOOP_21_2_proc_Pipeline_VITIS_LOOP_21_2_sin_coefficients_table_ROM_AUTO_1R' to 'Loop_VITIS_LOOP_21_2_proc_Pipeline_VITIS_LOOP_21_2_sin_coefficients_table_ROMcud' due to the length limit 80
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'Loop_VITIS_LOOP_21_2_proc_Pipeline_VITIS_LOOP_21_2' pipeline 'VITIS_LOOP_21_2' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-104] Estimated max fanout for 'Loop_VITIS_LOOP_21_2_proc_Pipeline_VITIS_LOOP_21_2' is 124605 from HDL expression: (1'b0 == ap_block_pp0_stage0_11001)
+INFO: [RTGEN 206-100] Generating core module 'fadd_32ns_32ns_32_5_full_dsp_1': 512 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fmul_32ns_32ns_32_4_max_dsp_1': 510 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'Loop_VITIS_LOOP_21_2_proc_Pipeline_VITIS_LOOP_21_2'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 21 seconds. CPU system time: 0 seconds. Elapsed time: 22.342 seconds; current allocated memory: 1.548 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'Loop_VITIS_LOOP_21_2_proc' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Generating core module 'fmul_32ns_32ns_32_4_max_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'Loop_VITIS_LOOP_21_2_proc'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 15 seconds. CPU system time: 1 seconds. Elapsed time: 15.389 seconds; current allocated memory: 1.594 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'dft' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'dft/real_sample' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'dft/imag_sample' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'dft/real_output' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'dft/imag_output' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'dft' to 'ap_ctrl_hs'.
+WARNING: [RTGEN 206-101] Port 'dft/imag_sample_address0' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'dft/imag_sample_ce0' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'dft/imag_sample_d0' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'dft/imag_sample_q0' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'dft/imag_sample_we0' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'dft'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 3 seconds. CPU system time: 0 seconds. Elapsed time: 3.283 seconds; current allocated memory: 1.594 GB.
+INFO: [RTMG 210-279] Implementing memory 'dft_Loop_VITIS_LOOP_21_2_proc_Pipeline_VITIS_LOOP_21_2_cos_coefficients_table_ROMbkb' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'dft_Loop_VITIS_LOOP_21_2_proc_Pipeline_VITIS_LOOP_21_2_sin_coefficients_table_ROMcud' using auto ROMs.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_255_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_254_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_253_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_252_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_251_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_250_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_249_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_248_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_247_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_246_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_245_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_244_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_243_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_242_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_241_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_240_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_239_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_238_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_237_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_236_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_235_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_234_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_233_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_232_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_231_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_230_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_229_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_228_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_227_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_226_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_225_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_224_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_223_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_222_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_221_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_220_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_219_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_218_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_217_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_216_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_215_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_214_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_213_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_212_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_211_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_210_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_209_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_208_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_207_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_206_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_205_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_204_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_203_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_202_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_201_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_200_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_199_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_198_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_197_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_196_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_195_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_194_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_193_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_192_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_191_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_190_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_189_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_188_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_187_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_186_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_185_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_184_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_183_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_182_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_181_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_180_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_179_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_178_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_177_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_176_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_175_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_174_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_173_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_172_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_171_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_170_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_169_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_168_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_167_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_166_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_165_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_164_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_163_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_162_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_161_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_160_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_159_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_158_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_157_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_156_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_155_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_154_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_153_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_152_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_151_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_150_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_149_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_148_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_147_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_146_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_145_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_144_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_143_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_142_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_141_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_140_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_139_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_138_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_137_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_136_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_135_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_134_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_133_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_132_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_131_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_130_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_129_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_128_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_127_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_126_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_125_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_124_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_123_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_122_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_121_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_120_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_119_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_118_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_117_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_116_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_115_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_114_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_113_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_112_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_111_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_110_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_109_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_108_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_107_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_106_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_105_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_104_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_103_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_102_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_101_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_100_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_99_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_98_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_97_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_96_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_95_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_94_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_93_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_92_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_91_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_90_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_89_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_88_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_87_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_86_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_85_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_84_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_83_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_82_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_81_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_80_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_79_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_78_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_77_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_76_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_75_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_74_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_73_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_72_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_71_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_70_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_69_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_68_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_67_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_66_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_65_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_64_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_63_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_62_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_61_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_60_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_59_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_58_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_57_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_56_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_55_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_54_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_53_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_52_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_51_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_50_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_49_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_48_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_47_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_46_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_45_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_44_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_43_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_42_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_41_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_40_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_39_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_38_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_37_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_36_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_35_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_34_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_33_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_32_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_31_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_30_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_29_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_28_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_27_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_26_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_25_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_24_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_23_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_22_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_21_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_20_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_19_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_18_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_17_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_16_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_15_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_14_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_13_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_12_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_11_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_10_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_9_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_8_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_7_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_6_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_5_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_4_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_3_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_2_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_1_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 28 seconds. CPU system time: 1 seconds. Elapsed time: 28.905 seconds; current allocated memory: 1.606 GB.
+INFO: [HLS 200-111] Finished Updating report files: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.85 seconds; current allocated memory: 1.627 GB.
+INFO: [VHDL 208-304] Generating VHDL RTL for dft.
+INFO: [VLOG 209-307] Generating Verilog RTL for dft.
+INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were satisfied.
+INFO: [HLS 200-789] **** Estimated Fmax: 137.82 MHz
+INFO: [HLS 200-111] Finished Command csynth_design CPU user time: 107 seconds. CPU system time: 2 seconds. Elapsed time: 114.806 seconds; current allocated memory: 166.352 MB.
+INFO: [HLS 200-112] Total CPU user time: 111 seconds. Total CPU system time: 3 seconds. Total elapsed time: 117.3 seconds; peak allocated memory: 1.627 GB.
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2022.1 (64-bit)
+Tool Version Limit: 2022.04
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-1611] Setting target device to 'xc7z020-clg484-1'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_part xc7z020clg484-1 
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+INFO: [HLS 200-1510] Running: cosim_design -trace_level all 
+INFO: [COSIM 212-47] Using XSIM for RTL simulation.
+INFO: [COSIM 212-14] Instrumenting C test bench ...
+INFO: [COSIM 212-302] Starting C TB testing ... 
+INFO: [COSIM 212-333] Generating C post check test bench ...
+INFO: [COSIM 212-12] Generating RTL test bench ...
+INFO: [COSIM 212-1] *** C/RTL co-simulation file generation completed. ***
+INFO: [COSIM 212-323] Starting verilog simulation. 
+INFO: [COSIM 212-15] Starting XSIM ...
+INFO: [COSIM 212-316] Starting C post checking ...
+INFO: [COSIM 212-1000] *** C/RTL co-simulation finished: PASS ***
+INFO: [COSIM 212-211] II is measurable only when transaction number is greater than 1 in RTL simulation. Otherwise, they will be marked as all NA. If user wants to calculate them, please make sure there are at least 2 transactions in RTL simulation.
+INFO: [HLS 200-111] Finished Command cosim_design CPU user time: 8 seconds. CPU system time: 0 seconds. Elapsed time: 246.027 seconds; current allocated memory: 2.465 MB.
+INFO: [HLS 200-112] Total CPU user time: 11 seconds. Total CPU system time: 1 seconds. Total elapsed time: 248 seconds; peak allocated memory: 1.467 GB.
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2022.1 (64-bit)
+Tool Version Limit: 2022.04
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-1611] Setting target device to 'xc7z020-clg484-1'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_part xc7z020clg484-1 
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+INFO: [HLS 200-1510] Running: source ./dft_256_v2/dataflow_1/directives.tcl
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.008 seconds; current allocated memory: 1.464 GB.
+INFO: [HLS 200-10] Analyzing design file 'dft_256_v2/dft.cpp' ... 
+WARNING: [HLS 214-114] Since the only kind of statements allowed in a canonical dataflow region are variable declarations and function calls, the compiler may not be able to correctly handle the region (dft_256_v2/dft.cpp:22:9)
+WARNING: [HLS 200-471] Dataflow form checks found 1 issue(s) in file dft_256_v2/dft.cpp
+WARNING: [HLS 207-5292] unused parameter 'imag_sample' (dft_256_v2/dft.cpp:5:78)
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.551 seconds; current allocated memory: 1.464 GB.
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_28_3' is marked as complete unroll implied by the pipeline pragma (dft_256_v2/dft.cpp:28:20)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_28_3' (dft_256_v2/dft.cpp:28:20) in function 'dft' completely with a factor of 256 (dft_256_v2/dft.cpp:6:0)
+INFO: [HLS 214-248] Applying array_partition to 'temp': Block partitioning with factor 64 on dimension 1. (dft_256_v2/dft.cpp:14:8)
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 3.185 seconds; current allocated memory: 1.464 GB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.001 seconds; current allocated memory: 1.464 GB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.309 seconds; current allocated memory: 1.464 GB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.146 seconds; current allocated memory: 1.464 GB.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_18_1' (dft_256_v2/dft.cpp:19) in function 'dft' automatically.
+INFO: [XFORM 203-721] Changing loop 'Loop_VITIS_LOOP_18_1_proc' (dft_256_v2/dft.cpp:19) to a process function for dataflow in function 'dft'.
+INFO: [XFORM 203-721] Changing loop 'Loop_VITIS_LOOP_23_2_proc' (dft_256_v2/dft.cpp:15) to a process function for dataflow in function 'dft'.
+WARNING: [HLS 200-786] Detected dataflow-on-top in function  'dft' (dft_256_v2/dft.cpp:5:1)  with default interface mode 'ap_ctrl_hs'. Overlapped execution of successive kernel calls will not happen unless interface mode 'ap_ctrl_chain' is used (or 'ap_ctrl_none' for a purely data-driven design).
+INFO: [XFORM 203-712] Applying dataflow to function 'dft' (dft_256_v2/dft.cpp:5:1), detected/extracted 3 process function(s): 
+	 'Loop_VITIS_LOOP_18_1_proc'
+	 'Block_dft_for.cond.i.exit_proc'
+	 'Loop_VITIS_LOOP_23_2_proc'.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 2 seconds. CPU system time: 0 seconds. Elapsed time: 1.958 seconds; current allocated memory: 1.464 GB.
+INFO: [HLS 200-472] Inferring partial write operation for 'temp' (dft_256_v2/dft.cpp:19:11)
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.999 seconds; current allocated memory: 1.464 GB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'dft' ...
+WARNING: [SYN 201-103] Legalizing function name 'Block_dft_for.cond.i.exit_proc' to 'Block_dft_for_cond_i_exit_proc'.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'Loop_VITIS_LOOP_18_1_proc' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_18_1'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 2, loop 'VITIS_LOOP_18_1'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.258 seconds; current allocated memory: 1.464 GB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.055 seconds; current allocated memory: 1.464 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'Block_dft_for_cond_i_exit_proc' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.347 seconds; current allocated memory: 1.464 GB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.209 seconds; current allocated memory: 1.464 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'Loop_VITIS_LOOP_23_2_proc' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_23_2'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 1282, loop 'VITIS_LOOP_23_2'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 6 seconds. CPU system time: 0 seconds. Elapsed time: 6.43 seconds; current allocated memory: 1.464 GB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 9 seconds. CPU system time: 0 seconds. Elapsed time: 8.458 seconds; current allocated memory: 1.464 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'dft' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 6 seconds. CPU system time: 0 seconds. Elapsed time: 6.108 seconds; current allocated memory: 1.464 GB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 1.318 seconds; current allocated memory: 1.464 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'Loop_VITIS_LOOP_18_1_proc' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'Loop_VITIS_LOOP_18_1_proc' pipeline 'VITIS_LOOP_18_1' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Finished creating RTL model for 'Loop_VITIS_LOOP_18_1_proc'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 3 seconds. CPU system time: 0 seconds. Elapsed time: 2.945 seconds; current allocated memory: 1.464 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'Block_dft_for_cond_i_exit_proc' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-104] Estimated max fanout for 'Block_dft_for_cond_i_exit_proc' is 8227 from HDL expression: (1'b1 == ap_CS_fsm_state11)
+INFO: [RTGEN 206-100] Generating core module 'fadd_32ns_32ns_32_5_full_dsp_1': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fmul_32ns_32ns_32_4_max_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'Block_dft_for_cond_i_exit_proc'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 4 seconds. CPU system time: 0 seconds. Elapsed time: 4.28 seconds; current allocated memory: 1.464 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'Loop_VITIS_LOOP_23_2_proc' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'Loop_VITIS_LOOP_23_2_proc' pipeline 'VITIS_LOOP_23_2' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-104] Estimated max fanout for 'Loop_VITIS_LOOP_23_2_proc' is 5295847 from HDL expression: (1'b0 == ap_block_pp0_stage0_11001)
+INFO: [RTGEN 206-100] Generating core module 'fadd_32ns_32ns_32_5_full_dsp_1': 510 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fmul_32ns_32ns_32_4_max_dsp_1': 510 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'Loop_VITIS_LOOP_23_2_proc'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 24 seconds. CPU system time: 0 seconds. Elapsed time: 24.55 seconds; current allocated memory: 1.504 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'dft' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'dft/real_sample' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'dft/imag_sample' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'dft/real_output' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'dft/imag_output' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'dft' to 'ap_ctrl_hs'.
+WARNING: [RTGEN 206-101] Port 'dft/imag_sample_address0' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'dft/imag_sample_ce0' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'dft/imag_sample_d0' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'dft/imag_sample_q0' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'dft/imag_sample_we0' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'dft'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 20 seconds. CPU system time: 1 seconds. Elapsed time: 20.925 seconds; current allocated memory: 1.558 GB.
+INFO: [RTMG 210-279] Implementing memory 'dft_Loop_VITIS_LOOP_23_2_proc_cos_coefficients_table_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'dft_Loop_VITIS_LOOP_23_2_proc_sin_coefficients_table_ROM_AUTO_1R' using auto ROMs.
+INFO: [HLS 200-740] Implementing PIPO dft_temp_RAM_AUTO_1R1W_memcore using a separate memory for each block
+INFO: [RTMG 210-278] Implementing memory 'dft_temp_RAM_AUTO_1R1W_memcore_ram (RAM)' using auto RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'sum_r_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'sum_i_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_load_1_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_load_2_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_load_3_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_1_load_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_1_load_1_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_1_load_2_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_1_load_3_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_2_load_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_2_load_1_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_2_load_2_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_2_load_3_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_3_load_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_3_load_1_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_3_load_2_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_3_load_3_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_4_load_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_4_load_1_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_4_load_2_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_4_load_3_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_5_load_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_5_load_1_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_5_load_2_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_5_load_3_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_6_load_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_6_load_1_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_6_load_2_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_6_load_3_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_7_load_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_7_load_1_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_7_load_2_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_7_load_3_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_8_load_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_8_load_1_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_8_load_2_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_8_load_3_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_9_load_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_9_load_1_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_9_load_2_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_9_load_3_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_10_load_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_10_load_1_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_10_load_2_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_10_load_3_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_11_load_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_11_load_1_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_11_load_2_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_11_load_3_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_12_load_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_12_load_1_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_12_load_2_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_12_load_3_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_13_load_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_13_load_1_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_13_load_2_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_13_load_3_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_14_load_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_14_load_1_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_14_load_2_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_14_load_3_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_15_load_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_15_load_1_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_15_load_2_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_15_load_3_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_16_load_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_16_load_1_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_16_load_2_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_16_load_3_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_17_load_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_17_load_1_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_17_load_2_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_17_load_3_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_18_load_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_18_load_1_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_18_load_2_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_18_load_3_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_19_load_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_19_load_1_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_19_load_2_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_19_load_3_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_20_load_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_20_load_1_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_20_load_2_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_20_load_3_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_21_load_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_21_load_1_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_21_load_2_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_21_load_3_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_22_load_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_22_load_1_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_22_load_2_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_22_load_3_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_23_load_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_23_load_1_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_23_load_2_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_23_load_3_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_24_load_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_24_load_1_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_24_load_2_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_24_load_3_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_25_load_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_25_load_1_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_25_load_2_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_25_load_3_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_26_load_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_26_load_1_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_26_load_2_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_26_load_3_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_27_load_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_27_load_1_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_27_load_2_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_27_load_3_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_28_load_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_28_load_1_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_28_load_2_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_28_load_3_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_29_load_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_29_load_1_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_29_load_2_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_29_load_3_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_30_load_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_30_load_1_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_30_load_2_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_30_load_3_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_31_load_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_31_load_1_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_31_load_2_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_31_load_3_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_32_load_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_32_load_1_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_32_load_2_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_32_load_3_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_33_load_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_33_load_1_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_33_load_2_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_33_load_3_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_34_load_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_34_load_1_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_34_load_2_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_34_load_3_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_35_load_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_35_load_1_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_35_load_2_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_35_load_3_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_36_load_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_36_load_1_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_36_load_2_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_36_load_3_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_37_load_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_37_load_1_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_37_load_2_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_37_load_3_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_38_load_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_38_load_1_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_38_load_2_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_38_load_3_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_39_load_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_39_load_1_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_39_load_2_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_39_load_3_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_40_load_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_40_load_1_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_40_load_2_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_40_load_3_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_41_load_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_41_load_1_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_41_load_2_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_41_load_3_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_42_load_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_42_load_1_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_42_load_2_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_42_load_3_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_43_load_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_43_load_1_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_43_load_2_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_43_load_3_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_44_load_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_44_load_1_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_44_load_2_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_44_load_3_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_45_load_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_45_load_1_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_45_load_2_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_45_load_3_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_46_load_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_46_load_1_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_46_load_2_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_46_load_3_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_47_load_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_47_load_1_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_47_load_2_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_47_load_3_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_48_load_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_48_load_1_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_48_load_2_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_48_load_3_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_49_load_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_49_load_1_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_49_load_2_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_49_load_3_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_50_load_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_50_load_1_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_50_load_2_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_50_load_3_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_51_load_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_51_load_1_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_51_load_2_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_51_load_3_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_52_load_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_52_load_1_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_52_load_2_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_52_load_3_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_53_load_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_53_load_1_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_53_load_2_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_53_load_3_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_54_load_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_54_load_1_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_54_load_2_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_54_load_3_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_55_load_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_55_load_1_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_55_load_2_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_55_load_3_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_56_load_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_56_load_1_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_56_load_2_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_56_load_3_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_57_load_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_57_load_1_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_57_load_2_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_57_load_3_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_58_load_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_58_load_1_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_58_load_2_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_58_load_3_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_59_load_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_59_load_1_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_59_load_2_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_59_load_3_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_60_load_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_60_load_1_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_60_load_2_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_60_load_3_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_61_load_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_61_load_1_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_61_load_2_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_61_load_3_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_62_load_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_62_load_1_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_62_load_2_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_62_load_3_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_63_load_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_63_load_1_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_63_load_2_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_63_load_3_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 29 seconds. CPU system time: 1 seconds. Elapsed time: 29.874 seconds; current allocated memory: 1.568 GB.
+INFO: [HLS 200-111] Finished Updating report files: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.807 seconds; current allocated memory: 1.590 GB.
+INFO: [VHDL 208-304] Generating VHDL RTL for dft.
+INFO: [VLOG 209-307] Generating Verilog RTL for dft.
+INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were satisfied.
+INFO: [HLS 200-789] **** Estimated Fmax: 137.82 MHz
+INFO: [HLS 200-111] Finished Command csynth_design CPU user time: 107 seconds. CPU system time: 2 seconds. Elapsed time: 113.76 seconds; current allocated memory: 128.316 MB.
+INFO: [HLS 200-112] Total CPU user time: 110 seconds. Total CPU system time: 3 seconds. Total elapsed time: 116.185 seconds; peak allocated memory: 1.590 GB.
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2022.1 (64-bit)
+Tool Version Limit: 2022.04
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-1611] Setting target device to 'xc7z020-clg484-1'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_part xc7z020clg484-1 
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+INFO: [HLS 200-1510] Running: source ./dft_256_v2/dataflow_1/directives.tcl
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.009 seconds; current allocated memory: 1.464 GB.
+INFO: [HLS 200-10] Analyzing design file 'dft_256_v2/dft.cpp' ... 
+WARNING: [HLS 214-114] Since the only kind of statements allowed in a canonical dataflow region are variable declarations and function calls, the compiler may not be able to correctly handle the region (dft_256_v2/dft.cpp:22:9)
+WARNING: [HLS 200-471] Dataflow form checks found 1 issue(s) in file dft_256_v2/dft.cpp
+WARNING: [HLS 207-5292] unused parameter 'imag_sample' (dft_256_v2/dft.cpp:5:78)
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.584 seconds; current allocated memory: 1.464 GB.
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_28_3' is marked as complete unroll implied by the pipeline pragma (dft_256_v2/dft.cpp:28:19)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_28_3' (dft_256_v2/dft.cpp:28:19) in function 'dft' completely with a factor of 256 (dft_256_v2/dft.cpp:6:0)
+INFO: [HLS 214-270] Inferring pragma 'array_partition type=complete dim=1' for array 'temp' due to pipeline pragma (dft_256_v2/dft.cpp:27:9)
+INFO: [HLS 214-248] Applying array_partition to 'temp': Complete partitioning on dimension 1. (dft_256_v2/dft.cpp:14:8)
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 3.47 seconds; current allocated memory: 1.464 GB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 1.464 GB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.553 seconds; current allocated memory: 1.464 GB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.238 seconds; current allocated memory: 1.464 GB.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_18_1' (dft_256_v2/dft.cpp:19) in function 'dft' automatically.
+INFO: [XFORM 203-721] Changing loop 'Loop_VITIS_LOOP_18_1_proc' (dft_256_v2/dft.cpp:19) to a process function for dataflow in function 'dft'.
+INFO: [XFORM 203-721] Changing loop 'Loop_VITIS_LOOP_23_2_proc' (dft_256_v2/dft.cpp:15) to a process function for dataflow in function 'dft'.
+WARNING: [HLS 200-786] Detected dataflow-on-top in function  'dft' (dft_256_v2/dft.cpp:5:1)  with default interface mode 'ap_ctrl_hs'. Overlapped execution of successive kernel calls will not happen unless interface mode 'ap_ctrl_chain' is used (or 'ap_ctrl_none' for a purely data-driven design).
+INFO: [XFORM 203-712] Applying dataflow to function 'dft' (dft_256_v2/dft.cpp:5:1), detected/extracted 2 process function(s): 
+	 'Loop_VITIS_LOOP_18_1_proc'
+	 'Loop_VITIS_LOOP_23_2_proc'.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 2 seconds. CPU system time: 0 seconds. Elapsed time: 2.414 seconds; current allocated memory: 1.464 GB.
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 2 seconds. CPU system time: 0 seconds. Elapsed time: 1.49 seconds; current allocated memory: 1.464 GB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'dft' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'Loop_VITIS_LOOP_18_1_proc' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_18_1'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 2, loop 'VITIS_LOOP_18_1'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.733 seconds; current allocated memory: 1.464 GB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.336 seconds; current allocated memory: 1.464 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'Loop_VITIS_LOOP_23_2_proc_Pipeline_VITIS_LOOP_23_2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_23_2'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 1282, loop 'VITIS_LOOP_23_2'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 6 seconds. CPU system time: 0 seconds. Elapsed time: 6.927 seconds; current allocated memory: 1.464 GB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 9 seconds. CPU system time: 0 seconds. Elapsed time: 8.825 seconds; current allocated memory: 1.464 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'Loop_VITIS_LOOP_23_2_proc' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 7 seconds. CPU system time: 0 seconds. Elapsed time: 6.632 seconds; current allocated memory: 1.464 GB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 1.428 seconds; current allocated memory: 1.464 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'dft' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 3 seconds. CPU system time: 0 seconds. Elapsed time: 3.213 seconds; current allocated memory: 1.464 GB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 2 seconds. CPU system time: 0 seconds. Elapsed time: 1.396 seconds; current allocated memory: 1.464 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'Loop_VITIS_LOOP_18_1_proc' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'Loop_VITIS_LOOP_18_1_proc' pipeline 'VITIS_LOOP_18_1' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-104] Estimated max fanout for 'Loop_VITIS_LOOP_18_1_proc' is 16384 from HDL expression: ((icmp_ln18_fu_1595_p2 == 1'd1) & (1'b0 == ap_block_pp0_stage0_11001) & (1'b1 == ap_CS_fsm_pp0_stage0))
+INFO: [RTGEN 206-100] Finished creating RTL model for 'Loop_VITIS_LOOP_18_1_proc'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 8 seconds. CPU system time: 0 seconds. Elapsed time: 8.036 seconds; current allocated memory: 1.464 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'Loop_VITIS_LOOP_23_2_proc_Pipeline_VITIS_LOOP_23_2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SYN 201-210] Renamed object name 'Loop_VITIS_LOOP_23_2_proc_Pipeline_VITIS_LOOP_23_2_cos_coefficients_table_ROM_AUTO_1R' to 'Loop_VITIS_LOOP_23_2_proc_Pipeline_VITIS_LOOP_23_2_cos_coefficients_table_ROMbkb' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'Loop_VITIS_LOOP_23_2_proc_Pipeline_VITIS_LOOP_23_2_sin_coefficients_table_ROM_AUTO_1R' to 'Loop_VITIS_LOOP_23_2_proc_Pipeline_VITIS_LOOP_23_2_sin_coefficients_table_ROMcud' due to the length limit 80
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'Loop_VITIS_LOOP_23_2_proc_Pipeline_VITIS_LOOP_23_2' pipeline 'VITIS_LOOP_23_2' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-104] Estimated max fanout for 'Loop_VITIS_LOOP_23_2_proc_Pipeline_VITIS_LOOP_23_2' is 114117 from HDL expression: (1'b0 == ap_block_pp0_stage0_11001)
+INFO: [RTGEN 206-100] Generating core module 'fadd_32ns_32ns_32_5_full_dsp_1': 510 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fmul_32ns_32ns_32_4_max_dsp_1': 510 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'Loop_VITIS_LOOP_23_2_proc_Pipeline_VITIS_LOOP_23_2'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 22 seconds. CPU system time: 0 seconds. Elapsed time: 23.301 seconds; current allocated memory: 1.548 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'Loop_VITIS_LOOP_23_2_proc' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Generating core module 'fadd_32ns_32ns_32_5_full_dsp_1': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fmul_32ns_32ns_32_4_max_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'Loop_VITIS_LOOP_23_2_proc'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 16 seconds. CPU system time: 1 seconds. Elapsed time: 15.696 seconds; current allocated memory: 1.594 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'dft' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'dft/real_sample' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'dft/imag_sample' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'dft/real_output' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'dft/imag_output' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'dft' to 'ap_ctrl_hs'.
+WARNING: [RTGEN 206-101] Port 'dft/imag_sample_address0' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'dft/imag_sample_ce0' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'dft/imag_sample_d0' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'dft/imag_sample_q0' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'dft/imag_sample_we0' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'dft'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 3 seconds. CPU system time: 0 seconds. Elapsed time: 3.415 seconds; current allocated memory: 1.594 GB.
+INFO: [RTMG 210-279] Implementing memory 'dft_Loop_VITIS_LOOP_23_2_proc_Pipeline_VITIS_LOOP_23_2_cos_coefficients_table_ROMbkb' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'dft_Loop_VITIS_LOOP_23_2_proc_Pipeline_VITIS_LOOP_23_2_sin_coefficients_table_ROMcud' using auto ROMs.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_255_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_254_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_253_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_252_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_251_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_250_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_249_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_248_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_247_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_246_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_245_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_244_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_243_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_242_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_241_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_240_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_239_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_238_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_237_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_236_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_235_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_234_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_233_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_232_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_231_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_230_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_229_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_228_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_227_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_226_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_225_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_224_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_223_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_222_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_221_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_220_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_219_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_218_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_217_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_216_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_215_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_214_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_213_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_212_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_211_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_210_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_209_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_208_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_207_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_206_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_205_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_204_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_203_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_202_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_201_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_200_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_199_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_198_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_197_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_196_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_195_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_194_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_193_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_192_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_191_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_190_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_189_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_188_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_187_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_186_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_185_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_184_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_183_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_182_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_181_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_180_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_179_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_178_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_177_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_176_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_175_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_174_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_173_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_172_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_171_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_170_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_169_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_168_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_167_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_166_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_165_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_164_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_163_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_162_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_161_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_160_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_159_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_158_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_157_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_156_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_155_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_154_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_153_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_152_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_151_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_150_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_149_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_148_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_147_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_146_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_145_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_144_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_143_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_142_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_141_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_140_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_139_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_138_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_137_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_136_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_135_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_134_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_133_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_132_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_131_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_130_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_129_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_128_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_127_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_126_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_125_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_124_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_123_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_122_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_121_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_120_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_119_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_118_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_117_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_116_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_115_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_114_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_113_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_112_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_111_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_110_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_109_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_108_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_107_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_106_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_105_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_104_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_103_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_102_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_101_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_100_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_99_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_98_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_97_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_96_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_95_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_94_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_93_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_92_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_91_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_90_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_89_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_88_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_87_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_86_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_85_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_84_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_83_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_82_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_81_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_80_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_79_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_78_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_77_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_76_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_75_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_74_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_73_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_72_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_71_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_70_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_69_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_68_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_67_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_66_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_65_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_64_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_63_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_62_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_61_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_60_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_59_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_58_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_57_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_56_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_55_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_54_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_53_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_52_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_51_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_50_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_49_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_48_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_47_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_46_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_45_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_44_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_43_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_42_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_41_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_40_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_39_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_38_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_37_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_36_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_35_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_34_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_33_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_32_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_31_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_30_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_29_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_28_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_27_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_26_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_25_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_24_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_23_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_22_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_21_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_20_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_19_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_18_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_17_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_16_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_15_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_14_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_13_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_12_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_11_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_10_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_9_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_8_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_7_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_6_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_5_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_4_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_3_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_2_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_1_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'temp_loc_channel_U(dft_fifo_w32_d2_S)' using Shift Registers.
+INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 29 seconds. CPU system time: 1 seconds. Elapsed time: 30.785 seconds; current allocated memory: 1.605 GB.
+INFO: [HLS 200-111] Finished Updating report files: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.874 seconds; current allocated memory: 1.627 GB.
+INFO: [VHDL 208-304] Generating VHDL RTL for dft.
+INFO: [VLOG 209-307] Generating Verilog RTL for dft.
+INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were satisfied.
+INFO: [HLS 200-789] **** Estimated Fmax: 137.82 MHz
+INFO: [HLS 200-111] Finished Command csynth_design CPU user time: 113 seconds. CPU system time: 2 seconds. Elapsed time: 120.397 seconds; current allocated memory: 166.703 MB.
+INFO: [HLS 200-112] Total CPU user time: 117 seconds. Total CPU system time: 3 seconds. Total elapsed time: 122.985 seconds; peak allocated memory: 1.627 GB.
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2022.1 (64-bit)
+Tool Version Limit: 2022.04
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-1611] Setting target device to 'xc7z020-clg484-1'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_part xc7z020clg484-1 
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+INFO: [HLS 200-1510] Running: source ./dft_256_v2/dataflow_1/directives.tcl
+INFO: [HLS 200-1510] Running: cosim_design -trace_level all 
+ERROR: [COSIM 212-366] Cannot delete directory  'sim/verilog': it is being used by another program. Please close the program and try again.
+ERROR: [COSIM 212-5] *** C/RTL co-simulation file generation failed. ***
+ERROR: [COSIM 212-4] *** C/RTL co-simulation finished: FAIL ***
+INFO: [HLS 200-111] Finished Command cosim_design CPU user time: 2 seconds. CPU system time: 0 seconds. Elapsed time: 2.611 seconds; current allocated memory: 2.250 MB.
+INFO: [HLS 200-112] Total CPU user time: 5 seconds. Total CPU system time: 1 seconds. Total elapsed time: 4.559 seconds; peak allocated memory: 1.466 GB.

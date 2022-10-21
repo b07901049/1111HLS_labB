@@ -1,0 +1,1455 @@
+
+
+================================================================
+== Vitis HLS Report for 'dft'
+================================================================
+* Date:           Fri Oct 21 19:36:54 2022
+
+* Version:        2022.1 (Build 3526262 on Mon Apr 18 15:48:16 MDT 2022)
+* Project:        dft_256_v2
+* Solution:       dataflow_1 (Vivado IP Flow Target)
+* Product family: zynq
+* Target device:  xc7z020-clg484-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  7.256 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+-----------+-----------+------+------+----------+
+    |  Latency (cycles) |   Latency (absolute)  |   Interval  | Pipeline |
+    |   min   |   max   |    min    |    max    |  min |  max |   Type   |
+    +---------+---------+-----------+-----------+------+------+----------+
+    |     1808|     1808|  18.080 us|  18.080 us|  1550|  1550|  dataflow|
+    +---------+---------+-----------+-----------+------+------+----------+
+
+    + Detail: 
+        * Instance: 
+        +------------------------------+---------------------------+---------+---------+-----------+-----------+------+------+---------+
+        |                              |                           |  Latency (cycles) |   Latency (absolute)  |   Interval  | Pipeline|
+        |           Instance           |           Module          |   min   |   max   |    min    |    max    |  min |  max |   Type  |
+        +------------------------------+---------------------------+---------+---------+-----------+-----------+------+------+---------+
+        |Loop_VITIS_LOOP_18_1_proc_U0  |Loop_VITIS_LOOP_18_1_proc  |      258|      258|   2.580 us|   2.580 us|   258|   258|       no|
+        |Loop_VITIS_LOOP_23_2_proc_U0  |Loop_VITIS_LOOP_23_2_proc  |     1549|     1549|  15.490 us|  15.490 us|  1549|  1549|       no|
+        +------------------------------+---------------------------+---------+---------+-----------+-----------+------+------+---------+
+
+        * Loop: 
+        N/A
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+------+--------+--------+-----+
+|       Name      | BRAM_18K|  DSP |   FF   |   LUT  | URAM|
++-----------------+---------+------+--------+--------+-----+
+|DSP              |        -|     -|       -|       -|    -|
+|Expression       |        -|     -|       0|    1030|    -|
+|FIFO             |        -|     -|   25344|   17408|    -|
+|Instance         |     1016|  2550|  247966|  373264|    -|
+|Memory           |        -|     -|       -|       -|    -|
+|Multiplexer      |        -|     -|       -|    2304|    -|
+|Register         |        -|     -|     256|       -|    -|
++-----------------+---------+------+--------+--------+-----+
+|Total            |     1016|  2550|  273566|  394006|    0|
++-----------------+---------+------+--------+--------+-----+
+|Available        |      280|   220|  106400|   53200|    0|
++-----------------+---------+------+--------+--------+-----+
+|Utilization (%)  |      362|  1159|     257|     740|    0|
++-----------------+---------+------+--------+--------+-----+
+
++ Detail: 
+    * Instance: 
+    +------------------------------+---------------------------+---------+------+--------+--------+-----+
+    |           Instance           |           Module          | BRAM_18K|  DSP |   FF   |   LUT  | URAM|
+    +------------------------------+---------------------------+---------+------+--------+--------+-----+
+    |Loop_VITIS_LOOP_18_1_proc_U0  |Loop_VITIS_LOOP_18_1_proc  |        0|     0|   16404|    4675|    0|
+    |Loop_VITIS_LOOP_23_2_proc_U0  |Loop_VITIS_LOOP_23_2_proc  |     1016|  2550|  231562|  368589|    0|
+    +------------------------------+---------------------------+---------+------+--------+--------+-----+
+    |Total                         |                           |     1016|  2550|  247966|  373264|    0|
+    +------------------------------+---------------------------+---------+------+--------+--------+-----+
+
+    * DSP: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    +------------------------+---------+-----+----+-----+------+-----+---------+
+    |          Name          | BRAM_18K|  FF | LUT| URAM| Depth| Bits| Size:D*B|
+    +------------------------+---------+-----+----+-----+------+-----+---------+
+    |temp_100_loc_channel_U  |        0|   99|   0|    -|     2|   32|       64|
+    |temp_101_loc_channel_U  |        0|   99|   0|    -|     2|   32|       64|
+    |temp_102_loc_channel_U  |        0|   99|   0|    -|     2|   32|       64|
+    |temp_103_loc_channel_U  |        0|   99|   0|    -|     2|   32|       64|
+    |temp_104_loc_channel_U  |        0|   99|   0|    -|     2|   32|       64|
+    |temp_105_loc_channel_U  |        0|   99|   0|    -|     2|   32|       64|
+    |temp_106_loc_channel_U  |        0|   99|   0|    -|     2|   32|       64|
+    |temp_107_loc_channel_U  |        0|   99|   0|    -|     2|   32|       64|
+    |temp_108_loc_channel_U  |        0|   99|   0|    -|     2|   32|       64|
+    |temp_109_loc_channel_U  |        0|   99|   0|    -|     2|   32|       64|
+    |temp_10_loc_channel_U   |        0|   99|   0|    -|     2|   32|       64|
+    |temp_110_loc_channel_U  |        0|   99|   0|    -|     2|   32|       64|
+    |temp_111_loc_channel_U  |        0|   99|   0|    -|     2|   32|       64|
+    |temp_112_loc_channel_U  |        0|   99|   0|    -|     2|   32|       64|
+    |temp_113_loc_channel_U  |        0|   99|   0|    -|     2|   32|       64|
+    |temp_114_loc_channel_U  |        0|   99|   0|    -|     2|   32|       64|
+    |temp_115_loc_channel_U  |        0|   99|   0|    -|     2|   32|       64|
+    |temp_116_loc_channel_U  |        0|   99|   0|    -|     2|   32|       64|
+    |temp_117_loc_channel_U  |        0|   99|   0|    -|     2|   32|       64|
+    |temp_118_loc_channel_U  |        0|   99|   0|    -|     2|   32|       64|
+    |temp_119_loc_channel_U  |        0|   99|   0|    -|     2|   32|       64|
+    |temp_11_loc_channel_U   |        0|   99|   0|    -|     2|   32|       64|
+    |temp_120_loc_channel_U  |        0|   99|   0|    -|     2|   32|       64|
+    |temp_121_loc_channel_U  |        0|   99|   0|    -|     2|   32|       64|
+    |temp_122_loc_channel_U  |        0|   99|   0|    -|     2|   32|       64|
+    |temp_123_loc_channel_U  |        0|   99|   0|    -|     2|   32|       64|
+    |temp_124_loc_channel_U  |        0|   99|   0|    -|     2|   32|       64|
+    |temp_125_loc_channel_U  |        0|   99|   0|    -|     2|   32|       64|
+    |temp_126_loc_channel_U  |        0|   99|   0|    -|     2|   32|       64|
+    |temp_127_loc_channel_U  |        0|   99|   0|    -|     2|   32|       64|
+    |temp_128_loc_channel_U  |        0|   99|   0|    -|     2|   32|       64|
+    |temp_129_loc_channel_U  |        0|   99|   0|    -|     2|   32|       64|
+    |temp_12_loc_channel_U   |        0|   99|   0|    -|     2|   32|       64|
+    |temp_130_loc_channel_U  |        0|   99|   0|    -|     2|   32|       64|
+    |temp_131_loc_channel_U  |        0|   99|   0|    -|     2|   32|       64|
+    |temp_132_loc_channel_U  |        0|   99|   0|    -|     2|   32|       64|
+    |temp_133_loc_channel_U  |        0|   99|   0|    -|     2|   32|       64|
+    |temp_134_loc_channel_U  |        0|   99|   0|    -|     2|   32|       64|
+    |temp_135_loc_channel_U  |        0|   99|   0|    -|     2|   32|       64|
+    |temp_136_loc_channel_U  |        0|   99|   0|    -|     2|   32|       64|
+    |temp_137_loc_channel_U  |        0|   99|   0|    -|     2|   32|       64|
+    |temp_138_loc_channel_U  |        0|   99|   0|    -|     2|   32|       64|
+    |temp_139_loc_channel_U  |        0|   99|   0|    -|     2|   32|       64|
+    |temp_13_loc_channel_U   |        0|   99|   0|    -|     2|   32|       64|
+    |temp_140_loc_channel_U  |        0|   99|   0|    -|     2|   32|       64|
+    |temp_141_loc_channel_U  |        0|   99|   0|    -|     2|   32|       64|
+    |temp_142_loc_channel_U  |        0|   99|   0|    -|     2|   32|       64|
+    |temp_143_loc_channel_U  |        0|   99|   0|    -|     2|   32|       64|
+    |temp_144_loc_channel_U  |        0|   99|   0|    -|     2|   32|       64|
+    |temp_145_loc_channel_U  |        0|   99|   0|    -|     2|   32|       64|
+    |temp_146_loc_channel_U  |        0|   99|   0|    -|     2|   32|       64|
+    |temp_147_loc_channel_U  |        0|   99|   0|    -|     2|   32|       64|
+    |temp_148_loc_channel_U  |        0|   99|   0|    -|     2|   32|       64|
+    |temp_149_loc_channel_U  |        0|   99|   0|    -|     2|   32|       64|
+    |temp_14_loc_channel_U   |        0|   99|   0|    -|     2|   32|       64|
+    |temp_150_loc_channel_U  |        0|   99|   0|    -|     2|   32|       64|
+    |temp_151_loc_channel_U  |        0|   99|   0|    -|     2|   32|       64|
+    |temp_152_loc_channel_U  |        0|   99|   0|    -|     2|   32|       64|
+    |temp_153_loc_channel_U  |        0|   99|   0|    -|     2|   32|       64|
+    |temp_154_loc_channel_U  |        0|   99|   0|    -|     2|   32|       64|
+    |temp_155_loc_channel_U  |        0|   99|   0|    -|     2|   32|       64|
+    |temp_156_loc_channel_U  |        0|   99|   0|    -|     2|   32|       64|
+    |temp_157_loc_channel_U  |        0|   99|   0|    -|     2|   32|       64|
+    |temp_158_loc_channel_U  |        0|   99|   0|    -|     2|   32|       64|
+    |temp_159_loc_channel_U  |        0|   99|   0|    -|     2|   32|       64|
+    |temp_15_loc_channel_U   |        0|   99|   0|    -|     2|   32|       64|
+    |temp_160_loc_channel_U  |        0|   99|   0|    -|     2|   32|       64|
+    |temp_161_loc_channel_U  |        0|   99|   0|    -|     2|   32|       64|
+    |temp_162_loc_channel_U  |        0|   99|   0|    -|     2|   32|       64|
+    |temp_163_loc_channel_U  |        0|   99|   0|    -|     2|   32|       64|
+    |temp_164_loc_channel_U  |        0|   99|   0|    -|     2|   32|       64|
+    |temp_165_loc_channel_U  |        0|   99|   0|    -|     2|   32|       64|
+    |temp_166_loc_channel_U  |        0|   99|   0|    -|     2|   32|       64|
+    |temp_167_loc_channel_U  |        0|   99|   0|    -|     2|   32|       64|
+    |temp_168_loc_channel_U  |        0|   99|   0|    -|     2|   32|       64|
+    |temp_169_loc_channel_U  |        0|   99|   0|    -|     2|   32|       64|
+    |temp_16_loc_channel_U   |        0|   99|   0|    -|     2|   32|       64|
+    |temp_170_loc_channel_U  |        0|   99|   0|    -|     2|   32|       64|
+    |temp_171_loc_channel_U  |        0|   99|   0|    -|     2|   32|       64|
+    |temp_172_loc_channel_U  |        0|   99|   0|    -|     2|   32|       64|
+    |temp_173_loc_channel_U  |        0|   99|   0|    -|     2|   32|       64|
+    |temp_174_loc_channel_U  |        0|   99|   0|    -|     2|   32|       64|
+    |temp_175_loc_channel_U  |        0|   99|   0|    -|     2|   32|       64|
+    |temp_176_loc_channel_U  |        0|   99|   0|    -|     2|   32|       64|
+    |temp_177_loc_channel_U  |        0|   99|   0|    -|     2|   32|       64|
+    |temp_178_loc_channel_U  |        0|   99|   0|    -|     2|   32|       64|
+    |temp_179_loc_channel_U  |        0|   99|   0|    -|     2|   32|       64|
+    |temp_17_loc_channel_U   |        0|   99|   0|    -|     2|   32|       64|
+    |temp_180_loc_channel_U  |        0|   99|   0|    -|     2|   32|       64|
+    |temp_181_loc_channel_U  |        0|   99|   0|    -|     2|   32|       64|
+    |temp_182_loc_channel_U  |        0|   99|   0|    -|     2|   32|       64|
+    |temp_183_loc_channel_U  |        0|   99|   0|    -|     2|   32|       64|
+    |temp_184_loc_channel_U  |        0|   99|   0|    -|     2|   32|       64|
+    |temp_185_loc_channel_U  |        0|   99|   0|    -|     2|   32|       64|
+    |temp_186_loc_channel_U  |        0|   99|   0|    -|     2|   32|       64|
+    |temp_187_loc_channel_U  |        0|   99|   0|    -|     2|   32|       64|
+    |temp_188_loc_channel_U  |        0|   99|   0|    -|     2|   32|       64|
+    |temp_189_loc_channel_U  |        0|   99|   0|    -|     2|   32|       64|
+    |temp_18_loc_channel_U   |        0|   99|   0|    -|     2|   32|       64|
+    |temp_190_loc_channel_U  |        0|   99|   0|    -|     2|   32|       64|
+    |temp_191_loc_channel_U  |        0|   99|   0|    -|     2|   32|       64|
+    |temp_192_loc_channel_U  |        0|   99|   0|    -|     2|   32|       64|
+    |temp_193_loc_channel_U  |        0|   99|   0|    -|     2|   32|       64|
+    |temp_194_loc_channel_U  |        0|   99|   0|    -|     2|   32|       64|
+    |temp_195_loc_channel_U  |        0|   99|   0|    -|     2|   32|       64|
+    |temp_196_loc_channel_U  |        0|   99|   0|    -|     2|   32|       64|
+    |temp_197_loc_channel_U  |        0|   99|   0|    -|     2|   32|       64|
+    |temp_198_loc_channel_U  |        0|   99|   0|    -|     2|   32|       64|
+    |temp_199_loc_channel_U  |        0|   99|   0|    -|     2|   32|       64|
+    |temp_19_loc_channel_U   |        0|   99|   0|    -|     2|   32|       64|
+    |temp_1_loc_channel_U    |        0|   99|   0|    -|     2|   32|       64|
+    |temp_200_loc_channel_U  |        0|   99|   0|    -|     2|   32|       64|
+    |temp_201_loc_channel_U  |        0|   99|   0|    -|     2|   32|       64|
+    |temp_202_loc_channel_U  |        0|   99|   0|    -|     2|   32|       64|
+    |temp_203_loc_channel_U  |        0|   99|   0|    -|     2|   32|       64|
+    |temp_204_loc_channel_U  |        0|   99|   0|    -|     2|   32|       64|
+    |temp_205_loc_channel_U  |        0|   99|   0|    -|     2|   32|       64|
+    |temp_206_loc_channel_U  |        0|   99|   0|    -|     2|   32|       64|
+    |temp_207_loc_channel_U  |        0|   99|   0|    -|     2|   32|       64|
+    |temp_208_loc_channel_U  |        0|   99|   0|    -|     2|   32|       64|
+    |temp_209_loc_channel_U  |        0|   99|   0|    -|     2|   32|       64|
+    |temp_20_loc_channel_U   |        0|   99|   0|    -|     2|   32|       64|
+    |temp_210_loc_channel_U  |        0|   99|   0|    -|     2|   32|       64|
+    |temp_211_loc_channel_U  |        0|   99|   0|    -|     2|   32|       64|
+    |temp_212_loc_channel_U  |        0|   99|   0|    -|     2|   32|       64|
+    |temp_213_loc_channel_U  |        0|   99|   0|    -|     2|   32|       64|
+    |temp_214_loc_channel_U  |        0|   99|   0|    -|     2|   32|       64|
+    |temp_215_loc_channel_U  |        0|   99|   0|    -|     2|   32|       64|
+    |temp_216_loc_channel_U  |        0|   99|   0|    -|     2|   32|       64|
+    |temp_217_loc_channel_U  |        0|   99|   0|    -|     2|   32|       64|
+    |temp_218_loc_channel_U  |        0|   99|   0|    -|     2|   32|       64|
+    |temp_219_loc_channel_U  |        0|   99|   0|    -|     2|   32|       64|
+    |temp_21_loc_channel_U   |        0|   99|   0|    -|     2|   32|       64|
+    |temp_220_loc_channel_U  |        0|   99|   0|    -|     2|   32|       64|
+    |temp_221_loc_channel_U  |        0|   99|   0|    -|     2|   32|       64|
+    |temp_222_loc_channel_U  |        0|   99|   0|    -|     2|   32|       64|
+    |temp_223_loc_channel_U  |        0|   99|   0|    -|     2|   32|       64|
+    |temp_224_loc_channel_U  |        0|   99|   0|    -|     2|   32|       64|
+    |temp_225_loc_channel_U  |        0|   99|   0|    -|     2|   32|       64|
+    |temp_226_loc_channel_U  |        0|   99|   0|    -|     2|   32|       64|
+    |temp_227_loc_channel_U  |        0|   99|   0|    -|     2|   32|       64|
+    |temp_228_loc_channel_U  |        0|   99|   0|    -|     2|   32|       64|
+    |temp_229_loc_channel_U  |        0|   99|   0|    -|     2|   32|       64|
+    |temp_22_loc_channel_U   |        0|   99|   0|    -|     2|   32|       64|
+    |temp_230_loc_channel_U  |        0|   99|   0|    -|     2|   32|       64|
+    |temp_231_loc_channel_U  |        0|   99|   0|    -|     2|   32|       64|
+    |temp_232_loc_channel_U  |        0|   99|   0|    -|     2|   32|       64|
+    |temp_233_loc_channel_U  |        0|   99|   0|    -|     2|   32|       64|
+    |temp_234_loc_channel_U  |        0|   99|   0|    -|     2|   32|       64|
+    |temp_235_loc_channel_U  |        0|   99|   0|    -|     2|   32|       64|
+    |temp_236_loc_channel_U  |        0|   99|   0|    -|     2|   32|       64|
+    |temp_237_loc_channel_U  |        0|   99|   0|    -|     2|   32|       64|
+    |temp_238_loc_channel_U  |        0|   99|   0|    -|     2|   32|       64|
+    |temp_239_loc_channel_U  |        0|   99|   0|    -|     2|   32|       64|
+    |temp_23_loc_channel_U   |        0|   99|   0|    -|     2|   32|       64|
+    |temp_240_loc_channel_U  |        0|   99|   0|    -|     2|   32|       64|
+    |temp_241_loc_channel_U  |        0|   99|   0|    -|     2|   32|       64|
+    |temp_242_loc_channel_U  |        0|   99|   0|    -|     2|   32|       64|
+    |temp_243_loc_channel_U  |        0|   99|   0|    -|     2|   32|       64|
+    |temp_244_loc_channel_U  |        0|   99|   0|    -|     2|   32|       64|
+    |temp_245_loc_channel_U  |        0|   99|   0|    -|     2|   32|       64|
+    |temp_246_loc_channel_U  |        0|   99|   0|    -|     2|   32|       64|
+    |temp_247_loc_channel_U  |        0|   99|   0|    -|     2|   32|       64|
+    |temp_248_loc_channel_U  |        0|   99|   0|    -|     2|   32|       64|
+    |temp_249_loc_channel_U  |        0|   99|   0|    -|     2|   32|       64|
+    |temp_24_loc_channel_U   |        0|   99|   0|    -|     2|   32|       64|
+    |temp_250_loc_channel_U  |        0|   99|   0|    -|     2|   32|       64|
+    |temp_251_loc_channel_U  |        0|   99|   0|    -|     2|   32|       64|
+    |temp_252_loc_channel_U  |        0|   99|   0|    -|     2|   32|       64|
+    |temp_253_loc_channel_U  |        0|   99|   0|    -|     2|   32|       64|
+    |temp_254_loc_channel_U  |        0|   99|   0|    -|     2|   32|       64|
+    |temp_255_loc_channel_U  |        0|   99|   0|    -|     2|   32|       64|
+    |temp_25_loc_channel_U   |        0|   99|   0|    -|     2|   32|       64|
+    |temp_26_loc_channel_U   |        0|   99|   0|    -|     2|   32|       64|
+    |temp_27_loc_channel_U   |        0|   99|   0|    -|     2|   32|       64|
+    |temp_28_loc_channel_U   |        0|   99|   0|    -|     2|   32|       64|
+    |temp_29_loc_channel_U   |        0|   99|   0|    -|     2|   32|       64|
+    |temp_2_loc_channel_U    |        0|   99|   0|    -|     2|   32|       64|
+    |temp_30_loc_channel_U   |        0|   99|   0|    -|     2|   32|       64|
+    |temp_31_loc_channel_U   |        0|   99|   0|    -|     2|   32|       64|
+    |temp_32_loc_channel_U   |        0|   99|   0|    -|     2|   32|       64|
+    |temp_33_loc_channel_U   |        0|   99|   0|    -|     2|   32|       64|
+    |temp_34_loc_channel_U   |        0|   99|   0|    -|     2|   32|       64|
+    |temp_35_loc_channel_U   |        0|   99|   0|    -|     2|   32|       64|
+    |temp_36_loc_channel_U   |        0|   99|   0|    -|     2|   32|       64|
+    |temp_37_loc_channel_U   |        0|   99|   0|    -|     2|   32|       64|
+    |temp_38_loc_channel_U   |        0|   99|   0|    -|     2|   32|       64|
+    |temp_39_loc_channel_U   |        0|   99|   0|    -|     2|   32|       64|
+    |temp_3_loc_channel_U    |        0|   99|   0|    -|     2|   32|       64|
+    |temp_40_loc_channel_U   |        0|   99|   0|    -|     2|   32|       64|
+    |temp_41_loc_channel_U   |        0|   99|   0|    -|     2|   32|       64|
+    |temp_42_loc_channel_U   |        0|   99|   0|    -|     2|   32|       64|
+    |temp_43_loc_channel_U   |        0|   99|   0|    -|     2|   32|       64|
+    |temp_44_loc_channel_U   |        0|   99|   0|    -|     2|   32|       64|
+    |temp_45_loc_channel_U   |        0|   99|   0|    -|     2|   32|       64|
+    |temp_46_loc_channel_U   |        0|   99|   0|    -|     2|   32|       64|
+    |temp_47_loc_channel_U   |        0|   99|   0|    -|     2|   32|       64|
+    |temp_48_loc_channel_U   |        0|   99|   0|    -|     2|   32|       64|
+    |temp_49_loc_channel_U   |        0|   99|   0|    -|     2|   32|       64|
+    |temp_4_loc_channel_U    |        0|   99|   0|    -|     2|   32|       64|
+    |temp_50_loc_channel_U   |        0|   99|   0|    -|     2|   32|       64|
+    |temp_51_loc_channel_U   |        0|   99|   0|    -|     2|   32|       64|
+    |temp_52_loc_channel_U   |        0|   99|   0|    -|     2|   32|       64|
+    |temp_53_loc_channel_U   |        0|   99|   0|    -|     2|   32|       64|
+    |temp_54_loc_channel_U   |        0|   99|   0|    -|     2|   32|       64|
+    |temp_55_loc_channel_U   |        0|   99|   0|    -|     2|   32|       64|
+    |temp_56_loc_channel_U   |        0|   99|   0|    -|     2|   32|       64|
+    |temp_57_loc_channel_U   |        0|   99|   0|    -|     2|   32|       64|
+    |temp_58_loc_channel_U   |        0|   99|   0|    -|     2|   32|       64|
+    |temp_59_loc_channel_U   |        0|   99|   0|    -|     2|   32|       64|
+    |temp_5_loc_channel_U    |        0|   99|   0|    -|     2|   32|       64|
+    |temp_60_loc_channel_U   |        0|   99|   0|    -|     2|   32|       64|
+    |temp_61_loc_channel_U   |        0|   99|   0|    -|     2|   32|       64|
+    |temp_62_loc_channel_U   |        0|   99|   0|    -|     2|   32|       64|
+    |temp_63_loc_channel_U   |        0|   99|   0|    -|     2|   32|       64|
+    |temp_64_loc_channel_U   |        0|   99|   0|    -|     2|   32|       64|
+    |temp_65_loc_channel_U   |        0|   99|   0|    -|     2|   32|       64|
+    |temp_66_loc_channel_U   |        0|   99|   0|    -|     2|   32|       64|
+    |temp_67_loc_channel_U   |        0|   99|   0|    -|     2|   32|       64|
+    |temp_68_loc_channel_U   |        0|   99|   0|    -|     2|   32|       64|
+    |temp_69_loc_channel_U   |        0|   99|   0|    -|     2|   32|       64|
+    |temp_6_loc_channel_U    |        0|   99|   0|    -|     2|   32|       64|
+    |temp_70_loc_channel_U   |        0|   99|   0|    -|     2|   32|       64|
+    |temp_71_loc_channel_U   |        0|   99|   0|    -|     2|   32|       64|
+    |temp_72_loc_channel_U   |        0|   99|   0|    -|     2|   32|       64|
+    |temp_73_loc_channel_U   |        0|   99|   0|    -|     2|   32|       64|
+    |temp_74_loc_channel_U   |        0|   99|   0|    -|     2|   32|       64|
+    |temp_75_loc_channel_U   |        0|   99|   0|    -|     2|   32|       64|
+    |temp_76_loc_channel_U   |        0|   99|   0|    -|     2|   32|       64|
+    |temp_77_loc_channel_U   |        0|   99|   0|    -|     2|   32|       64|
+    |temp_78_loc_channel_U   |        0|   99|   0|    -|     2|   32|       64|
+    |temp_79_loc_channel_U   |        0|   99|   0|    -|     2|   32|       64|
+    |temp_7_loc_channel_U    |        0|   99|   0|    -|     2|   32|       64|
+    |temp_80_loc_channel_U   |        0|   99|   0|    -|     2|   32|       64|
+    |temp_81_loc_channel_U   |        0|   99|   0|    -|     2|   32|       64|
+    |temp_82_loc_channel_U   |        0|   99|   0|    -|     2|   32|       64|
+    |temp_83_loc_channel_U   |        0|   99|   0|    -|     2|   32|       64|
+    |temp_84_loc_channel_U   |        0|   99|   0|    -|     2|   32|       64|
+    |temp_85_loc_channel_U   |        0|   99|   0|    -|     2|   32|       64|
+    |temp_86_loc_channel_U   |        0|   99|   0|    -|     2|   32|       64|
+    |temp_87_loc_channel_U   |        0|   99|   0|    -|     2|   32|       64|
+    |temp_88_loc_channel_U   |        0|   99|   0|    -|     2|   32|       64|
+    |temp_89_loc_channel_U   |        0|   99|   0|    -|     2|   32|       64|
+    |temp_8_loc_channel_U    |        0|   99|   0|    -|     2|   32|       64|
+    |temp_90_loc_channel_U   |        0|   99|   0|    -|     2|   32|       64|
+    |temp_91_loc_channel_U   |        0|   99|   0|    -|     2|   32|       64|
+    |temp_92_loc_channel_U   |        0|   99|   0|    -|     2|   32|       64|
+    |temp_93_loc_channel_U   |        0|   99|   0|    -|     2|   32|       64|
+    |temp_94_loc_channel_U   |        0|   99|   0|    -|     2|   32|       64|
+    |temp_95_loc_channel_U   |        0|   99|   0|    -|     2|   32|       64|
+    |temp_96_loc_channel_U   |        0|   99|   0|    -|     2|   32|       64|
+    |temp_97_loc_channel_U   |        0|   99|   0|    -|     2|   32|       64|
+    |temp_98_loc_channel_U   |        0|   99|   0|    -|     2|   32|       64|
+    |temp_99_loc_channel_U   |        0|   99|   0|    -|     2|   32|       64|
+    |temp_9_loc_channel_U    |        0|   99|   0|    -|     2|   32|       64|
+    |temp_loc_channel_U      |        0|   99|   0|    -|     2|   32|       64|
+    +------------------------+---------+-----+----+-----+------+-----+---------+
+    |Total                   |        0|25344|   0|    0|   512| 8192|    16384|
+    +------------------------+---------+-----+----+-----+------+-----+---------+
+
+    * Expression: 
+    +--------------------------------------------+----------+----+---+----+------------+------------+
+    |                Variable Name               | Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +--------------------------------------------+----------+----+---+----+------------+------------+
+    |Loop_VITIS_LOOP_18_1_proc_U0_ap_continue    |       and|   0|  0|   2|           1|           1|
+    |Loop_VITIS_LOOP_23_2_proc_U0_ap_start       |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_100_loc_channel        |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_101_loc_channel        |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_102_loc_channel        |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_103_loc_channel        |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_104_loc_channel        |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_105_loc_channel        |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_106_loc_channel        |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_107_loc_channel        |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_108_loc_channel        |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_109_loc_channel        |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_10_loc_channel         |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_110_loc_channel        |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_111_loc_channel        |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_112_loc_channel        |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_113_loc_channel        |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_114_loc_channel        |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_115_loc_channel        |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_116_loc_channel        |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_117_loc_channel        |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_118_loc_channel        |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_119_loc_channel        |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_11_loc_channel         |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_120_loc_channel        |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_121_loc_channel        |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_122_loc_channel        |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_123_loc_channel        |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_124_loc_channel        |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_125_loc_channel        |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_126_loc_channel        |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_127_loc_channel        |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_128_loc_channel        |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_129_loc_channel        |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_12_loc_channel         |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_130_loc_channel        |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_131_loc_channel        |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_132_loc_channel        |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_133_loc_channel        |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_134_loc_channel        |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_135_loc_channel        |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_136_loc_channel        |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_137_loc_channel        |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_138_loc_channel        |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_139_loc_channel        |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_13_loc_channel         |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_140_loc_channel        |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_141_loc_channel        |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_142_loc_channel        |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_143_loc_channel        |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_144_loc_channel        |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_145_loc_channel        |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_146_loc_channel        |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_147_loc_channel        |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_148_loc_channel        |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_149_loc_channel        |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_14_loc_channel         |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_150_loc_channel        |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_151_loc_channel        |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_152_loc_channel        |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_153_loc_channel        |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_154_loc_channel        |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_155_loc_channel        |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_156_loc_channel        |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_157_loc_channel        |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_158_loc_channel        |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_159_loc_channel        |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_15_loc_channel         |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_160_loc_channel        |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_161_loc_channel        |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_162_loc_channel        |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_163_loc_channel        |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_164_loc_channel        |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_165_loc_channel        |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_166_loc_channel        |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_167_loc_channel        |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_168_loc_channel        |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_169_loc_channel        |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_16_loc_channel         |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_170_loc_channel        |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_171_loc_channel        |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_172_loc_channel        |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_173_loc_channel        |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_174_loc_channel        |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_175_loc_channel        |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_176_loc_channel        |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_177_loc_channel        |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_178_loc_channel        |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_179_loc_channel        |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_17_loc_channel         |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_180_loc_channel        |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_181_loc_channel        |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_182_loc_channel        |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_183_loc_channel        |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_184_loc_channel        |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_185_loc_channel        |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_186_loc_channel        |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_187_loc_channel        |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_188_loc_channel        |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_189_loc_channel        |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_18_loc_channel         |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_190_loc_channel        |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_191_loc_channel        |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_192_loc_channel        |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_193_loc_channel        |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_194_loc_channel        |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_195_loc_channel        |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_196_loc_channel        |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_197_loc_channel        |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_198_loc_channel        |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_199_loc_channel        |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_19_loc_channel         |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_1_loc_channel          |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_200_loc_channel        |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_201_loc_channel        |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_202_loc_channel        |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_203_loc_channel        |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_204_loc_channel        |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_205_loc_channel        |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_206_loc_channel        |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_207_loc_channel        |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_208_loc_channel        |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_209_loc_channel        |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_20_loc_channel         |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_210_loc_channel        |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_211_loc_channel        |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_212_loc_channel        |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_213_loc_channel        |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_214_loc_channel        |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_215_loc_channel        |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_216_loc_channel        |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_217_loc_channel        |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_218_loc_channel        |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_219_loc_channel        |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_21_loc_channel         |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_220_loc_channel        |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_221_loc_channel        |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_222_loc_channel        |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_223_loc_channel        |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_224_loc_channel        |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_225_loc_channel        |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_226_loc_channel        |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_227_loc_channel        |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_228_loc_channel        |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_229_loc_channel        |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_22_loc_channel         |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_230_loc_channel        |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_231_loc_channel        |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_232_loc_channel        |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_233_loc_channel        |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_234_loc_channel        |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_235_loc_channel        |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_236_loc_channel        |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_237_loc_channel        |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_238_loc_channel        |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_239_loc_channel        |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_23_loc_channel         |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_240_loc_channel        |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_241_loc_channel        |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_242_loc_channel        |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_243_loc_channel        |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_244_loc_channel        |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_245_loc_channel        |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_246_loc_channel        |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_247_loc_channel        |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_248_loc_channel        |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_249_loc_channel        |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_24_loc_channel         |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_250_loc_channel        |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_251_loc_channel        |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_252_loc_channel        |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_253_loc_channel        |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_254_loc_channel        |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_255_loc_channel        |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_25_loc_channel         |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_26_loc_channel         |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_27_loc_channel         |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_28_loc_channel         |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_29_loc_channel         |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_2_loc_channel          |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_30_loc_channel         |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_31_loc_channel         |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_32_loc_channel         |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_33_loc_channel         |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_34_loc_channel         |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_35_loc_channel         |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_36_loc_channel         |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_37_loc_channel         |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_38_loc_channel         |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_39_loc_channel         |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_3_loc_channel          |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_40_loc_channel         |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_41_loc_channel         |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_42_loc_channel         |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_43_loc_channel         |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_44_loc_channel         |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_45_loc_channel         |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_46_loc_channel         |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_47_loc_channel         |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_48_loc_channel         |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_49_loc_channel         |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_4_loc_channel          |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_50_loc_channel         |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_51_loc_channel         |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_52_loc_channel         |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_53_loc_channel         |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_54_loc_channel         |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_55_loc_channel         |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_56_loc_channel         |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_57_loc_channel         |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_58_loc_channel         |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_59_loc_channel         |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_5_loc_channel          |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_60_loc_channel         |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_61_loc_channel         |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_62_loc_channel         |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_63_loc_channel         |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_64_loc_channel         |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_65_loc_channel         |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_66_loc_channel         |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_67_loc_channel         |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_68_loc_channel         |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_69_loc_channel         |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_6_loc_channel          |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_70_loc_channel         |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_71_loc_channel         |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_72_loc_channel         |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_73_loc_channel         |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_74_loc_channel         |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_75_loc_channel         |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_76_loc_channel         |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_77_loc_channel         |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_78_loc_channel         |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_79_loc_channel         |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_7_loc_channel          |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_80_loc_channel         |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_81_loc_channel         |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_82_loc_channel         |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_83_loc_channel         |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_84_loc_channel         |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_85_loc_channel         |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_86_loc_channel         |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_87_loc_channel         |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_88_loc_channel         |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_89_loc_channel         |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_8_loc_channel          |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_90_loc_channel         |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_91_loc_channel         |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_92_loc_channel         |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_93_loc_channel         |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_94_loc_channel         |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_95_loc_channel         |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_96_loc_channel         |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_97_loc_channel         |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_98_loc_channel         |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_99_loc_channel         |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_9_loc_channel          |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_temp_loc_channel            |       and|   0|  0|   2|           1|           1|
+    |ap_idle                                     |       and|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_100_loc_channel  |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_101_loc_channel  |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_102_loc_channel  |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_103_loc_channel  |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_104_loc_channel  |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_105_loc_channel  |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_106_loc_channel  |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_107_loc_channel  |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_108_loc_channel  |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_109_loc_channel  |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_10_loc_channel   |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_110_loc_channel  |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_111_loc_channel  |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_112_loc_channel  |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_113_loc_channel  |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_114_loc_channel  |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_115_loc_channel  |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_116_loc_channel  |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_117_loc_channel  |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_118_loc_channel  |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_119_loc_channel  |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_11_loc_channel   |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_120_loc_channel  |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_121_loc_channel  |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_122_loc_channel  |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_123_loc_channel  |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_124_loc_channel  |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_125_loc_channel  |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_126_loc_channel  |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_127_loc_channel  |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_128_loc_channel  |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_129_loc_channel  |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_12_loc_channel   |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_130_loc_channel  |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_131_loc_channel  |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_132_loc_channel  |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_133_loc_channel  |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_134_loc_channel  |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_135_loc_channel  |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_136_loc_channel  |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_137_loc_channel  |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_138_loc_channel  |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_139_loc_channel  |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_13_loc_channel   |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_140_loc_channel  |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_141_loc_channel  |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_142_loc_channel  |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_143_loc_channel  |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_144_loc_channel  |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_145_loc_channel  |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_146_loc_channel  |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_147_loc_channel  |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_148_loc_channel  |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_149_loc_channel  |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_14_loc_channel   |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_150_loc_channel  |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_151_loc_channel  |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_152_loc_channel  |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_153_loc_channel  |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_154_loc_channel  |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_155_loc_channel  |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_156_loc_channel  |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_157_loc_channel  |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_158_loc_channel  |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_159_loc_channel  |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_15_loc_channel   |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_160_loc_channel  |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_161_loc_channel  |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_162_loc_channel  |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_163_loc_channel  |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_164_loc_channel  |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_165_loc_channel  |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_166_loc_channel  |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_167_loc_channel  |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_168_loc_channel  |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_169_loc_channel  |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_16_loc_channel   |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_170_loc_channel  |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_171_loc_channel  |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_172_loc_channel  |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_173_loc_channel  |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_174_loc_channel  |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_175_loc_channel  |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_176_loc_channel  |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_177_loc_channel  |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_178_loc_channel  |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_179_loc_channel  |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_17_loc_channel   |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_180_loc_channel  |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_181_loc_channel  |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_182_loc_channel  |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_183_loc_channel  |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_184_loc_channel  |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_185_loc_channel  |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_186_loc_channel  |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_187_loc_channel  |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_188_loc_channel  |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_189_loc_channel  |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_18_loc_channel   |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_190_loc_channel  |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_191_loc_channel  |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_192_loc_channel  |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_193_loc_channel  |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_194_loc_channel  |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_195_loc_channel  |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_196_loc_channel  |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_197_loc_channel  |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_198_loc_channel  |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_199_loc_channel  |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_19_loc_channel   |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_1_loc_channel    |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_200_loc_channel  |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_201_loc_channel  |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_202_loc_channel  |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_203_loc_channel  |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_204_loc_channel  |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_205_loc_channel  |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_206_loc_channel  |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_207_loc_channel  |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_208_loc_channel  |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_209_loc_channel  |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_20_loc_channel   |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_210_loc_channel  |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_211_loc_channel  |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_212_loc_channel  |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_213_loc_channel  |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_214_loc_channel  |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_215_loc_channel  |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_216_loc_channel  |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_217_loc_channel  |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_218_loc_channel  |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_219_loc_channel  |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_21_loc_channel   |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_220_loc_channel  |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_221_loc_channel  |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_222_loc_channel  |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_223_loc_channel  |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_224_loc_channel  |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_225_loc_channel  |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_226_loc_channel  |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_227_loc_channel  |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_228_loc_channel  |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_229_loc_channel  |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_22_loc_channel   |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_230_loc_channel  |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_231_loc_channel  |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_232_loc_channel  |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_233_loc_channel  |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_234_loc_channel  |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_235_loc_channel  |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_236_loc_channel  |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_237_loc_channel  |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_238_loc_channel  |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_239_loc_channel  |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_23_loc_channel   |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_240_loc_channel  |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_241_loc_channel  |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_242_loc_channel  |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_243_loc_channel  |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_244_loc_channel  |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_245_loc_channel  |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_246_loc_channel  |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_247_loc_channel  |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_248_loc_channel  |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_249_loc_channel  |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_24_loc_channel   |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_250_loc_channel  |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_251_loc_channel  |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_252_loc_channel  |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_253_loc_channel  |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_254_loc_channel  |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_255_loc_channel  |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_25_loc_channel   |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_26_loc_channel   |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_27_loc_channel   |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_28_loc_channel   |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_29_loc_channel   |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_2_loc_channel    |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_30_loc_channel   |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_31_loc_channel   |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_32_loc_channel   |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_33_loc_channel   |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_34_loc_channel   |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_35_loc_channel   |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_36_loc_channel   |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_37_loc_channel   |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_38_loc_channel   |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_39_loc_channel   |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_3_loc_channel    |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_40_loc_channel   |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_41_loc_channel   |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_42_loc_channel   |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_43_loc_channel   |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_44_loc_channel   |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_45_loc_channel   |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_46_loc_channel   |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_47_loc_channel   |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_48_loc_channel   |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_49_loc_channel   |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_4_loc_channel    |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_50_loc_channel   |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_51_loc_channel   |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_52_loc_channel   |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_53_loc_channel   |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_54_loc_channel   |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_55_loc_channel   |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_56_loc_channel   |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_57_loc_channel   |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_58_loc_channel   |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_59_loc_channel   |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_5_loc_channel    |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_60_loc_channel   |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_61_loc_channel   |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_62_loc_channel   |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_63_loc_channel   |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_64_loc_channel   |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_65_loc_channel   |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_66_loc_channel   |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_67_loc_channel   |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_68_loc_channel   |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_69_loc_channel   |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_6_loc_channel    |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_70_loc_channel   |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_71_loc_channel   |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_72_loc_channel   |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_73_loc_channel   |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_74_loc_channel   |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_75_loc_channel   |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_76_loc_channel   |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_77_loc_channel   |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_78_loc_channel   |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_79_loc_channel   |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_7_loc_channel    |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_80_loc_channel   |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_81_loc_channel   |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_82_loc_channel   |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_83_loc_channel   |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_84_loc_channel   |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_85_loc_channel   |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_86_loc_channel   |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_87_loc_channel   |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_88_loc_channel   |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_89_loc_channel   |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_8_loc_channel    |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_90_loc_channel   |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_91_loc_channel   |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_92_loc_channel   |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_93_loc_channel   |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_94_loc_channel   |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_95_loc_channel   |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_96_loc_channel   |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_97_loc_channel   |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_98_loc_channel   |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_99_loc_channel   |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_9_loc_channel    |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_temp_loc_channel      |        or|   0|  0|   2|           1|           1|
+    +--------------------------------------------+----------+----+---+----+------------+------------+
+    |Total                                       |          |   0|  0|1030|         515|         515|
+    +--------------------------------------------+----------+----+---+----+------------+------------+
+
+    * Multiplexer: 
+    +------------------------------------------------+----+-----------+-----+-----------+
+    |                      Name                      | LUT| Input Size| Bits| Total Bits|
+    +------------------------------------------------+----+-----------+-----+-----------+
+    |ap_sync_reg_channel_write_temp_100_loc_channel  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_101_loc_channel  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_102_loc_channel  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_103_loc_channel  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_104_loc_channel  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_105_loc_channel  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_106_loc_channel  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_107_loc_channel  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_108_loc_channel  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_109_loc_channel  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_10_loc_channel   |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_110_loc_channel  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_111_loc_channel  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_112_loc_channel  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_113_loc_channel  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_114_loc_channel  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_115_loc_channel  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_116_loc_channel  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_117_loc_channel  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_118_loc_channel  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_119_loc_channel  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_11_loc_channel   |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_120_loc_channel  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_121_loc_channel  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_122_loc_channel  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_123_loc_channel  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_124_loc_channel  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_125_loc_channel  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_126_loc_channel  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_127_loc_channel  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_128_loc_channel  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_129_loc_channel  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_12_loc_channel   |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_130_loc_channel  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_131_loc_channel  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_132_loc_channel  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_133_loc_channel  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_134_loc_channel  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_135_loc_channel  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_136_loc_channel  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_137_loc_channel  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_138_loc_channel  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_139_loc_channel  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_13_loc_channel   |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_140_loc_channel  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_141_loc_channel  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_142_loc_channel  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_143_loc_channel  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_144_loc_channel  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_145_loc_channel  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_146_loc_channel  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_147_loc_channel  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_148_loc_channel  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_149_loc_channel  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_14_loc_channel   |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_150_loc_channel  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_151_loc_channel  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_152_loc_channel  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_153_loc_channel  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_154_loc_channel  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_155_loc_channel  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_156_loc_channel  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_157_loc_channel  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_158_loc_channel  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_159_loc_channel  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_15_loc_channel   |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_160_loc_channel  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_161_loc_channel  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_162_loc_channel  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_163_loc_channel  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_164_loc_channel  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_165_loc_channel  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_166_loc_channel  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_167_loc_channel  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_168_loc_channel  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_169_loc_channel  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_16_loc_channel   |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_170_loc_channel  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_171_loc_channel  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_172_loc_channel  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_173_loc_channel  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_174_loc_channel  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_175_loc_channel  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_176_loc_channel  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_177_loc_channel  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_178_loc_channel  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_179_loc_channel  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_17_loc_channel   |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_180_loc_channel  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_181_loc_channel  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_182_loc_channel  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_183_loc_channel  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_184_loc_channel  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_185_loc_channel  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_186_loc_channel  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_187_loc_channel  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_188_loc_channel  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_189_loc_channel  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_18_loc_channel   |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_190_loc_channel  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_191_loc_channel  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_192_loc_channel  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_193_loc_channel  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_194_loc_channel  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_195_loc_channel  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_196_loc_channel  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_197_loc_channel  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_198_loc_channel  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_199_loc_channel  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_19_loc_channel   |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_1_loc_channel    |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_200_loc_channel  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_201_loc_channel  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_202_loc_channel  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_203_loc_channel  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_204_loc_channel  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_205_loc_channel  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_206_loc_channel  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_207_loc_channel  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_208_loc_channel  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_209_loc_channel  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_20_loc_channel   |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_210_loc_channel  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_211_loc_channel  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_212_loc_channel  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_213_loc_channel  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_214_loc_channel  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_215_loc_channel  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_216_loc_channel  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_217_loc_channel  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_218_loc_channel  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_219_loc_channel  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_21_loc_channel   |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_220_loc_channel  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_221_loc_channel  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_222_loc_channel  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_223_loc_channel  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_224_loc_channel  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_225_loc_channel  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_226_loc_channel  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_227_loc_channel  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_228_loc_channel  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_229_loc_channel  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_22_loc_channel   |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_230_loc_channel  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_231_loc_channel  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_232_loc_channel  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_233_loc_channel  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_234_loc_channel  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_235_loc_channel  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_236_loc_channel  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_237_loc_channel  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_238_loc_channel  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_239_loc_channel  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_23_loc_channel   |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_240_loc_channel  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_241_loc_channel  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_242_loc_channel  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_243_loc_channel  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_244_loc_channel  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_245_loc_channel  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_246_loc_channel  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_247_loc_channel  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_248_loc_channel  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_249_loc_channel  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_24_loc_channel   |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_250_loc_channel  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_251_loc_channel  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_252_loc_channel  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_253_loc_channel  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_254_loc_channel  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_255_loc_channel  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_25_loc_channel   |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_26_loc_channel   |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_27_loc_channel   |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_28_loc_channel   |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_29_loc_channel   |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_2_loc_channel    |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_30_loc_channel   |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_31_loc_channel   |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_32_loc_channel   |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_33_loc_channel   |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_34_loc_channel   |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_35_loc_channel   |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_36_loc_channel   |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_37_loc_channel   |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_38_loc_channel   |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_39_loc_channel   |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_3_loc_channel    |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_40_loc_channel   |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_41_loc_channel   |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_42_loc_channel   |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_43_loc_channel   |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_44_loc_channel   |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_45_loc_channel   |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_46_loc_channel   |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_47_loc_channel   |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_48_loc_channel   |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_49_loc_channel   |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_4_loc_channel    |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_50_loc_channel   |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_51_loc_channel   |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_52_loc_channel   |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_53_loc_channel   |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_54_loc_channel   |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_55_loc_channel   |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_56_loc_channel   |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_57_loc_channel   |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_58_loc_channel   |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_59_loc_channel   |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_5_loc_channel    |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_60_loc_channel   |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_61_loc_channel   |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_62_loc_channel   |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_63_loc_channel   |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_64_loc_channel   |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_65_loc_channel   |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_66_loc_channel   |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_67_loc_channel   |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_68_loc_channel   |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_69_loc_channel   |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_6_loc_channel    |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_70_loc_channel   |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_71_loc_channel   |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_72_loc_channel   |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_73_loc_channel   |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_74_loc_channel   |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_75_loc_channel   |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_76_loc_channel   |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_77_loc_channel   |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_78_loc_channel   |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_79_loc_channel   |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_7_loc_channel    |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_80_loc_channel   |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_81_loc_channel   |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_82_loc_channel   |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_83_loc_channel   |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_84_loc_channel   |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_85_loc_channel   |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_86_loc_channel   |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_87_loc_channel   |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_88_loc_channel   |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_89_loc_channel   |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_8_loc_channel    |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_90_loc_channel   |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_91_loc_channel   |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_92_loc_channel   |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_93_loc_channel   |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_94_loc_channel   |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_95_loc_channel   |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_96_loc_channel   |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_97_loc_channel   |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_98_loc_channel   |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_99_loc_channel   |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_9_loc_channel    |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_temp_loc_channel      |   9|          2|    1|          2|
+    +------------------------------------------------+----+-----------+-----+-----------+
+    |Total                                           |2304|        512|  256|        512|
+    +------------------------------------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +------------------------------------------------+---+----+-----+-----------+
+    |                      Name                      | FF| LUT| Bits| Const Bits|
+    +------------------------------------------------+---+----+-----+-----------+
+    |ap_sync_reg_channel_write_temp_100_loc_channel  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_101_loc_channel  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_102_loc_channel  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_103_loc_channel  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_104_loc_channel  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_105_loc_channel  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_106_loc_channel  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_107_loc_channel  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_108_loc_channel  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_109_loc_channel  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_10_loc_channel   |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_110_loc_channel  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_111_loc_channel  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_112_loc_channel  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_113_loc_channel  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_114_loc_channel  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_115_loc_channel  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_116_loc_channel  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_117_loc_channel  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_118_loc_channel  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_119_loc_channel  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_11_loc_channel   |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_120_loc_channel  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_121_loc_channel  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_122_loc_channel  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_123_loc_channel  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_124_loc_channel  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_125_loc_channel  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_126_loc_channel  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_127_loc_channel  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_128_loc_channel  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_129_loc_channel  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_12_loc_channel   |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_130_loc_channel  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_131_loc_channel  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_132_loc_channel  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_133_loc_channel  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_134_loc_channel  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_135_loc_channel  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_136_loc_channel  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_137_loc_channel  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_138_loc_channel  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_139_loc_channel  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_13_loc_channel   |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_140_loc_channel  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_141_loc_channel  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_142_loc_channel  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_143_loc_channel  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_144_loc_channel  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_145_loc_channel  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_146_loc_channel  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_147_loc_channel  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_148_loc_channel  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_149_loc_channel  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_14_loc_channel   |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_150_loc_channel  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_151_loc_channel  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_152_loc_channel  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_153_loc_channel  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_154_loc_channel  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_155_loc_channel  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_156_loc_channel  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_157_loc_channel  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_158_loc_channel  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_159_loc_channel  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_15_loc_channel   |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_160_loc_channel  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_161_loc_channel  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_162_loc_channel  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_163_loc_channel  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_164_loc_channel  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_165_loc_channel  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_166_loc_channel  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_167_loc_channel  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_168_loc_channel  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_169_loc_channel  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_16_loc_channel   |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_170_loc_channel  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_171_loc_channel  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_172_loc_channel  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_173_loc_channel  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_174_loc_channel  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_175_loc_channel  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_176_loc_channel  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_177_loc_channel  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_178_loc_channel  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_179_loc_channel  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_17_loc_channel   |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_180_loc_channel  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_181_loc_channel  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_182_loc_channel  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_183_loc_channel  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_184_loc_channel  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_185_loc_channel  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_186_loc_channel  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_187_loc_channel  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_188_loc_channel  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_189_loc_channel  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_18_loc_channel   |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_190_loc_channel  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_191_loc_channel  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_192_loc_channel  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_193_loc_channel  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_194_loc_channel  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_195_loc_channel  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_196_loc_channel  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_197_loc_channel  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_198_loc_channel  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_199_loc_channel  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_19_loc_channel   |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_1_loc_channel    |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_200_loc_channel  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_201_loc_channel  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_202_loc_channel  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_203_loc_channel  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_204_loc_channel  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_205_loc_channel  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_206_loc_channel  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_207_loc_channel  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_208_loc_channel  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_209_loc_channel  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_20_loc_channel   |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_210_loc_channel  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_211_loc_channel  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_212_loc_channel  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_213_loc_channel  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_214_loc_channel  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_215_loc_channel  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_216_loc_channel  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_217_loc_channel  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_218_loc_channel  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_219_loc_channel  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_21_loc_channel   |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_220_loc_channel  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_221_loc_channel  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_222_loc_channel  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_223_loc_channel  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_224_loc_channel  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_225_loc_channel  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_226_loc_channel  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_227_loc_channel  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_228_loc_channel  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_229_loc_channel  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_22_loc_channel   |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_230_loc_channel  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_231_loc_channel  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_232_loc_channel  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_233_loc_channel  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_234_loc_channel  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_235_loc_channel  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_236_loc_channel  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_237_loc_channel  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_238_loc_channel  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_239_loc_channel  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_23_loc_channel   |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_240_loc_channel  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_241_loc_channel  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_242_loc_channel  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_243_loc_channel  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_244_loc_channel  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_245_loc_channel  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_246_loc_channel  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_247_loc_channel  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_248_loc_channel  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_249_loc_channel  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_24_loc_channel   |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_250_loc_channel  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_251_loc_channel  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_252_loc_channel  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_253_loc_channel  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_254_loc_channel  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_255_loc_channel  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_25_loc_channel   |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_26_loc_channel   |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_27_loc_channel   |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_28_loc_channel   |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_29_loc_channel   |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_2_loc_channel    |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_30_loc_channel   |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_31_loc_channel   |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_32_loc_channel   |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_33_loc_channel   |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_34_loc_channel   |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_35_loc_channel   |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_36_loc_channel   |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_37_loc_channel   |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_38_loc_channel   |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_39_loc_channel   |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_3_loc_channel    |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_40_loc_channel   |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_41_loc_channel   |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_42_loc_channel   |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_43_loc_channel   |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_44_loc_channel   |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_45_loc_channel   |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_46_loc_channel   |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_47_loc_channel   |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_48_loc_channel   |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_49_loc_channel   |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_4_loc_channel    |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_50_loc_channel   |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_51_loc_channel   |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_52_loc_channel   |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_53_loc_channel   |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_54_loc_channel   |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_55_loc_channel   |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_56_loc_channel   |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_57_loc_channel   |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_58_loc_channel   |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_59_loc_channel   |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_5_loc_channel    |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_60_loc_channel   |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_61_loc_channel   |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_62_loc_channel   |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_63_loc_channel   |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_64_loc_channel   |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_65_loc_channel   |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_66_loc_channel   |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_67_loc_channel   |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_68_loc_channel   |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_69_loc_channel   |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_6_loc_channel    |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_70_loc_channel   |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_71_loc_channel   |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_72_loc_channel   |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_73_loc_channel   |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_74_loc_channel   |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_75_loc_channel   |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_76_loc_channel   |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_77_loc_channel   |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_78_loc_channel   |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_79_loc_channel   |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_7_loc_channel    |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_80_loc_channel   |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_81_loc_channel   |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_82_loc_channel   |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_83_loc_channel   |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_84_loc_channel   |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_85_loc_channel   |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_86_loc_channel   |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_87_loc_channel   |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_88_loc_channel   |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_89_loc_channel   |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_8_loc_channel    |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_90_loc_channel   |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_91_loc_channel   |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_92_loc_channel   |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_93_loc_channel   |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_94_loc_channel   |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_95_loc_channel   |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_96_loc_channel   |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_97_loc_channel   |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_98_loc_channel   |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_99_loc_channel   |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_9_loc_channel    |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_temp_loc_channel      |  1|   0|    1|          0|
+    +------------------------------------------------+---+----+-----+-----------+
+    |Total                                           |256|   0|  256|          0|
+    +------------------------------------------------+---+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++----------------------+-----+-----+------------+--------------+--------------+
+|       RTL Ports      | Dir | Bits|  Protocol  | Source Object|    C Type    |
++----------------------+-----+-----+------------+--------------+--------------+
+|real_sample_address0  |  out|    8|   ap_memory|   real_sample|         array|
+|real_sample_ce0       |  out|    1|   ap_memory|   real_sample|         array|
+|real_sample_d0        |  out|   32|   ap_memory|   real_sample|         array|
+|real_sample_q0        |   in|   32|   ap_memory|   real_sample|         array|
+|real_sample_we0       |  out|    1|   ap_memory|   real_sample|         array|
+|real_sample_address1  |  out|    8|   ap_memory|   real_sample|         array|
+|real_sample_ce1       |  out|    1|   ap_memory|   real_sample|         array|
+|real_sample_d1        |  out|   32|   ap_memory|   real_sample|         array|
+|real_sample_q1        |   in|   32|   ap_memory|   real_sample|         array|
+|real_sample_we1       |  out|    1|   ap_memory|   real_sample|         array|
+|imag_sample_address0  |  out|    8|   ap_memory|   imag_sample|         array|
+|imag_sample_ce0       |  out|    1|   ap_memory|   imag_sample|         array|
+|imag_sample_d0        |  out|   32|   ap_memory|   imag_sample|         array|
+|imag_sample_q0        |   in|   32|   ap_memory|   imag_sample|         array|
+|imag_sample_we0       |  out|    1|   ap_memory|   imag_sample|         array|
+|real_output_address0  |  out|    8|   ap_memory|   real_output|         array|
+|real_output_ce0       |  out|    1|   ap_memory|   real_output|         array|
+|real_output_d0        |  out|   32|   ap_memory|   real_output|         array|
+|real_output_q0        |   in|   32|   ap_memory|   real_output|         array|
+|real_output_we0       |  out|    1|   ap_memory|   real_output|         array|
+|real_output_address1  |  out|    8|   ap_memory|   real_output|         array|
+|real_output_ce1       |  out|    1|   ap_memory|   real_output|         array|
+|real_output_d1        |  out|   32|   ap_memory|   real_output|         array|
+|real_output_q1        |   in|   32|   ap_memory|   real_output|         array|
+|real_output_we1       |  out|    1|   ap_memory|   real_output|         array|
+|imag_output_address0  |  out|    8|   ap_memory|   imag_output|         array|
+|imag_output_ce0       |  out|    1|   ap_memory|   imag_output|         array|
+|imag_output_d0        |  out|   32|   ap_memory|   imag_output|         array|
+|imag_output_q0        |   in|   32|   ap_memory|   imag_output|         array|
+|imag_output_we0       |  out|    1|   ap_memory|   imag_output|         array|
+|imag_output_address1  |  out|    8|   ap_memory|   imag_output|         array|
+|imag_output_ce1       |  out|    1|   ap_memory|   imag_output|         array|
+|imag_output_d1        |  out|   32|   ap_memory|   imag_output|         array|
+|imag_output_q1        |   in|   32|   ap_memory|   imag_output|         array|
+|imag_output_we1       |  out|    1|   ap_memory|   imag_output|         array|
+|ap_clk                |   in|    1|  ap_ctrl_hs|           dft|  return value|
+|ap_rst                |   in|    1|  ap_ctrl_hs|           dft|  return value|
+|ap_start              |   in|    1|  ap_ctrl_hs|           dft|  return value|
+|ap_done               |  out|    1|  ap_ctrl_hs|           dft|  return value|
+|ap_ready              |  out|    1|  ap_ctrl_hs|           dft|  return value|
+|ap_idle               |  out|    1|  ap_ctrl_hs|           dft|  return value|
++----------------------+-----+-----+------------+--------------+--------------+
+

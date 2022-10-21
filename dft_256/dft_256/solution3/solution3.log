@@ -1,0 +1,199 @@
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2022.1 (64-bit)
+Tool Version Limit: 2022.04
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-1611] Setting target device to 'xc7z020-clg484-1'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_part xc7z020clg484-1 
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+INFO: [HLS 200-1510] Running: source ./dft_256/solution3/directives.tcl
+INFO: [HLS 200-1510] Running: csim_design -quiet 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s).
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-111] Finished Command csim_design CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.564 seconds; current allocated memory: 0.000 MB.
+INFO: [HLS 200-112] Total CPU user time: 3 seconds. Total CPU system time: 1 seconds. Total elapsed time: 2.593 seconds; peak allocated memory: 1.465 GB.
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2022.1 (64-bit)
+Tool Version Limit: 2022.04
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-1611] Setting target device to 'xc7z020-clg484-1'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_part xc7z020clg484-1 
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+INFO: [HLS 200-1510] Running: source ./dft_256/solution3/directives.tcl
+INFO: [HLS 200-1510] Running: csim_design -quiet 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-111] Finished Command csim_design CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.689 seconds; current allocated memory: 0.250 MB.
+INFO: [HLS 200-112] Total CPU user time: 3 seconds. Total CPU system time: 1 seconds. Total elapsed time: 2.726 seconds; peak allocated memory: 1.464 GB.
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2022.1 (64-bit)
+Tool Version Limit: 2022.04
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-1611] Setting target device to 'xc7z020-clg484-1'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_part xc7z020clg484-1 
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+INFO: [HLS 200-1510] Running: source ./dft_256/solution3/directives.tcl
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.009 seconds; current allocated memory: 1.464 GB.
+INFO: [HLS 200-10] Analyzing design file 'dft_256/dft.cpp' ... 
+WARNING: [HLS 207-5292] unused parameter 'imag_sample' (dft_256/dft.cpp:5:78)
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.566 seconds; current allocated memory: 1.464 GB.
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 2.864 seconds; current allocated memory: 1.464 GB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.001 seconds; current allocated memory: 1.464 GB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.011 seconds; current allocated memory: 1.464 GB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.009 seconds; current allocated memory: 1.464 GB.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_11_1' (dft_256/dft.cpp:7) in function 'dft' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_17_3' (dft_256/dft.cpp:7) in function 'dft' automatically.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.037 seconds; current allocated memory: 1.464 GB.
+WARNING: [HLS 200-960] Cannot flatten loop 'VITIS_LOOP_15_2' (dft_256/dft.cpp:7:6) in function 'dft' the outer loop is not a perfect loop.
+INFO: [HLS 200-472] Inferring partial write operation for 'temp' (dft_256/dft.cpp:12:11)
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.037 seconds; current allocated memory: 1.464 GB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'dft' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'dft_Pipeline_VITIS_LOOP_11_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_11_1'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 2, loop 'VITIS_LOOP_11_1'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.064 seconds; current allocated memory: 1.464 GB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.02 seconds; current allocated memory: 1.464 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'dft_Pipeline_VITIS_LOOP_17_3' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_17_3'.
+WARNING: [HLS 200-880] The II Violation in module 'dft_Pipeline_VITIS_LOOP_17_3' (loop 'VITIS_LOOP_17_3'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 0) between 'store' operation ('add4_write_ln19', dft_256/dft.cpp:19) of variable 'add', dft_256/dft.cpp:19 on local variable 'add4' and 'load' operation ('add4_load', dft_256/dft.cpp:19) on local variable 'add4'.
+WARNING: [HLS 200-880] The II Violation in module 'dft_Pipeline_VITIS_LOOP_17_3' (loop 'VITIS_LOOP_17_3'): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 0) between 'store' operation ('add4_write_ln19', dft_256/dft.cpp:19) of variable 'add', dft_256/dft.cpp:19 on local variable 'add4' and 'load' operation ('add4_load', dft_256/dft.cpp:19) on local variable 'add4'.
+WARNING: [HLS 200-880] The II Violation in module 'dft_Pipeline_VITIS_LOOP_17_3' (loop 'VITIS_LOOP_17_3'): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 0) between 'store' operation ('add4_write_ln19', dft_256/dft.cpp:19) of variable 'add', dft_256/dft.cpp:19 on local variable 'add4' and 'load' operation ('add4_load', dft_256/dft.cpp:19) on local variable 'add4'.
+WARNING: [HLS 200-880] The II Violation in module 'dft_Pipeline_VITIS_LOOP_17_3' (loop 'VITIS_LOOP_17_3'): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 0) between 'store' operation ('add4_write_ln19', dft_256/dft.cpp:19) of variable 'add', dft_256/dft.cpp:19 on local variable 'add4' and 'load' operation ('add4_load', dft_256/dft.cpp:19) on local variable 'add4'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 5, Depth = 13, loop 'VITIS_LOOP_17_3'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.075 seconds; current allocated memory: 1.464 GB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.065 seconds; current allocated memory: 1.464 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'dft' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.062 seconds; current allocated memory: 1.464 GB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.036 seconds; current allocated memory: 1.464 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'dft_Pipeline_VITIS_LOOP_11_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'dft_Pipeline_VITIS_LOOP_11_1' pipeline 'VITIS_LOOP_11_1' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Finished creating RTL model for 'dft_Pipeline_VITIS_LOOP_11_1'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.043 seconds; current allocated memory: 1.464 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'dft_Pipeline_VITIS_LOOP_17_3' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'dft_Pipeline_VITIS_LOOP_17_3' pipeline 'VITIS_LOOP_17_3' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'fadd_32ns_32ns_32_5_full_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fmul_32ns_32ns_32_4_max_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'dft_Pipeline_VITIS_LOOP_17_3'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.346 seconds; current allocated memory: 1.464 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'dft' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'dft/real_sample' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'dft/imag_sample' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'dft/real_output' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'dft/imag_output' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'dft' to 'ap_ctrl_hs'.
+WARNING: [RTGEN 206-101] Port 'dft/imag_sample_address0' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'dft/imag_sample_address0' to 0.
+WARNING: [RTGEN 206-101] Port 'dft/imag_sample_ce0' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'dft/imag_sample_ce0' to 0.
+WARNING: [RTGEN 206-101] Port 'dft/imag_sample_we0' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'dft/imag_sample_we0' to 0.
+WARNING: [RTGEN 206-101] Port 'dft/imag_sample_d0' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'dft/imag_sample_d0' to 0.
+WARNING: [RTGEN 206-101] Port 'dft/imag_sample_q0' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'dft/imag_sample_address1' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'dft/imag_sample_address1' to 0.
+WARNING: [RTGEN 206-101] Port 'dft/imag_sample_ce1' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'dft/imag_sample_ce1' to 0.
+WARNING: [RTGEN 206-101] Port 'dft/imag_sample_we1' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'dft/imag_sample_we1' to 0.
+WARNING: [RTGEN 206-101] Port 'dft/imag_sample_d1' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'dft/imag_sample_d1' to 0.
+WARNING: [RTGEN 206-101] Port 'dft/imag_sample_q1' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'dft'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.14 seconds; current allocated memory: 1.464 GB.
+INFO: [RTMG 210-279] Implementing memory 'dft_dft_Pipeline_VITIS_LOOP_17_3_cos_coefficients_table_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'dft_dft_Pipeline_VITIS_LOOP_17_3_sin_coefficients_table_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-278] Implementing memory 'dft_temp_RAM_AUTO_1R1W_ram (RAM)' using auto RAMs.
+INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.577 seconds; current allocated memory: 1.464 GB.
+INFO: [HLS 200-111] Finished Updating report files: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.315 seconds; current allocated memory: 1.464 GB.
+INFO: [VHDL 208-304] Generating VHDL RTL for dft.
+INFO: [VLOG 209-307] Generating Verilog RTL for dft.
+INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were NOT satisfied.
+INFO: [HLS 200-789] **** Estimated Fmax: 137.82 MHz
+INFO: [HLS 200-111] Finished Command csynth_design CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 5.305 seconds; current allocated memory: 0.000 MB.
+INFO: [HLS 200-112] Total CPU user time: 4 seconds. Total CPU system time: 1 seconds. Total elapsed time: 7.309 seconds; peak allocated memory: 1.464 GB.
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2022.1 (64-bit)
+Tool Version Limit: 2022.04
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-1611] Setting target device to 'xc7z020-clg484-1'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_part xc7z020clg484-1 
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+INFO: [HLS 200-1510] Running: source ./dft_256/solution3/directives.tcl
+INFO: [HLS 200-1510] Running: cosim_design -trace_level all 
+INFO: [COSIM 212-47] Using XSIM for RTL simulation.
+INFO: [COSIM 212-14] Instrumenting C test bench ...
+INFO: [COSIM 212-302] Starting C TB testing ... 
+INFO: [COSIM 212-333] Generating C post check test bench ...
+INFO: [COSIM 212-12] Generating RTL test bench ...
+INFO: [COSIM 212-1] *** C/RTL co-simulation file generation completed. ***
+INFO: [COSIM 212-323] Starting verilog simulation. 
+INFO: [COSIM 212-15] Starting XSIM ...
+INFO: [COSIM 212-316] Starting C post checking ...
+INFO: [COSIM 212-1000] *** C/RTL co-simulation finished: PASS ***
+INFO: [COSIM 212-211] II is measurable only when transaction number is greater than 1 in RTL simulation. Otherwise, they will be marked as all NA. If user wants to calculate them, please make sure there are at least 2 transactions in RTL simulation.
+INFO: [HLS 200-111] Finished Command cosim_design CPU user time: 2 seconds. CPU system time: 0 seconds. Elapsed time: 474.363 seconds; current allocated memory: 2.379 MB.
+INFO: [HLS 200-112] Total CPU user time: 5 seconds. Total CPU system time: 1 seconds. Total elapsed time: 476.436 seconds; peak allocated memory: 1.466 GB.
